@@ -1,0 +1,34 @@
+$historyColor: #0032d9;
+
+.hex {
+    width: 240px;
+    height: 136px;
+    background-color: $historyColor;
+    position: relative;
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hex:before,
+.hex:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 120px solid transparent;
+    border-right: 120px solid transparent;
+}
+
+.hex:before {
+    bottom: 100%;
+    border-bottom: 56.64px solid $historyColor
+}
+
+.hex:after {
+    top: 100%;
+    border-top: 56.64px solid $historyColor;
+}

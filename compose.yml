@@ -1,0 +1,11 @@
+services:
+  portfolio:
+    container_name: portfolio
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3230:3000"
+    volumes:
+      - .:/app
+    tty: true
