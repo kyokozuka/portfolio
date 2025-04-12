@@ -12,6 +12,9 @@ $historyColor: #0032d9;
     color: white;
     font-weight: bold;
     text-align: center;
+    transform: rotateY(0deg);
+    transform-origin: center;
+    transition: transform 1s;
 }
 
 .hex:before,
@@ -31,4 +34,9 @@ $historyColor: #0032d9;
 .hex:after {
     top: 100%;
     border-top: 56.64px solid $historyColor;
+}
+
+.hex:hover {
+    transform: rotateY(360deg);
+
 }

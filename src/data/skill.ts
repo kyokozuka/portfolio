@@ -5,14 +5,14 @@ const skills = [
       { name: "Python", level: 90 },
       { name: "PHP", level: 80 },
       { name: "React", level: 75 },
-      { name: "Rust", level: 30 },
+      { name: "Rust", level: 20 },
     ]
   },
   {
     name: "Framework",
     value: [
       { name: "FastAPI", level: 90 },
-      { name: "Flask", level: 90 },
+      { name: "Flask", level: 70 },
       { name: "ReactJS", level: 60 },
       { name: "Yii", level: 40 },
     ]
@@ -21,17 +21,17 @@ const skills = [
     name: "Infrastructure/Cloud",
     value: [
       { name: "AWS", level: 80 },
-      { name: "GCP", level: 30 },
+      { name: "GCP", level: 40 },
       { name: "Azure", level: 30 },
-      { name: "Docker", level: 75 },
+      { name: "Docker", level: 80 },
     ]
   },
   {
     name: "DB",
     value: [
-      { name: "Mysl", level: 80 },
-      { name: "PostgreSQL", level: 40 },
-      { name: "Redshift", level: 40 },
+      { name: "MySQL", level: 80 },
+      { name: "PostgreSQL", level: 60 },
+      { name: "Redshift", level: 60 },
     ]
   },
 ];
