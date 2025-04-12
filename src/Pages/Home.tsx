@@ -20,7 +20,7 @@ const Home = () => {
         <h2 className="text-2xl font-bold mt-4">Software Developer Engineer</h2>
         <i>
           <img
-            src="src/assets/profile.jpg"
+            src="assets/profile.jpg"
             alt="Kento Yokozuka"
             className="rounded-full object-cover w-40 h-40 mt-8"
           />
@@ -121,7 +121,7 @@ const Home = () => {
           className="flex items-center space-x-4 hover:opacity-80 transition m-4"
         >
           <img
-            src="src/assets/x.svg"
+            src="assets/x.svg"
             alt="X"
             className="w-10 h-10"
           />
@@ -134,7 +134,7 @@ const Home = () => {
           className="flex items-center space-x-4 hover:opacity-80 transition m-4"
         >
           <img
-            src="src/assets/github-mark-white.svg"
+            src="assets/github-mark-white.svg"
             alt="Github"
             className="w-10 h-10"
           />

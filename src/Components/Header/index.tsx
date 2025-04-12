@@ -9,21 +9,21 @@ const Header: React.FC = () => {
         <h1 className={`${styles.title} text-3xl tracking-tight`}>Kento Yokozuka</h1>
         <nav className="flex space-x-8 text-sm font-medium uppercase">
           <HashLink
-            to="/#profile"
+            to="/portfolio/#profile"
             className="hover:text-blue-400 transition duration-200"
             smooth
           >
             Profile
           </HashLink>
           <HashLink
-            to="/#about"
+            to="/portfolio/#about"
             className="hover:text-blue-400 transition duration-200"
             smooth
           >
             About Me
           </HashLink>
           <HashLink
-            to="/#contact"
+            to="/portfolio/#contact"
             className="hover:text-blue-400 transition duration-200"
             smooth
           >

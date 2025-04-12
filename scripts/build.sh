@@ -1,4 +1,4 @@
-npm run build
 rm -rf public/*
+npm run build
 cp -r dist/* public/
-rm -rf dist
+# rm -rf dist
