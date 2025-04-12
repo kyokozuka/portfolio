@@ -23,3 +23,8 @@ jobs:
 
       - name: Build React App
         run: npm run build
+
+      - name: Move build files to public directory
+        run: |
+          rm -rf public/*
+          cp -r dist/* public/
