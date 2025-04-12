@@ -13,7 +13,7 @@ function App() {
           <Header />
           <main className="flex-grow flex flex-col items-center max-w-5xl mx-auto mt-20">
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/portfolio/" element={<Home />} />
             </Routes>
           </main>
           <Footer />
