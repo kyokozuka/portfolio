@@ -13,7 +13,7 @@ const History: FC<HistoryProps> = (
   { year, title, company, place, onClick }
 ) => {
   return (
-    <div className="flex flex-col items-center mt-2 mr-4 ml-4 mb-36" onClick={onClick}>
+    <div className="flex flex-col items-center mt-2 mr-14 ml-14 mb-36" onClick={onClick}>
       <div className={`${styles["hex"]} hover:scale-105 transition-transform duration-300`}>
         <div className="flex flex-col">
           <p className="text-sm text-gray-300">{year}</p>

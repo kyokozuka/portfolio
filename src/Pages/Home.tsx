@@ -25,7 +25,7 @@ const Home = () => {
             className="rounded-full object-cover w-40 h-40 mt-8"
           />
         </i>
-        <article className="text-wrap font-bold mt-8 w-230">
+        <article className="text-wrap font-bold mt-8 w-300">
           <p className="whitespace-pre-line">
             Passionate Software Engineer with 8+ years of experience in developing web systems and backend systems.
             Skilled at writing clear code that is easy to maintain and troubleshoot.
@@ -39,12 +39,12 @@ const Home = () => {
       <div className="flex flex-col items-right mt-2 mb-8 w-230">
         <label className="mt-4 mb-4">About %</label>
         <ul className="list-disc list-inside mb-4">
-          <li className="text-m text-gray-200 mt-2">0%: No experience</li>
-          <li className="text-m text-gray-200 mt-2">20%: Basic self-taught knowledge level</li>
-          <li className="text-m text-gray-200 mt-2">40%: Capable of building applications or tools through personal projects</li>
-          <li className="text-m text-gray-200 mt-2">60%: Experienced in working in a team environment with hands-on development, testing, and debugging</li>
-          <li className="text-m text-gray-200 mt-2">80%: 3+ years of experience, capable of handling design, development, and code reviews</li>
-          <li className="text-m text-gray-200 mt-2">100%: Extensive experience leading technical decisions, architecture design, and mentoring developers</li>
+          <li className="text-m text-gray-900 mt-2">0%: No experience</li>
+          <li className="text-m text-gray-900 mt-2">20%: Basic self-taught knowledge level</li>
+          <li className="text-m text-gray-900 mt-2">40%: Capable of building applications or tools through personal projects</li>
+          <li className="text-m text-gray-900 mt-2">60%: Experienced in working in a team environment with hands-on development, testing, and debugging</li>
+          <li className="text-m text-gray-900 mt-2">80%: 3+ years of experience, capable of handling design, development, and code reviews</li>
+          <li className="text-m text-gray-900 mt-2">100%: Extensive experience leading technical decisions, architecture design, and mentoring developers</li>
         </ul>
         <div className="flex flex-row flex-wrap items-right mt-2">
           {skills.map((skill) => (
@@ -57,7 +57,7 @@ const Home = () => {
       </div >
 
       <SectionTitle id='certification' title="CERTIFICATION" />
-      <div className="flex flex-col items-center mt-2 mb-6 w-230">
+      <div className="flex flex-col items-center mt-2 mb-6 w-300">
         <i>
           <img
             src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg"
@@ -83,7 +83,7 @@ const Home = () => {
         )
       }
 
-      <div className="flex flex-row flex-wrap items-center mb-8 mt-16 w-230">
+      <div className="flex flex-row flex-wrap items-center mb-8 mt-16 w-300">
         {histories.map((history) => (
           <History
             year={history.year}
@@ -121,7 +121,7 @@ const Home = () => {
           className="flex items-center space-x-4 hover:opacity-80 transition m-4"
         >
           <img
-            src="assets/x.svg"
+            src="assets/x.png"
             alt="X"
             className="w-10 h-10"
           />
@@ -134,7 +134,7 @@ const Home = () => {
           className="flex items-center space-x-4 hover:opacity-80 transition m-4"
         >
           <img
-            src="assets/github-mark-white.svg"
+            src="assets/github-mark.svg"
             alt="Github"
             className="w-10 h-10"
           />
