@@ -4,8 +4,8 @@ import styles from "./header.module.scss";
 
 const Header: React.FC = () => {
   return (
-    <header className={`${styles.header} text-white shadow-md sticky top-0 z-50`}>
-      <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+    <header className={`${styles.header} text-gray-900 shadow-md sticky top-0 z-50`}>
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <h1 className={`${styles.title} text-3xl tracking-tight`}>Kento Yokozuka</h1>
         <nav className="flex space-x-8 text-sm font-medium uppercase">
           <HashLink

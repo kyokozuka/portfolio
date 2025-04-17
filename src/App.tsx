@@ -11,7 +11,7 @@ function App() {
       <div className="min-h-screen flex flex-col">
         <BrowserRouter>
           <Header />
-          <main className="flex-grow flex flex-col items-center max-w-5xl mx-auto mt-20">
+          <main className="flex-grow flex flex-col items-center max-w-7xl mx-auto mt-20">
             <Routes>
               <Route path="/portfolio/" element={<Home />} />
             </Routes>

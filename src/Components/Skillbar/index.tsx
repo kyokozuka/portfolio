@@ -16,8 +16,8 @@ const SkillBar: React.FC<SkillBarProps> = ({ name, level }) => {
   }, [level]);
 
   return (
-    <div key={name} className="w-full max-w-md mt-4 mr-6 ml-6">
-      <p className="mb-1 text-sm font-semibold text-white">{name}</p>
+    <div key={name} className="w-full max-w-md mt-4 mr-8">
+      <p className="mb-1 text-sm font-semibold text-gray-900">{name}</p>
       <div className="w-100 bg-gray-700 h-4 rounded">
         <div
           className={`${styles["skillbar"]} h-4 rounded transition-all duration-1500 text-xs text-white font-semibold flex items-center justify-end pr-2`}
