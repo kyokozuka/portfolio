@@ -43,7 +43,7 @@ export default function Header({ currentLang = "en", onLanguageChange }: HeaderP
   };
 
   return (
-    <header className={`bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-60 transition-all duration-300 ${
+    <header className={`bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50 transition-all duration-300 ${
       mounted && isScrolled ? 'shadow-lg bg-white/95' : ''
     }`}>
       <div className="container mx-auto px-4 py-4">
@@ -120,9 +120,11 @@ export default function Header({ currentLang = "en", onLanguageChange }: HeaderP
           </nav>
 
           {/* Language Switcher and Social Links with animations */}
-          <div className="flex items-center space-x-4 animate-slideInRight relative z-10">
+          <div className="flex items-center space-x-4 animate-slideInRight relative z-[100]">
             {onLanguageChange && (
-              <LanguageSwitcher currentLang={currentLang} onLanguageChange={onLanguageChange} />
+              <div className="relative z-[101]">
+                <LanguageSwitcher currentLang={currentLang} onLanguageChange={onLanguageChange} />
+              </div>
             )}
             <a
               href="https://www.linkedin.com/in/kento-yokozuka-26a1731b4/"

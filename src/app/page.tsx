@@ -11,6 +11,10 @@ export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [mounted, setMounted] = useState(false);
 
+  const handleLanguageChange = (lang: string) => {
+    setCurrentLang(lang);
+  };
+
   useEffect(() => {
     setIsLoaded(true);
     setMounted(true);
@@ -204,7 +208,7 @@ export default function Home() {
         />
       )}
 
-      <Header currentLang={currentLang} onLanguageChange={setCurrentLang} />
+      <Header currentLang={currentLang} onLanguageChange={handleLanguageChange} />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden">
