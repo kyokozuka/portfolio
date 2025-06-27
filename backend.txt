@@ -1,0 +1,184 @@
+### Software Engineer | JMA Systems  (Tokyo, Japan)
+**Apr 2024 - Present**
+~~~
+AWS(IAM, Glue, S3, Redshift, Lambda, Step Function, Cloud Watch, Event Bridge, SNS, SQS, Code Commit, Code build, Code deploy, Code pipeline)
+Python
+AWS CDK(Python), Docker
+Backlog, Teams
+~~~
+AWSとPythonを使用して大手メーカーの売上データ分析基盤の構築から運用・保守までを担当
+AWS(Athena, Glue, Redshfit, S3)とPython (PySpark, Pandas)を活用し、ETL処理パイプラインを設計・実装・運用。
+IAM設計、CloudWatchおよびEventBridge によるログ監視とアラート設計により、障害検知時間の大幅削減。
+CodeCommit、CodePipelineを利用したCI/CD環境を構築し、テストとリリースを自動化し、デプロイ時間を80%短縮。
+AWS CDKの導入し、Infrastructure as Code (IaC)によるAWSリソース管理を効率化し、開発工数を50%削減。
+
+---
+Led the development, operation, and maintenance of a sales data analytics platform for a major manufacturer using AWS and Python.
+Designed, implemented, and managed ETL pipelines using AWS (Athena, Glue, Redshift, S3) and Python (PySpark, Pandas).
+Reduced incident detection time by designing IAM policies, and implementing log monitoring and alerts with CloudWatch and EventBridge.
+Built a CI/CD environment using CodeCommit and CodePipeline, automating testing and release processes, and reducing deployment time by 80%.
+Introduced AWS CDK to manage AWS resources as Infrastructure as Code (IaC), streamlining operations and cutting development effort by 50%.
+### Software Engineer | TechDoctor (Tokyo, Japan)
+**Jun 2023 - Dec 2023**
+~~~
+AWS(IAM, S3, RDS, Fargate)
+Python(FastAPI)
+MySQL(8.0), Docker, GrpahQL
+Notion, Slack, Jira
+~~~
+ヘルスケアサービスシステムの構築・運用までを担当。
+AWS (Fargate, S3) と Python(FastAPI, DDD) を活用して、デジタルバイオマーカー開発プラットフォームの開発、運用。
+Python(Pytest, unittest)でテスト駆動設計 (TDD) を導入し、カバレッジを 0% から 80% に改善。
+ドキュメントの整備を実施し、属人化をなくすことによりコストを削減。
+
+---
+Developed and operated a healthcare service system, including a digital biomarker development platform.
+Utilized AWS (Fargate, S3) and Python (FastAPI, Domain-Driven Design) to build and maintain the platform.
+Introduced Test-Driven Development (TDD) using Python (Pytest, unittest), increasing test coverage from 0% to 80%.
+Improved documentation to eliminate knowledge silos, resulting in reduced operational risk and maintenance costs.
+### Software Engineer | One Stop Innovation  (Tokyo, Japan)
+**Sep 2021 - Sep 2024**
+~~~
+AWS(IAM, Glue, S3, RDS, Lambda, Cloud Watch, Secret Manager, SNS, SQS, VPC, EC2, Redshift)
+Google App Script, PHP, HTML, CSS, JavaScript
+Docker, Terraform, MySQL5.6, 8.0, Wordpress
+Backlog, ChatWork, Zoom
+~~~
+大手文具・事務器具メーカーのEコマースシステムおよび分析基盤の構築・運用までを担当。
+WordPressを使用し、コンテンツ更新や商品アップロードなど、日本のハンコ会社のEコマース運営を管理。
+分析基盤構築のためのデータ基盤をスクラッチで構築、DB設計、API連携およびBIツールでダッシュボード作成。
+Eコマースサイトのページ表示時間のパフォーマンスチューニングで 15 sec から 400 msec に改善。
+Terraform によるシステム基盤の Infrastructure as Code (IaC)によるAWSリソース管理を効率化し、開発工数を50%削減。
+MySQLのクエリチューニングにより、データ表示を 100 sec から 10 sec に改善。
+
+---
+Led the development and operation of an e-commerce system and analytics platform for a major stationery and office equipment manufacturer.
+Managed the operations of a Japanese seal (hanko) company’s e-commerce site using WordPress, including content updates and product uploads.
+Built a data platform from scratch to support analytics, including database design, API integrations, and dashboard creation using BI tools.
+Improved e-commerce page load time from 15 seconds to 400 milliseconds through performance tuning.
+Streamlined AWS infrastructure management using Terraform for Infrastructure as Code (IaC), reducing development effort by 50%.
+Tuned MySQL queries, reducing data retrieval time from 100 seconds to 10 seconds.
+### Technical Support Engineer | Microsoft Japan  (Tokyo, Japan)
+**Oct 2022 - Jul 2023**
+~~~
+Azure(App Service, Functions, Container Apps)
+Github(Actions), Teams
+~~~
+Azure App Service の テクニカルサポートエンジニアとして担当。
+Azure App ServiceにデプロイするためのGitLabを使用したCI/CDスクリプトを開発。
+ログ分析（Application Insights、KQL）を活用し、顧客の問題を特定し、ソースコードを分析し、改善のためのスクリプトを開発。
+ドキュメントの整備を実施し、チーム内でナレッジを共有し質問等のコストを削減。
+
+---
+Developed CI/CD scripts using GitLab for deploying applications to Azure App Service.
+Utilized Application Insights and Kusto Query Language (KQL) to analyze logs, identify customer issues, and trace problems back to source code. Developed scripts to resolve root causes and improve system reliability.
+Documented processes and shared technical knowledge across the team, reducing support and onboarding costs by minimizing redundant questions.
+### Backend Engineer | snaq.me  (Tokyo, Japan)
+**Mar 2022 - Aug 2022**
+~~~
+AWS(S3, Lambda, RDS)
+Python, JavaScript
+Docker
+GitHub, Slack
+~~~
+AWSを使用してスナックのサブスクリプションを提供するサービスの構築・運用を担当。
+AWS(Lambda, S3)とPython(FastAPI)を使用してコンテンツ配信バッチ処理を構築・運用。
+自社カスタムライブラリを作成することにより 40 % の開発コストの削減。
+
+---
+Built and operated a snack subscription service platform using AWS.
+Developed and maintained batch processing for content delivery using AWS (Lambda, S3) and Python (FastAPI).
+Created a custom internal library, reducing development costs by 40% through code reuse and standardization.
+### Software Engineer | Luup  (Tokyo, Japan)
+**Jul 2021 - Oct 2022**
+~~~
+AWS(IAM, Amplify, Lambda, AWS IoT)
+GCP(Cloud Run, Cloud Logging, Cloud Monitoring, Pub/Sub, BigQuery)
+FireBase(FireStore, Authentication, Functions)
+TypeScript(Express), Terraform
+GitHub(Actions), Notion, Slack
+~~~
+GCP&FirebaseおよびAWSを使用したモビリティサービス(IoTサービス)のサービスの構築・運用を担当。
+GCP&Firebase(Functions, Firestore)とTypescript(Express)を活用して、API(Rest API, MQTT)の構築・運用。
+Cloud Logging、Cloud Monitoringによるログ監視、アラーム設計、SLO設計により、障害検知時間の短縮
+AWS及びGCPを使用したインフラ構築をIaC化することにより開発・運用コストを 50 % 削減。
+Github Actions で自動テスト、自動デプロイを導入することにより、テスト・構築コストを100% 削減
+
+---
+Developed and operated a mobility (IoT) service using GCP, Firebase, and AWS.
+Built and maintained REST and MQTT APIs using GCP & Firebase (Cloud Functions, Firestore) and TypeScript (Express).
+Designed logging, monitoring, alerting, and SLOs using Cloud Logging and Cloud Monitoring, significantly reducing issue detection time.
+Reduced development and operations costs by 50% by implementing Infrastructure as Code (IaC) for both AWS and GCP environments.
+Eliminated manual testing and deployment efforts by 100% through automated testing and deployment with GitHub Actions.
+### Software Engineer | Asial Corporation  (Tokyo, Japan)
+**Apr 2021 - Nov 2021**
+~~~
+TypeSctipt(NestJS)
+Docker, MySQL
+Github, Slack
+~~~
+新卒採用大手システムおよび大学システムの構築・運用を担当。
+Docker、NestJS(Nodejs)、Mysql をによる大学入試採用システムの構築・運用。
+AWS（VPC、）、Docker、NestJS(Nodejs)、Mysql をによる新卒採用システムの構築・運用。
+年間100万人以上が利用する求人プラットフォームにおいて、クエリの最適化とインデックスの改善により、MySQLのパフォーマンスを最適化。
+クエリの実行時間を2秒から200ミリ秒に短縮。
+
+---
+Developed and maintained major new graduate recruitment and university systems.
+Built and operated a university entrance exam system using Docker, NestJS (Node.js), and MySQL.
+Built and maintained a new graduate recruitment platform using AWS (VPC), Docker, NestJS (Node.js), and MySQL.
+Optimized MySQL performance on a job-matching platform used by over 1 million users annually by improving query logic and indexes.
+Reduced query execution time from 2 seconds to 200 milliseconds, significantly enhancing system responsiveness and user experience.
+### Software Engineer | T2Lab  (Tokyo, Japan)
+**Mar 2020 - Mar 2021**
+~~~
+AWS(IAM, S3, Lambda, API Gateway, Cloud Watch, SNS, SQS, SES, VPC, EC2, DynamoDB, RDS)
+Python, ReactJS(TypeScript), HTML, CSS
+Slack, Teams
+~~~
+AWSにおける大手グローバルメーカーの臭いセンサーサービス(IoTサービス)の構築・運用を担当
+AWS(Amplify, S3, Lambda, DynamoDB, API GW) 、Python(Flask, Clean Architecture)、およびTypeScript(ReactJS) によるアプリを構築・運用。
+APIのパフォーマンスを最適化し、IoTデバイスのシームレスなリアルタイムデータ処理を実現。
+AWS(EC2、S3、RDS、Lambda、IAM)のベストプラクティスを網羅したAWSトレーニングセッションをエンタープライズクライアント向けに実施。
+ハンズオンデモンストレーションとアーキテクチャガイダンスを提供し、クライアントのAWSへのインフラ移行を成功に導いた。
+
+---
+Led the development and operation of an IoT-based odor sensor service for a major global manufacturer using AWS.
+Built and maintained the application using AWS (Amplify, S3, Lambda, DynamoDB, API Gateway), Python (Flask, Clean Architecture), and TypeScript (ReactJS).
+Optimized API performance to enable seamless real-time data processing from IoT devices.
+Delivered AWS best-practice training sessions for enterprise clients, covering services such as EC2, S3, RDS, Lambda, and IAM.
+Provided hands-on demonstrations and architectural guidance, successfully supporting clients in migrating their infrastructure to AWS.
+### FullStack Engineer | Micro CAD  (Tokyo, Japan)
+**Feb 2017 - Feb 2020**
+~~~
+AWS(IAM, S3, DynamoDB, Lambda, Cloud Watch, RDS, VPC, EC2, Cloud Formation, SES, SNS, SQS)
+PHP5.5, JavaScript, HTML, CSS, Python(Flask)
+MySql5.6, Subversion
+~~~
+知的財産システムの構築から運用まで担当。
+チームリーダーとしてチームメンバーのメンターから教育まで担当
+情報システム部門の室長としてチームマネジメントからソフトウェアの構築・運用を担当。
+PHP, HTML, CSS, JavaScript を使用して、システムのパフォーマンスチューニングを実施し、画面描画までを15 sec から 800 msec に改善。
+AWS (VPC, EC2, RDS) へのオンプレミスからクラウド移行への実施し、Cloud Formation でのシステム構築を実施することにより、1 日 から 20 min に改善。
+AWS (API Gateway, VPC, Lambda, DynamoDB)およびPython (Flask、Clean Architecture) を使用した勤怠管理システムをスクラッチで設計、構築・運用までを実施。
+
+---
+Led end-to-end development and operation of an intellectual property management system.
+Served as team leader, providing mentorship and training to team members.
+Oversaw both software development and IT operations as the head of the Information Systems Division.
+Optimized front-end performance using PHP, HTML, CSS, and JavaScript, reducing page rendering time from 15 seconds to 800 milliseconds.
+Migrated on-premises systems to AWS (VPC, EC2, RDS), and implemented infrastructure as code using CloudFormation, reducing deployment time from 1 day to 20 minutes.
+Designed, developed, and maintained a time and attendance management system from scratch, utilizing AWS (API Gateway, VPC, Lambda, DynamoDB) and Python (Flask, Clean Architecture).
+
+### Infrastructure Engineer | Xincor miXell  (Tokyo, Japan)
+**Apr 2015 - Feb 2017**
+~~~
+Linux(RedHat)
+VBA
+~~~
+大手通信企業においてネットワークサービスの運用を担当。
+VBAを使用したバッチ処理ソリューションの開発と導入により、毎日1時間のルーチン作業を5分以内に短縮し、チームの効率を大幅に改善。
+
+---
+Managed network service operations at a major telecommunications company.
+Developed and implemented a batch processing solution using VBA, reducing a daily one-hour routine task to under five minutes, significantly improving team efficiency.

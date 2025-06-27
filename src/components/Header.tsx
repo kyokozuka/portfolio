@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 interface HeaderProps {
@@ -11,6 +12,18 @@ interface HeaderProps {
 
 export default function Header({ currentLang = "en", onLanguageChange }: HeaderProps) {
   const pathname = usePathname();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const isActive = (path: string) => {
     return pathname === path;
@@ -30,60 +43,84 @@ export default function Header({ currentLang = "en", onLanguageChange }: HeaderP
   };
 
   return (
-    <header className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
+    <header className={`bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-60 transition-all duration-300 ${
+      mounted && isScrolled ? 'shadow-lg bg-white/95' : ''
+    }`}>
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
-            Kento Yokozuka
+          {/* Logo with slide-in animation */}
+          <Link
+            href="/"
+            className="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-all duration-300 transform hover:scale-105 animate-slideInLeft relative z-10 cursor-pointer"
+            prefetch={true}
+          >
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent pointer-events-none">
+              Kento Yokozuka
+            </span>
           </Link>
 
-          {/* Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          {/* Navigation with hover effects */}
+          <nav className="hidden md:flex items-center space-x-8 relative z-10">
             <Link
               href="/"
-              className={`text-lg font-medium transition-colors ${
+              className={`text-lg font-medium transition-all duration-300 relative group cursor-pointer ${
                 isActive('/')
                   ? 'text-blue-600'
                   : 'text-gray-700 hover:text-blue-600'
               }`}
+              prefetch={true}
             >
-              {getNavText('home')}
+              <span className="relative z-10">{getNavText('home')}</span>
+              <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full ${
+                isActive('/') ? 'w-full' : ''
+              }`}></span>
             </Link>
             <Link
               href="/software"
-              className={`text-lg font-medium transition-colors ${
+              className={`text-lg font-medium transition-all duration-300 relative group cursor-pointer ${
                 isActive('/software')
                   ? 'text-blue-600'
                   : 'text-gray-700 hover:text-blue-600'
               }`}
+              prefetch={true}
             >
-              {getNavText('software')}
+              <span className="relative z-10">{getNavText('software')}</span>
+              <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full ${
+                isActive('/software') ? 'w-full' : ''
+              }`}></span>
             </Link>
             <Link
               href="/uiux"
-              className={`text-lg font-medium transition-colors ${
+              className={`text-lg font-medium transition-all duration-300 relative group cursor-pointer ${
                 isActive('/uiux')
                   ? 'text-blue-600'
                   : 'text-gray-700 hover:text-blue-600'
               }`}
+              prefetch={true}
             >
-              {getNavText('uiux')}
+              <span className="relative z-10">{getNavText('uiux')}</span>
+              <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full ${
+                isActive('/uiux') ? 'w-full' : ''
+              }`}></span>
             </Link>
             <Link
               href="/contact"
-              className={`text-lg font-medium transition-colors ${
+              className={`text-lg font-medium transition-all duration-300 relative group cursor-pointer ${
                 isActive('/contact')
                   ? 'text-blue-600'
                   : 'text-gray-700 hover:text-blue-600'
               }`}
+              prefetch={true}
             >
-              {getNavText('contact')}
+              <span className="relative z-10">{getNavText('contact')}</span>
+              <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full ${
+                isActive('/contact') ? 'w-full' : ''
+              }`}></span>
             </Link>
           </nav>
 
-          {/* Language Switcher and Social Links */}
-          <div className="flex items-center space-x-4">
+          {/* Language Switcher and Social Links with animations */}
+          <div className="flex items-center space-x-4 animate-slideInRight relative z-10">
             {onLanguageChange && (
               <LanguageSwitcher currentLang={currentLang} onLanguageChange={onLanguageChange} />
             )}
@@ -91,7 +128,7 @@ export default function Header({ currentLang = "en", onLanguageChange }: HeaderP
               href="https://www.linkedin.com/in/kento-yokozuka-26a1731b4/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-blue-600 transition-colors"
+              className="text-gray-600 hover:text-blue-600 transition-all duration-300 transform hover:scale-110 hover:rotate-3 animate-pulse cursor-pointer"
               aria-label="LinkedIn"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -102,7 +139,7 @@ export default function Header({ currentLang = "en", onLanguageChange }: HeaderP
               href="https://github.com/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-gray-600 hover:text-gray-900 transition-all duration-300 transform hover:scale-110 hover:-rotate-3 animate-pulse cursor-pointer"
               aria-label="GitHub"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -111,7 +148,7 @@ export default function Header({ currentLang = "en", onLanguageChange }: HeaderP
             </a>
             <a
               href="mailto:contact@example.com"
-              className="text-gray-600 hover:text-red-600 transition-colors"
+              className="text-gray-600 hover:text-red-600 transition-all duration-300 transform hover:scale-110 hover:rotate-3 animate-pulse cursor-pointer"
               aria-label="Email"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
