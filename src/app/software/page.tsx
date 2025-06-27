@@ -652,6 +652,32 @@ export default function SoftwarePage() {
             ))}
           </div>
         </section>
+
+        {/* Contact Section */}
+        <section className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Let's Connect
+          </h2>
+          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+            Interested in discussing software engineering opportunities or collaborating on projects?
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="inline-block px-8 py-3 bg-blue-600 text-white font-bold rounded-lg shadow-lg hover:bg-blue-700 transition-colors"
+            >
+              Get in Touch
+            </Link>
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 bg-gray-800 text-white font-bold rounded-lg shadow-lg hover:bg-gray-900 transition-colors"
+            >
+              View GitHub
+            </a>
+          </div>
+        </section>
       </div>
 
       <Footer currentLang={currentLang} />

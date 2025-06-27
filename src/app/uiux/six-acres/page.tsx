@@ -64,12 +64,60 @@ export default function ProjectPage() {
       imageCredit: "All images are quoted from the official Six Acres website for design study purposes."
     },
     ja: {
-      // ...日本語訳（省略。必要なら追加）...
+      title: "リデザイン",
+      subtitle: "Six Acres レストラン",
+      role: "UX/UIデザイナー",
+      tools: "Figma, Notion",
+      duration: "1週間",
+      finalSolution: "Six Acresレストランウェブサイトの包括的なリデザイン。使いやすさ、視覚的魅力、そして全体的な食事体験の向上に焦点を当てました。新しいデザインは、モダンで親しみやすい外観と明確なナビゲーションを特徴とし、ユーザーが情報を見つけやすく、テーブルを予約しやすくなっています。",
+      beforeAfter: {
+        welcome: { before: "/projects/sixacres/Before/Welcome.svg", after: "/projects/sixacres/After/Welcome.svg" },
+        menu: { before: "/projects/sixacres/Before/Menu.svg", after: "/projects/sixacres/After/Menu.svg" },
+        event: { before: "/projects/sixacres/Before/Event.svg", after: "/projects/sixacres/After/Event.svg" },
+        reservation: { before: "/projects/sixacres/Before/Reservation.svg", after: "/projects/sixacres/After/Reservation.svg" },
+        contact: { before: "/projects/sixacres/Before/Contact.svg", after: "/projects/sixacres/After/Contact.svg" },
+      },
+      process: {
+        tasks: [
+          "ハッピーアワーの時間を見つける",
+          "レストランの住所を確認する",
+          "'Good Wing Mondays'イベントの詳細を調べる",
+          "Instagramページを見つける",
+          "レストランスペースのレンタル料金を調べる"
+        ],
+        findingsGood: [
+          "ほとんどのユーザーが全体的なレイアウトを明確だと感じ、元のバージョンと比較して構造を評価しました。",
+          "カラフルなデザインと改善された配置により、より活気があり親しみやすい印象を作り出しました。",
+          "元のグレーで平坦な雰囲気と比較して、情報が見つけやすくなりました。"
+        ],
+        findingsBad: [
+          "ヒーロー画像のコントラストが不足し、テキストが読みにくい。",
+          "ロゴの視認性が低い。より太いゴールドまたは黒への変更が提案されました。",
+          "ユーザーがInstagramなどのソーシャルリンクを見つけるのに苦労。アイコンのないテキストリンクだったため。",
+          "PDFリンクによるメニューナビゲーションが不便。",
+          "連絡先ページと予約ページの場所の詳細に不整合が指摘されました。",
+          "入力フォントサイズ、ボタン間隔、セクションアイコンなどのUI要素が改善点として挙げられました。",
+          "ハッピーアワーの情報が明確でなく、フッターコンテンツ（連絡先情報など）が最小限でした。"
+        ],
+        styleGuide: {
+          typography: "モダンでミニマル、やや工業的な特徴を持つDIN Condensed。大きな見出し、クリーンな本文、複数のウェイト。",
+          colors: "温かく親しみやすいトーン。プライマリーイエロー #FFF865、ディープバーガンディ #6D0E0F、クリーム #FFF7EB、バランスの取れたテキストカラー。",
+          buttons: "角丸で明確、CTAには強いコントラスト。"
+        },
+        wireframe: "レイアウトとユーザーフローを定義するための低解像度ワイヤーフレームから始め、Figmaで高解像度プロトタイプを作成しました。これにより、現実的なインタラクションテストと明確なチームコミュニケーションが可能になりました。目標は、開発前に直感的なナビゲーション、視覚的な明確さ、シームレスなユーザー体験を実現することでした。"
+      },
+      reflection: [
+        "このプロジェクトを通じて、チームで働く際のコミュニケーションの重要性を実感しました。リデザインプロセス全体を通じて、一貫した会話がないと、プロジェクトが簡単に異なる方向に流れることに気づきました。早期に共通のビジョンに合わせ、その整合性を維持することが、一貫した体験を提供する鍵でした。",
+        "また、ユーザーフィードバックの価値も学びました。実際の印象を聞くことで、各ページがより良い目的を果たす方法を理解できました。これがデザイン決定へのアプローチを形作り、ユーザーエンパシーの感覚を深めました。",
+        "さらに、FigmaやNotionなどのデザインツールの実践的な経験を積み、スタイルガイドの構築と適用に自信を持つようになりました。再利用可能なコンポーネントによる視覚的一貫性の確立により、デザイン速度と品質の両方が向上しました。",
+        "このプロジェクトを再度行う場合、スタイルガイド、コンポーネントシステム、ユーザーフローなどの基盤要素の定義により多くの時間を費やします。そうすることで、デザインと評価をより効果的に循環させ、より迅速な反復とより強力な最終製品につながります。"
+      ],
+      back: "UI/UXプロジェクトに戻る",
+      imageCredit: "すべての画像はデザイン研究目的でSix Acres公式ウェブサイトから引用しています。"
     }
   };
-  // Use only English content for now, with explicit type
-  type ContentType = typeof content.en;
-  const t: ContentType = content.en;
+  // Use content based on current language
+  const t = content[currentLang as keyof typeof content] ?? content.en;
 
   return (
     <div className="min-h-screen bg-[#FFF7EB] text-gray-900 font-sans">
