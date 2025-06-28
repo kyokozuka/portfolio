@@ -1,18 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Icon } from '@iconify/react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export default function ContactPage() {
   const [currentLang, setCurrentLang] = useState("en");
+  const [isLoaded, setIsLoaded] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   const content = {
     en: {
@@ -71,176 +77,195 @@ export default function ContactPage() {
   };
 
   return (
-    <>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-cyan-900 to-blue-900 relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-100/5 via-blue-100/3 to-purple-100/5 animate-pulse"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+
+        {/* Floating elements */}
+        <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-cyan-400/40 rounded-full animate-float"></div>
+        <div className="absolute top-2/3 left-1/3 w-1.5 h-1.5 bg-blue-400/40 rounded-full animate-float" style={{animationDelay: '0.5s'}}></div>
+        <div className="absolute top-1/6 left-1/6 w-3 h-3 bg-purple-400/20 rounded-full animate-pulse"></div>
+        <div className="absolute top-5/6 right-1/6 w-2 h-2 bg-cyan-400/20 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+      </div>
+
       <Header currentLang={currentLang} onLanguageChange={setCurrentLang} />
 
-      {/* Hero Section */}
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{animationDelay: '1s'}}></div>
-          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{animationDelay: '2s'}}></div>
-        </div>
-
-        <div className="relative z-10 container mx-auto px-4 py-16">
-          {/* Header Section */}
-          <div className="text-center mb-16 animate-fadeIn">
-            <h1 className="font-display text-6xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
-              {currentContent.title}
-            </h1>
-            <h2 className="font-display text-2xl md:text-3xl text-gray-800 mb-6">
+      <div className="relative z-10 container mx-auto px-4 py-12">
+        {/* Hero Section */}
+        <header className="text-center mb-20 animate-fadeIn">
+          <div className="max-w-5xl mx-auto">
+            <div className="relative">
+              <h1 className={`font-display text-7xl md:text-8xl font-black bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-8 tracking-tight transition-all duration-1000 ${
+                isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}>
+                {currentContent.title}
+              </h1>
+              <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-bounce"></div>
+              <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-bounce" style={{animationDelay: '0.5s'}}></div>
+            </div>
+            <p className={`font-display text-2xl md:text-3xl text-gray-300 mb-10 font-light tracking-wide transition-all duration-1000 ${
+              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`} style={{ animationDelay: '0.2s' }}>
               {currentContent.subtitle}
-            </h2>
-            <p className="font-body text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
+            </p>
+            <p className={`font-body text-lg text-gray-400 max-w-4xl mx-auto leading-relaxed transition-all duration-1000 ${
+              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`} style={{ animationDelay: '0.4s' }}>
               {currentContent.description}
             </p>
           </div>
+        </header>
 
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Contact Form */}
-            <div className="animate-slideInLeft">
-              <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-8 border border-white/20">
-                <h3 className="font-display text-2xl font-semibold text-gray-900 mb-6">
-                  {currentContent.form.sendButton}
-                </h3>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="group">
-                    <label htmlFor="name" className="block font-body text-sm font-medium text-gray-800 mb-2">
-                      {currentContent.form.name}
-                    </label>
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 font-body bg-white/50 backdrop-blur-sm text-gray-900 placeholder-gray-500"
-                      placeholder={currentLang === "ja" ? "山田太郎" : "John Doe"}
-                    />
-                  </div>
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Contact Form */}
+          <div className="animate-slideInLeft">
+            <div className="bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl p-8 border border-white/20 hover:shadow-3xl transition-all duration-500">
+              <h3 className="font-display text-3xl font-bold text-white mb-8 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                {currentContent.form.sendButton}
+              </h3>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="group">
+                  <label htmlFor="name" className="block font-body text-sm font-medium text-gray-300 mb-3">
+                    {currentContent.form.name}
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-4 border border-white/20 rounded-2xl focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 font-body bg-white/10 backdrop-blur-sm text-white placeholder-gray-400 hover:bg-white/15 focus:bg-white/20"
+                    placeholder={currentLang === "ja" ? "山田太郎" : "John Doe"}
+                  />
+                </div>
 
-                  <div className="group">
-                    <label htmlFor="email" className="block font-body text-sm font-medium text-gray-800 mb-2">
-                      {currentContent.form.email}
-                    </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 font-body bg-white/50 backdrop-blur-sm text-gray-900 placeholder-gray-500"
-                      placeholder={currentLang === "ja" ? "example@email.com" : "example@email.com"}
-                    />
-                  </div>
+                <div className="group">
+                  <label htmlFor="email" className="block font-body text-sm font-medium text-gray-300 mb-3">
+                    {currentContent.form.email}
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-4 border border-white/20 rounded-2xl focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 font-body bg-white/10 backdrop-blur-sm text-white placeholder-gray-400 hover:bg-white/15 focus:bg-white/20"
+                    placeholder={currentLang === "ja" ? "example@email.com" : "example@email.com"}
+                  />
+                </div>
 
-                  <div className="group">
-                    <label htmlFor="message" className="block font-body text-sm font-medium text-gray-800 mb-2">
-                      {currentContent.form.message}
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 font-body bg-white/50 backdrop-blur-sm resize-none text-gray-900 placeholder-gray-500"
-                      placeholder={currentLang === "ja" ? "プロジェクトの詳細やご質問をお聞かせください..." : "Tell me about your project or ask any questions..."}
-                    />
-                  </div>
+                <div className="group">
+                  <label htmlFor="message" className="block font-body text-sm font-medium text-gray-300 mb-3">
+                    {currentContent.form.message}
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-4 border border-white/20 rounded-2xl focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 font-body bg-white/10 backdrop-blur-sm resize-none text-white placeholder-gray-400 hover:bg-white/15 focus:bg-white/20"
+                    placeholder={currentLang === "ja" ? "プロジェクトの詳細やご質問をお聞かせください..." : "Tell me about your project or ask any questions..."}
+                  />
+                </div>
 
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-4 px-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-display font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group"
-                  >
-                    <span className="relative z-10">
-                      {isSubmitting ? currentContent.form.sending : currentContent.form.sendButton}
-                    </span>
-                    {isSubmitting && (
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 animate-shimmer"></div>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full py-4 px-6 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-display font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group"
+                >
+                  <span className="relative z-10 flex items-center justify-center">
+                    {isSubmitting ? (
+                      <>
+                        <Icon icon="mdi:loading" className="w-5 h-5 mr-2 animate-spin" />
+                        {currentContent.form.sending}
+                      </>
+                    ) : (
+                      <>
+                        <Icon icon="mdi:send" className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        {currentContent.form.sendButton}
+                      </>
                     )}
-                  </button>
-                </form>
-              </div>
+                  </span>
+                  {isSubmitting && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 animate-shimmer"></div>
+                  )}
+                </button>
+              </form>
             </div>
+          </div>
 
-            {/* Contact Information */}
-            <div className="animate-slideInRight">
-              <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-8 border border-white/20">
-                <h3 className="font-display text-2xl font-semibold text-gray-900 mb-6">
-                  {currentContent.contactInfo.title}
-                </h3>
-                <p className="font-body text-gray-700 mb-8">
-                  {currentContent.contactInfo.subtitle}
-                </p>
+          {/* Contact Information */}
+          <div className="animate-slideInRight">
+            <div className="bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl p-8 border border-white/20 hover:shadow-3xl transition-all duration-500">
+              <h3 className="font-display text-3xl font-bold text-white mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                {currentContent.contactInfo.title}
+              </h3>
+              <p className="font-body text-gray-300 mb-8">
+                {currentContent.contactInfo.subtitle}
+              </p>
 
-                <div className="space-y-6">
-                  {/* Email */}
-                  <div className="group p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl hover:from-blue-100 hover:to-indigo-100 transition-all duration-300 transform hover:scale-105">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h4 className="font-display font-semibold text-gray-900">Email</h4>
-                        <a
-                          href="mailto:contact@example.com"
-                          className="font-body text-blue-700 hover:text-blue-900 transition-colors duration-300 font-medium"
-                        >
-                          contact@example.com
-                        </a>
-                      </div>
+              <div className="space-y-6">
+                {/* Email */}
+                <div className="group p-6 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2 border border-white/20">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                      <Icon icon="mdi:email" className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-display font-semibold text-white">Email</h4>
+                      <a
+                        href="mailto:kento.yokozuka@gmail.com"
+                        className="font-body text-cyan-400 hover:text-cyan-300 transition-colors duration-300 font-medium group-hover:underline"
+                      >
+                        kento.yokozuka@gmail.com
+                      </a>
                     </div>
                   </div>
+                </div>
 
-                  {/* GitHub */}
-                  <div className="group p-6 bg-gradient-to-r from-gray-50 to-slate-50 rounded-xl hover:from-gray-100 hover:to-slate-100 transition-all duration-300 transform hover:scale-105">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-gray-700 to-slate-800 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
-                        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.565 21.8 24 17.302 24 12c0-6.63-5.37-12-12-12z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h4 className="font-display font-semibold text-gray-900">GitHub</h4>
-                        <a
-                          href="https://github.com/kentoyokozuka"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-body text-gray-800 hover:text-gray-900 transition-colors duration-300 font-medium"
-                        >
-                          @kentoyokozuka
-                        </a>
-                      </div>
+                {/* GitHub */}
+                <div className="group p-6 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2 border border-white/20">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-gray-700 to-slate-800 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                      <Icon icon="mdi:github" className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-display font-semibold text-white">GitHub</h4>
+                      <a
+                        href="https://github.com/kyokozuka"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-body text-gray-300 hover:text-white transition-colors duration-300 font-medium group-hover:underline"
+                      >
+                        @kyokozuka
+                      </a>
                     </div>
                   </div>
+                </div>
 
-                  {/* LinkedIn */}
-                  <div className="group p-6 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl hover:from-blue-100 hover:to-cyan-100 transition-all duration-300 transform hover:scale-105">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
-                        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.966 0-1.75-.79-1.75-1.75s.784-1.75 1.75-1.75 1.75.79 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.38v4.59h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h4 className="font-display font-semibold text-gray-900">LinkedIn</h4>
-                        <a
-                          href="https://linkedin.com/in/kento-yokozuka-26a1731b4"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-body text-blue-700 hover:text-blue-900 transition-colors duration-300 font-medium"
-                        >
-                          Kento Yokozuka
-                        </a>
-                      </div>
+                {/* LinkedIn */}
+                <div className="group p-6 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2 border border-white/20">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                      <Icon icon="mdi:linkedin" className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-display font-semibold text-white">LinkedIn</h4>
+                      <a
+                        href="https://linkedin.com/in/kento-yokozuka-26a1731b4"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-body text-blue-400 hover:text-blue-300 transition-colors duration-300 font-medium group-hover:underline"
+                      >
+                        Kento Yokozuka
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -251,6 +276,71 @@ export default function ContactPage() {
       </div>
 
       <Footer currentLang={currentLang} />
-    </>
+
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @keyframes slideInFromLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes slideInFromRight {
+          from {
+            opacity: 0;
+            transform: translateX(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        .animate-slideInLeft {
+          animation: slideInFromLeft 0.8s ease-out forwards;
+        }
+
+        .animate-slideInRight {
+          animation: slideInFromRight 0.8s ease-out forwards;
+        }
+
+        .animate-fadeIn {
+          animation: fadeIn 1s ease-out forwards;
+        }
+
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-shimmer {
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+          background-size: 200% 100%;
+          animation: shimmer 1.5s infinite;
+        }
+
+        @keyframes shimmer {
+          0% { background-position: -200% 0; }
+          100% { background-position: 200% 0; }
+        }
+      `}</style>
+    </div>
   );
 }
