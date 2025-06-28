@@ -1,54 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { Icon } from '@iconify/react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { contactData } from '@/data/contactData';
+import { useContactPage } from '@/hooks/useContactPage';
 
 export default function ContactPage() {
-  const [currentLang, setCurrentLang] = useState("en");
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
-  const content = {
-    en: {
-      title: "Let's Connect",
-      subtitle: "Ready to bring your ideas to life?",
-      description: "I'm always excited to hear about new projects and opportunities. Whether you have a specific project in mind or just want to chat about design and development, feel free to reach out!",
-      form: {
-        name: "Full Name",
-        email: "Email Address",
-        message: "Your Message",
-        sendButton: "Send Message",
-        sending: "Sending..."
-      },
-      contactInfo: {
-        title: "Get in Touch",
-        subtitle: "Choose your preferred way to connect"
-      }
-    },
-    ja: {
-      title: "お問い合わせ",
-      subtitle: "アイデアを形にしませんか？",
-      description: "新しいプロジェクトや機会について聞くのが大好きです。具体的なプロジェクトのご相談や、デザイン・開発についてお話ししたい方も、お気軽にご連絡ください！",
-      form: {
-        name: "お名前",
-        email: "メールアドレス",
-        message: "メッセージ",
-        sendButton: "送信",
-        sending: "送信中..."
-      },
-      contactInfo: {
-        title: "連絡方法",
-        subtitle: "お好みの方法でお気軽に"
-      }
-    }
-  };
-
-  const currentContent = content[currentLang as keyof typeof content];
+  const { currentLang, setCurrentLang, isLoaded, currentData } = useContactPage(contactData);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-cyan-900 to-blue-900 relative overflow-hidden">
@@ -65,7 +24,7 @@ export default function ContactPage() {
         <div className="absolute top-5/6 right-1/6 w-2 h-2 bg-cyan-400/20 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
       </div>
 
-      <Header currentLang={currentLang} onLanguageChange={setCurrentLang} />
+      <Header currentLang={currentLang} onLanguageChange={(lang: string) => setCurrentLang(lang as "en" | "ja")} />
 
       <div className="relative z-10 container mx-auto px-4 py-12">
         {/* Hero Section */}
@@ -75,7 +34,7 @@ export default function ContactPage() {
               <h1 className={`font-display text-7xl md:text-8xl font-black bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-8 tracking-tight transition-all duration-1000 ${
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}>
-                {currentContent.title}
+                {currentData.title}
               </h1>
               <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-bounce"></div>
               <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-bounce" style={{animationDelay: '0.5s'}}></div>
@@ -83,12 +42,12 @@ export default function ContactPage() {
             <p className={`font-display text-2xl md:text-3xl text-gray-300 mb-10 font-light tracking-wide transition-all duration-1000 ${
               isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`} style={{ animationDelay: '0.2s' }}>
-              {currentContent.subtitle}
+              {currentData.subtitle}
             </p>
             <p className={`font-body text-lg text-gray-400 max-w-4xl mx-auto leading-relaxed transition-all duration-1000 ${
               isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`} style={{ animationDelay: '0.4s' }}>
-              {currentContent.description}
+              {currentData.description}
             </p>
           </div>
         </header>
@@ -98,10 +57,10 @@ export default function ContactPage() {
           <div className="animate-slideInRight">
             <div className="bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl p-8 border border-white/20 hover:shadow-3xl transition-all duration-500">
               <h3 className="font-display text-3xl font-bold text-white mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent text-center">
-                {currentContent.contactInfo.title}
+                {currentData.contactInfo.title}
               </h3>
               <p className="font-body text-gray-300 mb-8 text-center">
-                {currentContent.contactInfo.subtitle}
+                {currentData.contactInfo.subtitle}
               </p>
               <div className="space-y-6">
                 {/* Email */}
@@ -218,17 +177,6 @@ export default function ContactPage() {
 
         .animate-float {
           animation: float 6s ease-in-out infinite;
-        }
-
-        .animate-shimmer {
-          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-          background-size: 200% 100%;
-          animation: shimmer 1.5s infinite;
-        }
-
-        @keyframes shimmer {
-          0% { background-position: -200% 0; }
-          100% { background-position: 200% 0; }
         }
       `}</style>
     </div>

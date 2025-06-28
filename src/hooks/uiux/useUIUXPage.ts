@@ -5,18 +5,23 @@ import {
   uiuxSkills,
   uiuxExperience,
   uiuxAcademicProjects,
-  categoryColors
+  categoryColors,
+  UIUXContent,
+  UIUXProject,
+  UIUXSkill,
+  UIUXExperience,
+  UIUXAcademicProject
 } from '@/data/uiux/uiuxData';
 
 export interface UseUIUXPageReturn {
   currentLang: string;
   setCurrentLang: (lang: string) => void;
   isLoaded: boolean;
-  currentContent: any;
-  projects: any[];
-  skillsByCategory: Record<string, any[]>;
-  experience: any[];
-  academicProjects: any[];
+  currentContent: UIUXContent;
+  projects: UIUXProject[];
+  skillsByCategory: Record<string, UIUXSkill[]>;
+  experience: UIUXExperience[];
+  academicProjects: UIUXAcademicProject[];
   categoryColors: Record<string, string>;
 }
 

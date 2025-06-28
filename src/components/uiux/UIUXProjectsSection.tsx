@@ -20,7 +20,7 @@ export default function UIUXProjectsSection({ projects }: UIUXProjectsSectionPro
       </div>
 
       <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        {projects.map((project, index) => (
+        {projects.map((project) => (
           <Link key={project.id} href={`/uiux/${project.id}`} className="group">
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-white/50">
               <div className="relative overflow-hidden">

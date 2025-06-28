@@ -5,7 +5,7 @@
 /**
  * Debounces a function call
  */
-export const debounce = <T extends (...args: any[]) => any>(
+export const debounce = <T extends (...args: unknown[]) => unknown>(
   func: T,
   wait: number
 ): ((...args: Parameters<T>) => void) => {
@@ -19,7 +19,7 @@ export const debounce = <T extends (...args: any[]) => any>(
 /**
  * Throttles a function call
  */
-export const throttle = <T extends (...args: any[]) => any>(
+export const throttle = <T extends (...args: unknown[]) => unknown>(
   func: T,
   limit: number
 ): ((...args: Parameters<T>) => void) => {
@@ -63,11 +63,11 @@ export const generateId = (): string => {
 /**
  * Checks if a value is empty (null, undefined, empty string, empty array, empty object)
  */
-export const isEmpty = (value: any): boolean => {
+export const isEmpty = (value: unknown): boolean => {
   if (value === null || value === undefined) return true;
   if (typeof value === 'string') return value.trim().length === 0;
   if (Array.isArray(value)) return value.length === 0;
-  if (typeof value === 'object') return Object.keys(value).length === 0;
+  if (typeof value === 'object') return Object.keys(value as Record<string, unknown>).length === 0;
   return false;
 };
 

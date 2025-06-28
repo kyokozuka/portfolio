@@ -14,7 +14,7 @@ export default function UIUXContactSection({ contactText }: UIUXContactSectionPr
             {contactText}
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Ready to collaborate on your next design project? Let's create something amazing together.
+            Ready to collaborate on your next design project? Let&apos;s create something amazing together.
           </p>
           <Link
             href="/contact"

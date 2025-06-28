@@ -4,7 +4,12 @@ import {
   allExperience,
   featuredProjects,
   getKeyAchievements,
-  getCoreExpertise
+  getCoreExpertise,
+  SoftwareContent,
+  KeyAchievement,
+  CoreExpertise,
+  Experience,
+  FeaturedProject
 } from '@/data/softwareData';
 
 export interface UseSoftwarePageReturn {
@@ -13,11 +18,11 @@ export interface UseSoftwarePageReturn {
   currentLang: string;
   setCurrentLang: (lang: string) => void;
   isLoaded: boolean;
-  currentContent: any;
-  keyAchievements: any[];
-  coreExpertise: any[];
-  allExperience: any[];
-  featuredProjects: any[];
+  currentContent: SoftwareContent[keyof SoftwareContent];
+  keyAchievements: KeyAchievement[];
+  coreExpertise: CoreExpertise[];
+  allExperience: Experience[];
+  featuredProjects: FeaturedProject[];
 }
 
 export const useSoftwarePage = (): UseSoftwarePageReturn => {
