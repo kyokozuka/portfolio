@@ -1,1 +1,1 @@
-export { SoftwareProjectLayout } from './SoftwareProjectLayout';
+export { default as SoftwareProjectLayout } from './SoftwareProjectLayout';
