@@ -1,9 +1,6 @@
 import React from 'react';
-import { Icon } from '@iconify/react';
-import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { SoftwareProjectData } from '@/types/softwareProjects';
 
 interface SoftwareProjectLayoutProps {
   children: React.ReactNode;
