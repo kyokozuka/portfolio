@@ -261,14 +261,14 @@ export const cyanElements: AnimationElement[] = [
 ];
 
 export const codeElements: AnimationElement[] = [
-  { left: "20%", top: "30%", delay: "0.5s", fontSize: "14px", text: "<div>" },
-  { left: "80%", top: "20%", delay: "1.2s", fontSize: "16px", text: "</div>" },
-  { left: "10%", top: "70%", delay: "0.8s", fontSize: "12px", text: "{" },
-  { left: "90%", top: "60%", delay: "2.1s", fontSize: "18px", text: "}" },
-  { left: "50%", top: "40%", delay: "1.5s", fontSize: "15px", text: "const" },
-  { left: "30%", top: "80%", delay: "0.3s", fontSize: "13px", text: "function" },
-  { left: "70%", top: "10%", delay: "2.8s", fontSize: "17px", text: "return" },
-  { left: "60%", top: "90%", delay: "1.8s", fontSize: "11px", text: "import" }
+  { left: "20%", top: "30%", delay: "0.5s", duration: "4s", fontSize: "14px", text: "<div>" },
+  { left: "80%", top: "20%", delay: "1.2s", duration: "4s", fontSize: "16px", text: "</div>" },
+  { left: "10%", top: "70%", delay: "0.8s", duration: "4s", fontSize: "12px", text: "{" },
+  { left: "90%", top: "60%", delay: "2.1s", duration: "4s", fontSize: "18px", text: "}" },
+  { left: "50%", top: "40%", delay: "1.5s", duration: "4s", fontSize: "15px", text: "const" },
+  { left: "30%", top: "80%", delay: "0.3s", duration: "4s", fontSize: "13px", text: "function" },
+  { left: "70%", top: "10%", delay: "2.8s", duration: "4s", fontSize: "17px", text: "return" },
+  { left: "60%", top: "90%", delay: "1.8s", duration: "4s", fontSize: "11px", text: "import" }
 ];
 
 export const allExperience: Experience[] = [
