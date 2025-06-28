@@ -184,7 +184,7 @@ export default function Home() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
         <Image
-            src="/self/PXL_20250401_232454450.PORTRAIT.jpg"
+            src="self/PXL_20250401_232454450.PORTRAIT.jpg"
             alt="Kento Yokozuka Background"
             fill
             className="object-cover"
@@ -205,7 +205,7 @@ export default function Home() {
               <div className="relative group">
                 <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white/90 shadow-2xl group-hover:shadow-3xl transition-all duration-500 animate-bounce-slow backdrop-blur-sm">
                   <Image
-                    src="/self/PXL_20250401_232454450.PORTRAIT.jpg"
+                    src="self/PXL_20250401_232454450.PORTRAIT.jpg"
                     alt="Kento Yokozuka"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"

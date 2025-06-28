@@ -182,7 +182,7 @@ export default function AchievyPage() {
           {/* Floating Hero Image */}
           <div className="absolute inset-0 flex items-center justify-center">
             <Image
-              src="/projects/achievy/Hero.svg"
+              src="projects/achievy/Hero.svg"
               alt={'Achievy Hero Visual'}
               fill
               style={{ objectFit: 'cover', zIndex: 1, opacity: 0.15 }}
@@ -196,7 +196,7 @@ export default function AchievyPage() {
           <div className="absolute top-8 right-8 md:top-12 md:right-16 z-20">
             <div className={`transition-all duration-500 ${isHovered ? 'scale-110 rotate-12' : 'scale-100 rotate-0'}`}>
               <Image
-                src="/projects/achievy/achievy-icon.svg"
+                src="projects/achievy/achievy-icon.svg"
                 alt={'Achievy icon'}
                 width={64}
                 height={64}
@@ -432,7 +432,7 @@ export default function AchievyPage() {
             </p>
             <div className="flex justify-center w-full animate-fadeIn delay-200">
               <Image
-                src="/projects/achievy/sitemap.svg"
+                src="projects/achievy/sitemap.svg"
                 alt={'Achievy Sitemap'}
                 width={600}
                 height={800}
@@ -476,7 +476,7 @@ export default function AchievyPage() {
               <span className="text-lg font-bold text-green-700 mb-4">User Journey Map</span>
               <div className="bg-white/60 rounded-2xl p-8 shadow-2xl border border-green-100/30 hover:shadow-3xl transition-shadow">
                 <Image
-                  src="/projects/achievy/map.svg"
+                  src="projects/achievy/map.svg"
                   alt={'Journey Map'}
                   width={600}
                   height={300}
@@ -534,7 +534,7 @@ export default function AchievyPage() {
               <div className="flex flex-col items-center bg-white/60 rounded-2xl p-6 shadow-md border border-pink-100/30 hover:shadow-lg transition-shadow">
                 <span className="text-lg font-bold text-pink-700 mb-4">Crazy 8 Sketch</span>
                 <Image
-                  src="/projects/achievy/crazy8.jpg"
+                  src="projects/achievy/crazy8.jpg"
                   alt={'Crazy 8 Sketch'}
                   width={400}
                   height={200}
@@ -544,7 +544,7 @@ export default function AchievyPage() {
               <div className="flex flex-col items-center bg-white/60 rounded-2xl p-6 shadow-md border border-pink-100/30 hover:shadow-lg transition-shadow">
                 <span className="text-lg font-bold text-pink-700 mb-4">Lightning Demos</span>
                 <Image
-                  src="/projects/achievy/LightningDemos.svg"
+                  src="projects/achievy/LightningDemos.svg"
                   alt={'Lightning Demos'}
                   width={400}
                   height={200}
@@ -572,7 +572,7 @@ export default function AchievyPage() {
               <div className="flex flex-col items-center bg-white/60 rounded-2xl p-6 shadow-md border border-amber-100/30 hover:shadow-lg transition-shadow">
                 <span className="text-lg font-bold text-amber-700 mb-4">Storyboard</span>
                 <Image
-                  src="/projects/achievy/storyboard.svg"
+                  src="projects/achievy/storyboard.svg"
                   alt={'Storyboard'}
                   width={400}
                   height={200}
@@ -582,7 +582,7 @@ export default function AchievyPage() {
               <div className="flex flex-col items-center bg-white/60 rounded-2xl p-6 shadow-md border border-amber-100/30 hover:shadow-lg transition-shadow">
                 <span className="text-lg font-bold text-amber-700 mb-4">Prototype Screen</span>
                 <Image
-                  src="/projects/achievy/prototype.svg"
+                  src="projects/achievy/prototype.svg"
                   alt={'Prototype Screen'}
                   width={400}
                   height={200}

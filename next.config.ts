@@ -1,10 +1,13 @@
 import type { NextConfig } from "next";
 
+const isGithubActions = process.env.GITHUB_ACTIONS || false;
+const basePath = isGithubActions ? '/portfolio' : '';
+
 const nextConfig: NextConfig = {
   output: 'export',
   trailingSlash: true,
-  basePath: '/portfolio',
-  assetPrefix: '/portfolio',
+  basePath: basePath,
+  assetPrefix: basePath,
   images: {
     unoptimized: true,
     loader: 'default',

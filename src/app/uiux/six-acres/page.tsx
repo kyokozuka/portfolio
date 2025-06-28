@@ -168,7 +168,7 @@ export default function ProjectPage() {
         }`} style={{ animationDelay: '0.4s' }}>
           <div className="relative group">
             <Image
-              src="/projects/sixacres/Hero.svg"
+              src="projects/sixacres/Hero.svg"
               alt="Six Acres Redesign Hero"
               width={1200}
               height={600}
@@ -398,7 +398,7 @@ export default function ProjectPage() {
                 <h4 className="text-lg font-semibold mb-4 text-gray-700">Wireframes</h4>
                 <div className="w-full h-48 overflow-hidden border border-gray-200 rounded-2xl hover:scale-105 transition-transform duration-500">
                   <Image
-                    src="/projects/sixacres/Wireframe.svg"
+                    src="projects/sixacres/Wireframe.svg"
                     alt="Wireframes"
                     width={400}
                     height={200}
@@ -410,7 +410,7 @@ export default function ProjectPage() {
                 <h4 className="text-lg font-semibold mb-4 text-gray-700">High-Fidelity Prototype</h4>
                 <div className="w-full h-48 overflow-hidden border border-gray-200 rounded-2xl hover:scale-105 transition-transform duration-500">
                   <Image
-                    src="/projects/sixacres/Prototype.svg"
+                    src="projects/sixacres/Prototype.svg"
                     alt="Prototype"
                     width={400}
                     height={200}

@@ -151,7 +151,7 @@ export default function EcommerceProjectPage() {
           <div className="max-w-6xl mx-auto">
             <div className="bg-white/10 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-white/20">
               <Image
-                src="/projects/ecommerce/EcommerceImage.jpg"
+                src="projects/ecommerce/EcommerceImage.jpg"
                 alt="E-commerce Platform Design"
                 width={1200}
                 height={600}
