@@ -1,9 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import TechnicalSkills from "@/components/TechnicalSkills";
 import MatrixBackground from "@/components/software/MatrixBackground";
 import HeroSection from "@/components/software/HeroSection";
 import KeyAchievements from "@/components/software/KeyAchievements";
@@ -12,26 +10,22 @@ import ExperienceSection from "@/components/software/ExperienceSection";
 import FeaturedProjects from "@/components/software/FeaturedProjects";
 import ContactSection from "@/components/software/ContactSection";
 import SoftwareStyles from "@/components/software/SoftwareStyles";
-import {
-  softwareContent,
-  allExperience,
-  featuredProjects,
-  getKeyAchievements,
-  getCoreExpertise
-} from "@/data/softwareData";
+import SoftwareSkillsSection from "@/components/software/SoftwareSkillsSection";
+import { useSoftwarePage } from "@/hooks/software/useSoftwarePage";
 
 export default function SoftwarePage() {
-  const [showAllExperience, setShowAllExperience] = useState(false);
-  const [currentLang, setCurrentLang] = useState("en");
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
-  const currentContent = softwareContent[currentLang as keyof typeof softwareContent];
-  const keyAchievements = getKeyAchievements(currentLang);
-  const coreExpertise = getCoreExpertise(currentLang);
+  const {
+    showAllExperience,
+    setShowAllExperience,
+    currentLang,
+    setCurrentLang,
+    isLoaded,
+    currentContent,
+    keyAchievements,
+    coreExpertise,
+    allExperience,
+    featuredProjects
+  } = useSoftwarePage();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
@@ -53,12 +47,10 @@ export default function SoftwarePage() {
           title={currentContent.coreExpertise.title}
         />
 
-        <section className="mb-16 animate-slideInRight">
-          <h2 className="font-display text-4xl font-bold text-white mb-12 text-center drop-shadow-lg">
-            {currentContent.skills.title}
-          </h2>
-          <TechnicalSkills currentLang={currentLang} />
-        </section>
+        <SoftwareSkillsSection
+          title={currentContent.skills.title}
+          currentLang={currentLang}
+        />
 
         <ExperienceSection
           experience={allExperience}
