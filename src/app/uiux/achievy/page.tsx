@@ -10,7 +10,7 @@ import { achievyData } from '@/data/uiux/achievyData';
 import { useUIUXProjectPage } from '@/hooks/uiux/useUIUXProjectPage';
 
 export default function AchievyPage() {
-  const { currentLang, setCurrentLang, isLoaded } = useUIUXProjectPage();
+  const { currentLang, setCurrentLang } = useUIUXProjectPage();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
@@ -281,7 +281,7 @@ export default function AchievyPage() {
           <section className="text-center">
             <div className="bg-gradient-to-r from-blue-100 to-cyan-100 rounded-3xl p-8 md:p-12 border border-blue-200">
               <blockquote className="text-2xl md:text-3xl font-bold text-blue-900 italic">
-                "{t.quote}"
+                &quot;{t.quote}&quot;
               </blockquote>
             </div>
           </section>
