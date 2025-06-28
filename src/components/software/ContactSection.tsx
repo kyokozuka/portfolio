@@ -7,10 +7,10 @@ export default function ContactSection() {
     <section className="text-center animate-fadeIn">
       <div className="bg-white/10 backdrop-blur-md rounded-3xl p-12 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02]">
         <h2 className="font-display text-4xl font-bold text-white mb-6 drop-shadow-lg">
-          Let's Connect
+          Let&apos;s Connect
         </h2>
         <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto drop-shadow-lg">
-          Ready to discuss your next project? Let's explore how we can work together to bring your ideas to life.
+          Ready to discuss your next project? Let&apos;s explore how we can work together to bring your ideas to life.
         </p>
         <Link
           href="/contact"

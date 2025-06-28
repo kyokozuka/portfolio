@@ -100,7 +100,7 @@ All design ideas were rooted in empathy.`,
     result: {
       title: 'Results, Learnings & Next Steps',
       text:
-        'The prototype was highly rated as "an app that feels like a friend."\nNext steps: improve color, engagement, and AI features.\n\nUI/UX designer\'s takeaway:\nSupporting ADHD means building empathy and celebrating small wins.\nI\'ll keep evolving the product with users\' voices at the center.',
+        'The prototype was highly rated as "an app that feels like a friend."\nNext steps: improve color, engagement, and AI features.\n\nUI/UX designer&apos;s takeaway:\nSupporting ADHD means building empathy and celebrating small wins.\nI&apos;ll keep evolving the product with users&apos; voices at the center.',
     },
     quote: '&quot;The app should feel like a friend — not a to-do list.&quot;'
   }
@@ -412,7 +412,7 @@ export default function AchievyPage() {
               {t.result.title}
             </h3>
             <p className="text-lg text-gray-800 text-center max-w-2xl animate-fadeIn delay-100 font-medium leading-relaxed">
-              <span className="block text-xl font-bold text-blue-700 mb-2">What did we learn? What's next?</span>
+              <span className="block text-xl font-bold text-blue-700 mb-2">What did we learn? What&apos;s next?</span>
               <span className="block mb-2">{t.result.text.split('\n')[0]}</span>
               <span className="block mb-2 text-cyan-700 font-semibold">{t.result.text.split('\n')[1]}</span>
               <span className="block italic text-gray-600">{t.result.text.split('\n').slice(2).join(' ')}</span>
@@ -427,7 +427,7 @@ export default function AchievyPage() {
               Sitemap
             </h3>
             <p className="text-lg text-gray-700 text-center max-w-2xl animate-fadeIn delay-100 font-medium">
-              The blueprint of our app's structure—every screen, every flow, every interaction designed with ADHD students in mind.<br/>
+              The blueprint of our app&apos;s structure—every screen, every flow, every interaction designed with ADHD students in mind.<br/>
               <span className="text-blue-700 font-bold">See how we organized the experience!</span>
             </p>
             <div className="flex justify-center w-full animate-fadeIn delay-200">

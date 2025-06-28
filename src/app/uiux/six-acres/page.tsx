@@ -3,14 +3,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export default function ProjectPage() {
   const [currentLang, setCurrentLang] = useState("en");
   const [isLoaded, setIsLoaded] = useState(false);
-  const [activeSection, setActiveSection] = useState(0);
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

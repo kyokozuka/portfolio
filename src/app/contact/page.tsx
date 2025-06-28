@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Icon } from '@iconify/react';
 import Header from "@/components/Header";

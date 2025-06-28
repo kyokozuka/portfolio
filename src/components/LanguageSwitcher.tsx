@@ -5,11 +5,6 @@ import { LanguageSwitcherProps } from "../types/LanguageSwitcherProps";
 
 export default function LanguageSwitcher({ currentLang, onLanguageChange }: LanguageSwitcherProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, [currentLang]);
 
   const languages = [
     { code: "en", name: "English", flag: "🇺🇸", short: "EN" },
