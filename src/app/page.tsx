@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { Icon } from '@iconify/react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { blueParticles, purpleParticles } from '../data/particles';
 
 export default function Home() {
   const [currentLang, setCurrentLang] = useState("en");
@@ -44,48 +46,6 @@ export default function Home() {
     };
   }, []);
 
-  // Pre-generated static values for animations to avoid hydration mismatch
-  const blueParticles = [
-    { left: "10%", top: "20%", delay: "0s", duration: "4s" },
-    { left: "85%", top: "15%", delay: "1s", duration: "5s" },
-    { left: "20%", top: "80%", delay: "2s", duration: "3s" },
-    { left: "90%", top: "70%", delay: "0.5s", duration: "6s" },
-    { left: "50%", top: "10%", delay: "1.5s", duration: "4s" },
-    { left: "15%", top: "60%", delay: "0.8s", duration: "5s" },
-    { left: "75%", top: "85%", delay: "2.5s", duration: "3s" },
-    { left: "40%", top: "30%", delay: "1.2s", duration: "4s" },
-    { left: "60%", top: "50%", delay: "0.3s", duration: "5s" },
-    { left: "25%", top: "90%", delay: "1.8s", duration: "3s" },
-    { left: "80%", top: "40%", delay: "0.7s", duration: "4s" },
-    { left: "35%", top: "75%", delay: "2.2s", duration: "5s" },
-    { left: "70%", top: "25%", delay: "1.4s", duration: "3s" },
-    { left: "5%", top: "45%", delay: "0.9s", duration: "4s" },
-    { left: "95%", top: "55%", delay: "2.8s", duration: "5s" },
-    { left: "45%", top: "65%", delay: "1.6s", duration: "4s" },
-    { left: "55%", top: "35%", delay: "0.4s", duration: "3s" },
-    { left: "30%", top: "40%", delay: "2.1s", duration: "5s" },
-    { left: "65%", top: "70%", delay: "1.9s", duration: "4s" },
-    { left: "85%", top: "25%", delay: "0.6s", duration: "3s" }
-  ];
-
-  const purpleParticles = [
-    { left: "30%", top: "25%", delay: "0.2s", duration: "5s" },
-    { left: "70%", top: "35%", delay: "1.3s", duration: "4s" },
-    { left: "45%", top: "65%", delay: "0.8s", duration: "6s" },
-    { left: "85%", top: "45%", delay: "2.1s", duration: "3s" },
-    { left: "15%", top: "75%", delay: "1.6s", duration: "5s" },
-    { left: "55%", top: "85%", delay: "0.4s", duration: "4s" },
-    { left: "25%", top: "15%", delay: "2.4s", duration: "6s" },
-    { left: "75%", top: "65%", delay: "1.1s", duration: "3s" },
-    { left: "40%", top: "95%", delay: "0.6s", duration: "5s" },
-    { left: "90%", top: "25%", delay: "2.7s", duration: "4s" },
-    { left: "20%", top: "50%", delay: "1.8s", duration: "3s" },
-    { left: "60%", top: "20%", delay: "0.9s", duration: "5s" },
-    { left: "35%", top: "80%", delay: "2.3s", duration: "4s" },
-    { left: "80%", top: "55%", delay: "1.5s", duration: "3s" },
-    { left: "50%", top: "30%", delay: "0.7s", duration: "6s" }
-  ];
-
   const content = {
     en: {
       title: "Kento Yokozuka",
@@ -96,6 +56,10 @@ export default function Home() {
         effort: "Dev Effort Reduction",
         loadTime: "Page Load Time",
         experience: "Years Experience"
+      },
+      resume: {
+        button: "View Resume",
+        download: "Download PDF"
       },
       software: {
         title: "Software Engineer",
@@ -133,6 +97,10 @@ export default function Home() {
         effort: "開発工数削減",
         loadTime: "ページ読み込み時間",
         experience: "年経験"
+      },
+      resume: {
+        button: "履歴書を見る",
+        download: "PDFをダウンロード"
       },
       software: {
         title: "ソフトウェアエンジニア",
@@ -211,14 +179,28 @@ export default function Home() {
       <Header currentLang={currentLang} onLanguageChange={handleLanguageChange} />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-indigo-600/10"></div>
-        <div className="container mx-auto px-4 py-20 relative">
+      <section className="relative overflow-hidden min-h-screen flex items-center">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/self/PXL_20250401_232454450.PORTRAIT.jpg"
+            alt="Kento Yokozuka Background"
+            className="w-full h-full object-cover"
+          />
+          {/* Gradient Overlays */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-purple-900/70 to-indigo-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40"></div>
+          {/* Animated Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-indigo-600/20 animate-pulse"></div>
+        </div>
+
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto text-center">
             {/* Profile Image */}
             <div className="mb-12 flex justify-center">
               <div className="relative group">
-                <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-2xl group-hover:shadow-3xl transition-all duration-500 animate-bounce-slow">
+                <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white/90 shadow-2xl group-hover:shadow-3xl transition-all duration-500 animate-bounce-slow backdrop-blur-sm">
                   <img
                     src="/self/PXL_20250401_232454450.PORTRAIT.jpg"
                     alt="Kento Yokozuka"
@@ -226,9 +208,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center shadow-lg animate-pulse">
-                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
+                  <Icon icon="akar-icons:check" className="w-6 h-6 text-white" />
                 </div>
                 {/* Orbiting elements */}
                 <div className="absolute inset-0 animate-spin-slow">
@@ -237,25 +217,83 @@ export default function Home() {
                 <div className="absolute inset-0 animate-spin-slow-reverse">
                   <div className="absolute bottom-0 left-1/2 w-2 h-2 bg-purple-400 rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
                 </div>
+                {/* Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-purple-500/30 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
               </div>
             </div>
 
             {/* Title and Description */}
-            <h1 className={`text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <h1 className={`text-5xl md:text-7xl font-bold text-white mb-6 leading-tight transition-all duration-1000 drop-shadow-2xl ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <span className="inline-block animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
                 {currentContent.title.split(' ').map((word, i) => (
-                  <span key={i} className="inline-block hover:text-blue-600 transition-colors duration-300 hover:scale-110 transform" style={{ animationDelay: `${0.3 + i * 0.1}s` }}>
+                  <span key={i} className="inline-block hover:text-blue-300 transition-colors duration-300 hover:scale-110 transform" style={{ animationDelay: `${0.3 + i * 0.1}s` }}>
                     {word}{' '}
                   </span>
                 ))}
               </span>
             </h1>
-            <p className={`text-2xl md:text-3xl text-gray-600 mb-8 font-medium transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ animationDelay: '0.5s' }}>
+            <p className={`text-2xl md:text-3xl text-blue-100 mb-8 font-medium transition-all duration-1000 drop-shadow-lg ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ animationDelay: '0.5s' }}>
               {currentContent.subtitle}
             </p>
-            <p className={`text-xl text-gray-500 max-w-4xl mx-auto leading-relaxed transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ animationDelay: '0.7s' }}>
+            <p className={`text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed transition-all duration-1000 drop-shadow-lg ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ animationDelay: '0.7s' }}>
               {currentContent.description}
             </p>
+
+            {/* Resume Buttons */}
+            <div className={`flex flex-col sm:flex-row gap-4 justify-center items-center mt-12 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ animationDelay: '0.9s' }}>
+              {/* View Resume Button */}
+              <a
+                href="https://docs.google.com/document/d/1jPtRuI8ydBeFbcl2gWQsps6JiGIwFDlwDu46G_BHDLQ/edit?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+                className="group relative px-8 py-4 bg-white/20 backdrop-blur-md text-white font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 overflow-hidden border border-white/30"
+              >
+                {/* Background Animation */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/50 to-purple-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                {/* Shimmer Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+
+                {/* Content */}
+                <div className="relative flex items-center gap-3">
+                  <Icon icon="akar-icons:file" className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" />
+                  <span>{currentContent.resume.button}</span>
+                </div>
+
+                {/* Border Glow */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-white/50 transition-all duration-300"></div>
+              </a>
+
+              {/* Download PDF Button */}
+              <a
+                href="https://docs.google.com/document/d/1jPtRuI8ydBeFbcl2gWQsps6JiGIwFDlwDu46G_BHDLQ/edit?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+                className="group relative px-8 py-4 bg-white/10 backdrop-blur-md text-white font-semibold rounded-2xl border border-white/30 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 overflow-hidden hover:bg-white/20"
+              >
+                {/* Background Animation */}
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+
+                {/* Shimmer Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-300/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 rounded-2xl"></div>
+
+                {/* Content */}
+                <div className="relative flex items-center gap-3">
+                  <Icon icon="akar-icons:download" className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+                  <span>{currentContent.resume.download}</span>
+                </div>
+
+                {/* Border Glow */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-blue-300/50 transition-all duration-300"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
@@ -299,9 +337,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="text-center h-full flex flex-col justify-center relative z-10">
                     <div className="w-24 h-24 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:from-blue-200 group-hover:to-indigo-200 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                      <svg className="w-12 h-12 text-blue-600 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                      </svg>
+                      <Icon icon="mdi:code-braces" className="w-12 h-12 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
                     </div>
                     <h2 className="text-3xl font-bold text-gray-900 mb-6 group-hover:text-blue-600 transition-colors duration-300">
                       {currentContent.software.title}
@@ -330,9 +366,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="text-center h-full flex flex-col justify-center relative z-10">
                     <div className="w-24 h-24 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:from-purple-200 group-hover:to-pink-200 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-12">
-                      <svg className="w-12 h-12 text-purple-600 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
-                      </svg>
+                      <Icon icon="mdi:palette-outline" className="w-12 h-12 text-purple-600 group-hover:scale-110 transition-transform duration-300" />
                     </div>
                     <h2 className="text-3xl font-bold text-gray-900 mb-6 group-hover:text-purple-600 transition-colors duration-300">
                       {currentContent.uiux.title}
