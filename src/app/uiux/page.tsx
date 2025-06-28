@@ -69,26 +69,46 @@ export default function UIUXPage() {
       color: "from-pink-500 to-purple-600"
     },
     {
-      id: "task-management",
-      title: "Task Management System",
-      description: "Design Sprint methodology applied to create an efficient team collaboration platform",
-      category: "Web Application",
-      image: "/api/placeholder/400/250",
-      tools: ["Design Sprint", "Figma", "User Testing"],
+      id: "achievy",
+      title: "Achievy: Task Management for ADHD Students",
+      description: "Design Sprint project for a neurodiversity-friendly task management app. Research, ideation, prototyping, and user testing for Canadian college students with ADHD.",
+      category: "Design Sprint",
+      image: "/projects/achievy/achievy_thumnail.jpg",
+      tools: ["Design Sprint", "Figma", "User Research", "Prototyping"],
       color: "from-blue-500 to-cyan-600"
     }
   ];
 
   const skills = [
-    { name: "Figma", category: "Design Tools", icon: "logos:figma", level: 90, color: "from-purple-400 to-pink-500" },
-    { name: "User Research", category: "Research", icon: "mdi:account-search", level: 85, color: "from-blue-400 to-cyan-500" },
-    { name: "Prototyping", category: "Design", icon: "mdi:layers-triple", level: 88, color: "from-green-400 to-emerald-500" },
-    { name: "Wireframing", category: "Design", icon: "mdi:vector-square", level: 92, color: "from-orange-400 to-red-500" },
-    { name: "Usability Testing", category: "Research", icon: "mdi:test-tube", level: 80, color: "from-indigo-400 to-purple-500" },
-    { name: "Design Sprint", category: "Methodology", icon: "mdi:run-fast", level: 85, color: "from-yellow-400 to-orange-500" },
-    { name: "Miro", category: "Collaboration", icon: "logos:miro", level: 88, color: "from-pink-400 to-rose-500" },
-    { name: "Notion", category: "Documentation", icon: "logos:notion-icon", level: 82, color: "from-slate-400 to-gray-500" }
+    // Design Tools
+    { name: "Figma", category: "Design Tools", icon: "logos:figma", color: "from-purple-400 to-pink-500" },
+    { name: "Miro", category: "Design Tools", icon: "logos:miro", color: "from-pink-400 to-rose-500" },
+    { name: "Notion", category: "Design Tools", icon: "logos:notion-icon", color: "from-slate-400 to-gray-500" },
+
+    // Research & Analysis
+    { name: "User Research", category: "Research & Analysis", icon: "mdi:account-search", color: "from-blue-400 to-cyan-500" },
+    { name: "Usability Testing", category: "Research & Analysis", icon: "mdi:test-tube", color: "from-indigo-400 to-purple-500" },
+
+    // Design Process
+    { name: "Prototyping", category: "Design Process", icon: "mdi:layers-triple", color: "from-green-400 to-emerald-500" },
+    { name: "Wireframing", category: "Design Process", icon: "mdi:vector-square", color: "from-orange-400 to-red-500" },
+    { name: "Design Sprint", category: "Design Process", icon: "mdi:run-fast", color: "from-yellow-400 to-orange-500" }
   ];
+
+  // Group skills by category
+  const skillsByCategory = skills.reduce((acc, skill) => {
+    if (!acc[skill.category]) {
+      acc[skill.category] = [];
+    }
+    acc[skill.category].push(skill);
+    return acc;
+  }, {} as Record<string, typeof skills>);
+
+  const categoryColors = {
+    "Design Tools": "from-purple-500 to-pink-600",
+    "Research & Analysis": "from-blue-500 to-cyan-600",
+    "Design Process": "from-green-500 to-emerald-600"
+  };
 
   const experience = [
     {
@@ -115,13 +135,6 @@ export default function UIUXPage() {
       tools: ["Figma", "Prototyping", "Usability Testing"],
       status: "In Progress",
       color: "from-purple-400 to-pink-500"
-    },
-    {
-      title: "Task Management System",
-      description: "Design Sprint methodology for team collaboration solution",
-      tools: ["Design Sprint", "Figma", "Rapid Prototyping"],
-      status: "Completed",
-      color: "from-orange-400 to-red-500"
     }
   ];
 
@@ -200,7 +213,7 @@ export default function UIUXPage() {
 
         {/* Skills Section */}
         <section className="mb-24 animate-slideInUp">
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <h2 className="font-display text-6xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-6 tracking-tight">
               Skills & Expertise
             </h2>
@@ -209,44 +222,71 @@ export default function UIUXPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-            {skills.map((skill, index) => (
-              <div
-                key={skill.name}
-                className="group relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 hover:scale-105 cursor-pointer overflow-hidden"
-                style={{ animationDelay: `${0.6 + index * 0.1}s` }}
-              >
-                <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
-
-                <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${skill.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-lg`}>
-                      <Icon icon={skill.icon} className="w-8 h-8 text-white" />
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {Object.entries(skillsByCategory).map(([category, categorySkills], categoryIndex) => (
+                <div
+                  key={category}
+                  className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/50 hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden group"
+                  style={{ animationDelay: `${0.6 + categoryIndex * 0.2}s` }}
+                >
+                  {/* Category Header */}
+                  <div className="text-center mb-8">
+                    <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${categoryColors[category as keyof typeof categoryColors]} rounded-2xl shadow-lg mb-4 group-hover:scale-110 transition-all duration-500`}>
+                      <Icon
+                        icon={
+                          category === "Design Tools" ? "mdi:palette" :
+                          category === "Research & Analysis" ? "mdi:account-search" :
+                          "mdi:layers-triple"
+                        }
+                        className="w-8 h-8 text-white"
+                      />
                     </div>
-                    <span className="text-xs font-bold text-gray-600 bg-gray-100 px-4 py-2 rounded-full">
-                      {skill.category}
-                    </span>
+                    <h3 className="font-display text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-3 tracking-tight">
+                      {category}
+                    </h3>
+                    <div className={`w-16 h-1 bg-gradient-to-r ${categoryColors[category as keyof typeof categoryColors]} rounded-full mx-auto`}></div>
                   </div>
 
-                  <h3 className="font-display text-2xl font-bold text-gray-900 mb-6 group-hover:text-purple-600 transition-colors duration-300">
-                    {skill.name}
-                  </h3>
-
-                  <div className="mb-4">
-                    <div className="flex justify-between text-sm font-medium text-gray-600 mb-3">
-                      <span>Proficiency</span>
-                      <span className="text-purple-600">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                  {/* Skills List */}
+                  <div className="space-y-4">
+                    {categorySkills.map((skill, skillIndex) => (
                       <div
-                        className={`bg-gradient-to-r ${skill.color} h-3 rounded-full transition-all duration-1000 ease-out shadow-lg`}
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
+                        key={skill.name}
+                        className="group/skill flex items-center gap-4 p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl hover:from-gray-100 hover:to-gray-200 transition-all duration-300 transform hover:scale-105 cursor-pointer border border-gray-200/50"
+                        style={{ animationDelay: `${0.8 + categoryIndex * 0.2 + skillIndex * 0.1}s` }}
+                      >
+                        {/* Skill Icon */}
+                        <div className={`w-12 h-12 bg-gradient-to-br ${skill.color} rounded-xl flex items-center justify-center group-hover/skill:scale-110 transition-all duration-300 shadow-md`}>
+                          <Icon icon={skill.icon} className="w-6 h-6 text-white" />
+                        </div>
+
+                        {/* Skill Name */}
+                        <h4 className="font-display text-lg font-bold text-gray-900 group-hover/skill:text-purple-600 transition-colors duration-300 flex-1">
+                          {skill.name}
+                        </h4>
+
+                        {/* Arrow Indicator */}
+                        <div className="w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center opacity-0 group-hover/skill:opacity-100 transition-all duration-300">
+                          <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Category Description */}
+                  <div className="mt-6 text-center">
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      {category === "Design Tools" && "Professional tools for creating and collaborating on design projects"}
+                      {category === "Research & Analysis" && "Methods and techniques for understanding user needs and validating solutions"}
+                      {category === "Design Process" && "Systematic approaches to design thinking and problem-solving"}
+                    </p>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
