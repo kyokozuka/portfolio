@@ -47,7 +47,7 @@ export default function UIUXPage() {
       title: "UI/UX Designer",
       subtitle: "Turning ideas into beautiful experiences",
       description: "Passionate about creating intuitive, accessible, and beautiful user interfaces. Currently studying UI/UX Design at CICCC, focusing on user-centered design principles and modern design systems.",
-      contact: "Let's Create Something Amazing"
+      contact: "Let&apos;s Create Something Amazing"
     },
     ja: {
       title: "UI/UXデザイナー",
@@ -490,7 +490,7 @@ export default function UIUXPage() {
                 {currentContent.contact}
               </h2>
               <p className="text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-                Ready to create exceptional user experiences together? Let's discuss your next design project and bring your vision to life.
+                Ready to create exceptional user experiences together? Let&apos;s discuss your next design project and bring your vision to life.
               </p>
               <Link
                 href="/contact"

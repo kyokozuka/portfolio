@@ -8,12 +8,6 @@ import Footer from "@/components/Footer";
 export default function ContactPage() {
   const [currentLang, setCurrentLang] = useState("en");
   const [isLoaded, setIsLoaded] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
@@ -55,25 +49,6 @@ export default function ContactPage() {
   };
 
   const currentContent = content[currentLang as keyof typeof content];
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setFormData({ name: "", email: "", message: "" });
-      alert(currentLang === "ja" ? "メッセージを送信しました！" : "Message sent successfully!");
-    }, 2000);
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-cyan-900 to-blue-900 relative overflow-hidden">
