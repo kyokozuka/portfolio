@@ -500,7 +500,7 @@ export default function AchievyPage() {
               <span className="block mb-4 italic text-gray-600">{t.insight.text.split('\n').slice(2).join(' ')}</span>
             </p>
             <div className="w-full max-w-3xl animate-fadeIn delay-200">
-              <h4 className="text-xl font-bold text-purple-700 mb-4 text-center">Our "How Might We" Statements</h4>
+              <h4 className="text-xl font-bold text-purple-700 mb-4 text-center">Our &quot;How Might We&quot; Statements</h4>
               <div className="grid gap-4">
                 {t.insight.hmw.map((item, i) => (
                   <div key={i} className="bg-white/60 rounded-2xl p-4 shadow-md border border-purple-100/30 hover:shadow-lg transition-shadow">
