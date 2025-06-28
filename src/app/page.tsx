@@ -183,13 +183,13 @@ export default function Home() {
       <section className="relative overflow-hidden min-h-screen flex items-center">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          <Image
+        <Image
             src="/self/PXL_20250401_232454450.PORTRAIT.jpg"
             alt="Kento Yokozuka Background"
             fill
             className="object-cover"
-            priority
-          />
+          priority
+        />
           {/* Gradient Overlays */}
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-purple-900/70 to-indigo-900/80"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40"></div>
@@ -450,7 +450,7 @@ export default function Home() {
                   <div
                     key={index}
                     className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:rotate-1 border border-white/50 group cursor-pointer"
-                  >
+        >
                     <h5 className="font-bold text-gray-900 mb-3 text-lg group-hover:text-blue-600 transition-colors duration-300">{project.name}</h5>
                     <p className="text-gray-600 mb-4 group-hover:text-gray-800 transition-colors duration-300">{project.desc}</p>
                     <div className="flex flex-wrap gap-2">
@@ -482,7 +482,7 @@ export default function Home() {
                   <div
                     key={index}
                     className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:-rotate-1 border border-white/50 group cursor-pointer"
-                  >
+        >
                     <h5 className="font-bold text-gray-900 mb-3 text-lg group-hover:text-purple-600 transition-colors duration-300">{project.name}</h5>
                     <p className="text-gray-600 mb-4 group-hover:text-gray-800 transition-colors duration-300">{project.desc}</p>
                     <div className="flex flex-wrap gap-2">

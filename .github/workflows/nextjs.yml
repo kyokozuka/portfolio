@@ -75,6 +75,23 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+      - name: Copy public assets to out directory
+        run: |
+          echo "Copying public assets to out directory..."
+          cp -r public/* out/ || true
+          echo "Public assets copied successfully"
+          ls -la out/
+      - name: Verify assets in out directory
+        run: |
+          echo "Verifying assets in out directory..."
+          echo "Checking for projects directory:"
+          ls -la out/projects/ || echo "projects directory not found"
+          echo "Checking for self directory:"
+          ls -la out/self/ || echo "self directory not found"
+          echo "Checking for skills directory:"
+          ls -la out/skills/ || echo "skills directory not found"
+          echo "Checking for SVG files:"
+          ls -la out/*.svg || echo "SVG files not found"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
