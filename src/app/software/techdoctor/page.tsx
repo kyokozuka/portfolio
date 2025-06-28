@@ -149,7 +149,7 @@ export default function TechDoctorPage() {
     image: "/projects/techdoctor/healthcare-platform.jpg"
   };
 
-  const currentData = projectData[currentLang as keyof typeof projectData] as any;
+  const currentData = projectData[currentLang as keyof typeof projectData] as ProjectData['en' | 'ja'];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-emerald-900 to-green-900 relative overflow-hidden">
@@ -279,7 +279,7 @@ export default function TechDoctorPage() {
             {currentLang === "en" ? "Technical Details" : "技術詳細"}
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {Object.entries(currentData.technicalDetails).map(([key, detail]: [string, any], index: number) => (
+            {Object.entries(currentData.technicalDetails).map(([key, detail]: [string, { title: string; description: string; technologies: string[] }], index: number) => (
               <div
                 key={key}
                 className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group cursor-pointer"
@@ -325,7 +325,7 @@ export default function TechDoctorPage() {
               {currentData.performance.title}
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {currentData.performance.metrics.map((metric: any, index: number) => (
+              {currentData.performance.metrics.map((metric: { label: string; value: string; improvement: string }, index: number) => (
                 <div
                   key={index}
                   className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-white/20 text-center hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:rotate-1 group cursor-pointer"

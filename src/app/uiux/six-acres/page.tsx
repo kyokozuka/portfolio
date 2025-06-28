@@ -234,7 +234,7 @@ export default function ProjectPage() {
           Before & After
         </h2>
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {Object.entries(t.beforeAfter).map(([key, val]: [string, { before: string; after: string }], index) => (
+          {Object.entries(t.beforeAfter).map(([key, val]: [string, { before: string; after: string }]) => (
             <React.Fragment key={key}>
               <div className="group bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-white/50 p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
                 <div className="font-bold text-2xl mb-6 text-center text-red-600">Before</div>
@@ -283,8 +283,8 @@ export default function ProjectPage() {
             <div>
               <h4 className="text-xl font-semibold mb-6 text-gray-800">Tasks Given to Users</h4>
               <div className="space-y-4">
-                {t.process.tasks.map((task: string, i: number) => (
-                  <div key={i} className="flex items-start group">
+                {t.process.tasks.map((task: string) => (
+                  <div key={task} className="flex items-start group">
                     <div className="bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full w-3 h-3 mt-3 mr-4 flex-shrink-0 group-hover:scale-150 transition-transform duration-300"></div>
                     <span className="text-gray-700 text-lg leading-relaxed">{task}</span>
                   </div>
@@ -312,8 +312,8 @@ export default function ProjectPage() {
             <div>
               <h4 className="text-xl font-semibold mb-6 text-green-700">✅ What Worked Well</h4>
               <div className="space-y-4">
-                {t.process.findingsGood.map((finding: string, i: number) => (
-                  <div key={i} className="flex items-start group">
+                {t.process.findingsGood.map((finding: string) => (
+                  <div key={finding} className="flex items-start group">
                     <div className="bg-gradient-to-r from-green-500 to-emerald-500 rounded-full w-3 h-3 mt-3 mr-4 flex-shrink-0 group-hover:scale-150 transition-transform duration-300"></div>
                     <span className="text-gray-700 text-lg leading-relaxed">{finding}</span>
                   </div>
@@ -323,8 +323,8 @@ export default function ProjectPage() {
             <div>
               <h4 className="text-xl font-semibold mb-6 text-red-700">🔧 Areas for Improvement</h4>
               <div className="space-y-4">
-                {t.process.findingsBad.map((finding: string, i: number) => (
-                  <div key={i} className="flex items-start group">
+                {t.process.findingsBad.map((finding: string) => (
+                  <div key={finding} className="flex items-start group">
                     <div className="bg-gradient-to-r from-red-500 to-pink-500 rounded-full w-3 h-3 mt-3 mr-4 flex-shrink-0 group-hover:scale-150 transition-transform duration-300"></div>
                     <span className="text-gray-700 text-lg leading-relaxed">{finding}</span>
                   </div>
