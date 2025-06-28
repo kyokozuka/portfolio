@@ -119,98 +119,16 @@ export default function ContactPage() {
           </div>
         </header>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
-          <div className="animate-slideInLeft">
-            <div className="bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl p-8 border border-white/20 hover:shadow-3xl transition-all duration-500">
-              <h3 className="font-display text-3xl font-bold text-white mb-8 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                {currentContent.form.sendButton}
-              </h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="group">
-                  <label htmlFor="name" className="block font-body text-sm font-medium text-gray-300 mb-3">
-                    {currentContent.form.name}
-                  </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-4 border border-white/20 rounded-2xl focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 font-body bg-white/10 backdrop-blur-sm text-white placeholder-gray-400 hover:bg-white/15 focus:bg-white/20"
-                    placeholder={currentLang === "ja" ? "山田太郎" : "John Doe"}
-                  />
-                </div>
-
-                <div className="group">
-                  <label htmlFor="email" className="block font-body text-sm font-medium text-gray-300 mb-3">
-                    {currentContent.form.email}
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-4 border border-white/20 rounded-2xl focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 font-body bg-white/10 backdrop-blur-sm text-white placeholder-gray-400 hover:bg-white/15 focus:bg-white/20"
-                    placeholder={currentLang === "ja" ? "example@email.com" : "example@email.com"}
-                  />
-                </div>
-
-                <div className="group">
-                  <label htmlFor="message" className="block font-body text-sm font-medium text-gray-300 mb-3">
-                    {currentContent.form.message}
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-4 border border-white/20 rounded-2xl focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 font-body bg-white/10 backdrop-blur-sm resize-none text-white placeholder-gray-400 hover:bg-white/15 focus:bg-white/20"
-                    placeholder={currentLang === "ja" ? "プロジェクトの詳細やご質問をお聞かせください..." : "Tell me about your project or ask any questions..."}
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-4 px-6 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-display font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group"
-                >
-                  <span className="relative z-10 flex items-center justify-center">
-                    {isSubmitting ? (
-                      <>
-                        <Icon icon="mdi:loading" className="w-5 h-5 mr-2 animate-spin" />
-                        {currentContent.form.sending}
-                      </>
-                    ) : (
-                      <>
-                        <Icon icon="mdi:send" className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        {currentContent.form.sendButton}
-                      </>
-                    )}
-                  </span>
-                  {isSubmitting && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 animate-shimmer"></div>
-                  )}
-                </button>
-              </form>
-            </div>
-          </div>
-
-          {/* Contact Information */}
+        <div className="grid lg:grid-cols-1 gap-12 max-w-2xl mx-auto">
+          {/* Contact Information - Centered */}
           <div className="animate-slideInRight">
             <div className="bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl p-8 border border-white/20 hover:shadow-3xl transition-all duration-500">
-              <h3 className="font-display text-3xl font-bold text-white mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <h3 className="font-display text-3xl font-bold text-white mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent text-center">
                 {currentContent.contactInfo.title}
               </h3>
-              <p className="font-body text-gray-300 mb-8">
+              <p className="font-body text-gray-300 mb-8 text-center">
                 {currentContent.contactInfo.subtitle}
               </p>
-
               <div className="space-y-6">
                 {/* Email */}
                 <div className="group p-6 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2 border border-white/20">
@@ -229,7 +147,6 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-
                 {/* GitHub */}
                 <div className="group p-6 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2 border border-white/20">
                   <div className="flex items-center space-x-4">
@@ -249,7 +166,6 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-
                 {/* LinkedIn */}
                 <div className="group p-6 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2 border border-white/20">
                   <div className="flex items-center space-x-4">
