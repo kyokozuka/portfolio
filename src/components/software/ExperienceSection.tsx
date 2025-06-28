@@ -30,7 +30,7 @@ export default function ExperienceSection({
       </h2>
       <div className="max-w-6xl mx-auto space-y-8">
         {displayedExperience.map((exp, index) => {
-          const currentExp = exp[currentLang as keyof typeof exp] as any;
+          const currentExp = exp[currentLang as keyof typeof exp] as Experience["en"];
           return (
             <div
               key={index}

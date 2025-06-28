@@ -18,7 +18,7 @@ export default function FeaturedProjects({ projects, title, currentLang }: Featu
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {projects.map((project, index) => {
-          const currentProject = project[currentLang as keyof typeof project] as any;
+          const currentProject = project[currentLang as keyof typeof project] as FeaturedProject["en"];
           const projectId = project.id;
 
           // Color mapping for better visual consistency

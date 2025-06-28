@@ -225,11 +225,10 @@ export default function UIUXPage() {
 
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {Object.entries(skillsByCategory).map(([category, categorySkills], categoryIndex) => (
+              {Object.entries(skillsByCategory).map(([category, categorySkills]) => (
                 <div
                   key={category}
                   className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/50 hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden group"
-                  style={{ animationDelay: `${0.6 + categoryIndex * 0.2}s` }}
                 >
                   {/* Category Header */}
                   <div className="text-center mb-8">
@@ -251,11 +250,10 @@ export default function UIUXPage() {
 
                   {/* Skills List */}
                   <div className="space-y-4">
-                    {categorySkills.map((skill, skillIndex) => (
+                    {categorySkills.map((skill) => (
                       <div
                         key={skill.name}
                         className="group/skill flex items-center gap-4 p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl hover:from-gray-100 hover:to-gray-200 transition-all duration-300 transform hover:scale-105 cursor-pointer border border-gray-200/50"
-                        style={{ animationDelay: `${0.8 + categoryIndex * 0.2 + skillIndex * 0.1}s` }}
                       >
                         {/* Skill Icon */}
                         <div className={`w-12 h-12 bg-gradient-to-br ${skill.color} rounded-xl flex items-center justify-center group-hover/skill:scale-110 transition-all duration-300 shadow-md`}>
@@ -303,7 +301,7 @@ export default function UIUXPage() {
           </div>
 
           <div className="max-w-6xl mx-auto space-y-12">
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <Link key={project.id} href={`/uiux/${project.id}`} className="group block">
                 <div className="bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 border border-white/50 relative">
                   <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
@@ -341,7 +339,7 @@ export default function UIUXPage() {
                       </p>
 
                       <div className="flex flex-wrap gap-3 mb-6">
-                        {project.tools.map((tool, toolIndex) => (
+                        {project.tools.map((tool) => (
                           <span
                             key={tool}
                             className="px-4 py-2 bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 rounded-full text-sm font-bold border border-gray-300 shadow-sm"
@@ -377,11 +375,10 @@ export default function UIUXPage() {
           </div>
 
           <div className="max-w-6xl mx-auto">
-            {experience.map((exp, index) => (
+            {experience.map((exp) => (
               <div
-                key={index}
+                key={exp.title}
                 className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-2xl border border-white/50 hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-4 group cursor-pointer relative overflow-hidden"
-                style={{ animationDelay: `${1.0 + index * 0.1}s` }}
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${exp.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
 
@@ -405,7 +402,7 @@ export default function UIUXPage() {
                   </p>
 
                   <div className="flex flex-wrap gap-4">
-                    {exp.highlights.map((highlight, highlightIndex) => (
+                    {exp.highlights.map((highlight) => (
                       <span
                         key={highlight}
                         className="px-6 py-3 bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 rounded-full text-lg font-bold border border-gray-300 shadow-sm group-hover:from-gray-200 group-hover:to-gray-300 transition-all duration-300"
@@ -432,11 +429,10 @@ export default function UIUXPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
-            {academicProjects.map((project, index) => (
+            {academicProjects.map((project) => (
               <div
-                key={index}
+                key={project.title}
                 className="bg-white/80 backdrop-blur-sm rounded-3xl p-10 shadow-2xl border border-white/50 hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-6 group cursor-pointer relative overflow-hidden"
-                style={{ animationDelay: `${1.2 + index * 0.1}s` }}
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
 
@@ -465,7 +461,7 @@ export default function UIUXPage() {
                   </p>
 
                   <div className="flex flex-wrap gap-3">
-                    {project.tools.map((tool, toolIndex) => (
+                    {project.tools.map((tool) => (
                       <span
                         key={tool}
                         className="px-4 py-2 bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 rounded-full text-sm font-bold border border-gray-300 shadow-sm group-hover:from-gray-200 group-hover:to-gray-300 transition-all duration-300"

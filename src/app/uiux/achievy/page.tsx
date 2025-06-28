@@ -612,7 +612,7 @@ export default function AchievyPage() {
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
                     <span className="text-green-500 text-xl">✓</span>
-                    <p className="text-gray-800">"Feels like a friend, not just a to-do list"</p>
+                    <p className="text-gray-800">&quot;Feels like a friend, not just a to-do list&quot;</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="text-blue-500 text-xl">💡</span>
