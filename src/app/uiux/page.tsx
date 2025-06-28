@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { Icon } from '@iconify/react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Image from 'next/image';
 
 export default function UIUXPage() {
   const [currentLang, setCurrentLang] = useState("en");
@@ -310,10 +311,11 @@ export default function UIUXPage() {
                   <div className="flex flex-col lg:flex-row">
                     <div className="lg:w-1/3 h-64 lg:h-auto bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center overflow-hidden relative">
                       {project.image !== "/api/placeholder/400/250" ? (
-                        <img
+                        <Image
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          fill
+                          className="object-cover group-hover:scale-110 transition-transform duration-700"
                         />
                       ) : (
                         <div className="text-center text-gray-500 group-hover:text-purple-600 transition-colors duration-300">

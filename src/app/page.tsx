@@ -6,6 +6,7 @@ import { Icon } from '@iconify/react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { blueParticles, purpleParticles } from '../data/particles';
+import Image from 'next/image';
 
 export default function Home() {
   const [currentLang, setCurrentLang] = useState("en");
@@ -182,10 +183,12 @@ export default function Home() {
       <section className="relative overflow-hidden min-h-screen flex items-center">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src="/self/PXL_20250401_232454450.PORTRAIT.jpg"
             alt="Kento Yokozuka Background"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
+            priority
           />
           {/* Gradient Overlays */}
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-purple-900/70 to-indigo-900/80"></div>
@@ -201,10 +204,11 @@ export default function Home() {
             <div className="mb-12 flex justify-center">
               <div className="relative group">
                 <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white/90 shadow-2xl group-hover:shadow-3xl transition-all duration-500 animate-bounce-slow backdrop-blur-sm">
-                  <img
+                  <Image
                     src="/self/PXL_20250401_232454450.PORTRAIT.jpg"
                     alt="Kento Yokozuka"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
                 <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center shadow-lg animate-pulse">

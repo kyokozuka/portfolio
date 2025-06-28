@@ -1,3 +1,6 @@
+import React from 'react';
+import Image from 'next/image';
+
 interface Skill {
   name: string;
   level: "Expert" | "Advanced" | "Intermediate" | "Beginner";
@@ -125,10 +128,12 @@ function getSkillIcon(skill: Skill) {
   // Special cases for AWS services and VBA
   if (skill.name === "VBA") {
     return (
-      <img
+      <Image
         src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualbasic/visualbasic-original.svg"
         alt={`${skill.name} logo`}
-        className="w-8 h-8 object-contain rounded"
+        width={32}
+        height={32}
+        className="object-contain rounded"
       />
     );
   }
@@ -136,10 +141,12 @@ function getSkillIcon(skill: Skill) {
   // AWS services use AWS wordmark icon
   if (["AWS", "AWS CDK", "Redshift", "Glue"].includes(skill.name)) {
     return (
-      <img
+      <Image
         src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
         alt={`${skill.name} logo`}
-        className="w-8 h-8 object-contain rounded"
+        width={32}
+        height={32}
+        className="object-contain rounded"
       />
     );
   }
@@ -147,10 +154,12 @@ function getSkillIcon(skill: Skill) {
   // GraphQL uses plain version
   if (skill.name === "GraphQL") {
     return (
-      <img
+      <Image
         src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg"
         alt={`${skill.name} logo`}
-        className="w-8 h-8 object-contain rounded"
+        width={32}
+        height={32}
+        className="object-contain rounded"
       />
     );
   }
@@ -158,10 +167,12 @@ function getSkillIcon(skill: Skill) {
   // Backlog uses official logo
   if (skill.name === "Backlog") {
     return (
-      <img
+      <Image
         src="https://backlog.com/ja/wp-content/themes/backlog/assets/images/common/logo.svg"
         alt={`${skill.name} logo`}
-        className="w-8 h-8 object-contain rounded"
+        width={32}
+        height={32}
+        className="object-contain rounded"
       />
     );
   }
@@ -187,10 +198,12 @@ function getSkillIcon(skill: Skill) {
 
   // Devicon SVG CDN for all other skills
   return (
-    <img
+    <Image
       src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skill.icon}/${skill.icon}-original.svg`}
       alt={`${skill.name} logo`}
-      className="w-8 h-8 object-contain rounded"
+      width={32}
+      height={32}
+      className="object-contain rounded"
     />
   );
 }

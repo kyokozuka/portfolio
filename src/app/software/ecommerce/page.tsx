@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Icon } from '@iconify/react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Image from 'next/image';
 
 export default function EcommerceProjectPage() {
   const [currentLang, setCurrentLang] = useState("en");
@@ -149,9 +150,11 @@ export default function EcommerceProjectPage() {
         <section className="mb-20 animate-slideInUp">
           <div className="max-w-6xl mx-auto">
             <div className="bg-white/10 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-white/20">
-              <img
+              <Image
                 src="/projects/ecommerce/EcommerceImage.jpg"
                 alt="E-commerce Platform Design"
+                width={1200}
+                height={600}
                 className="w-full h-auto object-cover"
               />
             </div>
