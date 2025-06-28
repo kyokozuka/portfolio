@@ -2,8 +2,6 @@
 
 import Image from 'next/image';
 import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
-import { Icon } from '@iconify/react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { achievyData } from '@/data/uiux/achievyData';
@@ -37,7 +35,7 @@ export default function AchievyPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-indigo-100 relative overflow-x-hidden">
-      <Header currentLang={currentLang} onLanguageChange={(lang: string) => setCurrentLang(lang as "en" | "ja")} />
+      <Header currentLang={currentLang} onLanguageChange={(lang: string) => setCurrentLang(lang as 'en' | 'ja')} />
       <main className="container mx-auto px-4 py-16">
         {/* Enhanced Hero Section */}
         <section
@@ -101,218 +99,444 @@ export default function AchievyPage() {
               <Image
                 src="projects/achievy/achievy-icon.svg"
                 alt={'Achievy icon'}
-                width={80}
-                height={80}
-                className="drop-shadow-2xl"
+                width={64}
+                height={64}
+                className="drop-shadow-lg bg-white/80 rounded-full p-3 border-2 border-blue-200 animate-bounce"
+                priority
               />
             </div>
+            {/* Icon Glow Effect */}
+            <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-xl animate-pulse" />
           </div>
 
-          {/* Main Content */}
-          <div className="relative z-10 text-center px-8">
+          {/* Main Content with Enhanced Animations */}
+          <div className="relative z-10 flex flex-col items-center justify-center w-full px-4 py-16 md:py-24">
+            {/* Title with Typing Animation */}
             <div className="mb-8">
-              <Link
-                href="/uiux"
-                className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors duration-300 mb-6 group"
-              >
-                <Icon icon="mdi:arrow-left" className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform duration-300" />
-                {currentLang === "en" ? "Back to UI/UX Projects" : "UI/UXプロジェクトに戻る"}
-              </Link>
+              <h1 className="text-7xl md:text-9xl font-black bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 bg-clip-text text-transparent tracking-tight drop-shadow-2xl text-center animate-slideInLeft">
+                {t.hero.title.split('').map((char, index) => (
+                  <span
+                    key={index}
+                    className="inline-block animate-bounce"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    {char}
+                  </span>
+                ))}
+              </h1>
             </div>
 
-            <h1 className="text-6xl md:text-8xl font-black text-blue-900 mb-6 tracking-tight">
-              {t.hero.title.split('').map((char, index) => (
-                <span
-                  key={index}
-                  className="inline-block animate-bounce"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  {char}
+            {/* Subtitle with Enhanced Styling */}
+            <div className="mb-6 transform transition-all duration-500 hover:scale-105">
+              <h2 className="text-2xl md:text-4xl text-gray-900/90 font-bold tracking-wide drop-shadow-lg text-center backdrop-blur-md px-8 py-4 rounded-3xl bg-white/60 border border-white/30 animate-fadeIn delay-300">
+                <span className="text-gray-800">{t.hero.subtitle.split(' for ')[0]}</span>
+                <span className="inline-block mx-3 text-blue-700 font-extrabold bg-gradient-to-r from-blue-100 to-cyan-100 px-4 py-2 rounded-full border-2 border-blue-200 shadow-lg transform hover:scale-110 transition-transform duration-200">
+                  for
                 </span>
-              ))}
-            </h1>
-            <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-4">
-              {t.hero.subtitle}
-            </h2>
-            <p className="text-lg md:text-xl text-blue-700 max-w-3xl mx-auto leading-relaxed">
-              {t.hero.tagline}
-            </p>
-          </div>
-
-          {/* Wave SVG Effect */}
-          <div className="absolute bottom-0 left-0 w-full">
-            <svg
-              viewBox="0 0 1200 120"
-              preserveAspectRatio="none"
-              className="w-full h-16 md:h-20"
-            >
-              <path
-                d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
-                opacity=".25"
-                className="fill-blue-100"
-              ></path>
-              <path
-                d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
-                opacity=".5"
-                className="fill-blue-200"
-              ></path>
-              <path
-                d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
-                className="fill-blue-300"
-              ></path>
-            </svg>
-          </div>
-        </section>
-
-        {/* Design Sprint Info Card */}
-        <section className="mb-20">
-          <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl border border-white/50 p-8 md:p-12 max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
-                {currentLang === "en" ? "Design Sprint Methodology" : "デザインスプリント手法"}
+                <span className="text-gray-800">{t.hero.subtitle.split(' for ')[1]}</span>
               </h2>
-              <p className="text-lg text-blue-700">
-                {currentLang === "en"
-                  ? "This project follows the Google Design Sprint methodology, a 5-day process for solving big problems and testing new ideas."
-                  : "このプロジェクトは、大きな問題を解決し新しいアイデアをテストするための5日間のプロセスであるGoogleデザインスプリント手法に従っています。"}
+            </div>
+
+            {/* Tagline with Floating Animation */}
+            <div className="transform transition-all duration-500 hover:scale-105">
+              <p className="text-xl md:text-3xl text-blue-700 font-semibold italic opacity-90 text-center max-w-4xl mx-auto backdrop-blur-md px-8 py-4 rounded-3xl bg-white/40 border border-white/20 animate-fadeIn delay-500 shadow-lg">
+                {t.hero.tagline}
               </p>
             </div>
 
-            <div className="grid md:grid-cols-5 gap-4 mb-8">
-              {[
-                { day: "1", phase: currentLang === "en" ? "Map" : "マップ", desc: currentLang === "en" ? "Define the problem" : "問題を定義" },
-                { day: "2", phase: currentLang === "en" ? "Sketch" : "スケッチ", desc: currentLang === "en" ? "Generate solutions" : "解決策を生成" },
-                { day: "3", phase: currentLang === "en" ? "Decide" : "決定", desc: currentLang === "en" ? "Choose the best" : "最良を選択" },
-                { day: "4", phase: currentLang === "en" ? "Prototype" : "プロトタイプ", desc: currentLang === "en" ? "Build a prototype" : "プロトタイプを構築" },
-                { day: "5", phase: currentLang === "en" ? "Test" : "テスト", desc: currentLang === "en" ? "Validate with users" : "ユーザーで検証" }
-              ].map((item, index) => (
-                <div key={index} className="text-center p-4 bg-blue-50 rounded-2xl border border-blue-200">
-                  <div className="text-2xl font-bold text-blue-600 mb-2">Day {item.day}</div>
-                  <div className="font-semibold text-blue-800 mb-1">{item.phase}</div>
-                  <div className="text-sm text-blue-600">{item.desc}</div>
-                </div>
-              ))}
+            {/* Interactive Call-to-Action */}
+            <div className="mt-8 animate-fadeIn delay-700">
+              <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+                <span className="relative z-10">Explore the Design Process</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400 blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
+              </button>
+            </div>
+          </div>
+
+          {/* Bottom Wave Effect */}
+          <div className="absolute inset-x-0 bottom-0 h-32 md:h-48 bg-gradient-to-t from-blue-50/90 via-cyan-50/70 to-transparent pointer-events-none">
+            <svg className="w-full h-full" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 120C360 60 1080 180 1440 120V0H0V120Z" fill="url(#wave)" />
+              <defs>
+                <linearGradient id="wave" x1="0" y1="0" x2="1440" y2="120" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#e0e7ff" />
+                  <stop offset="1" stopColor="#cffafe" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          {/* Floating Elements */}
+          <div className="absolute top-1/4 left-8 md:left-16 animate-float">
+            <div className="w-4 h-4 bg-blue-400/40 rounded-full" />
+          </div>
+          <div className="absolute top-1/3 right-12 md:right-24 animate-float delay-1000">
+            <div className="w-3 h-3 bg-cyan-400/50 rounded-full" />
+          </div>
+          <div className="absolute bottom-1/4 left-16 md:left-32 animate-float delay-2000">
+            <div className="w-2 h-2 bg-indigo-400/60 rounded-full" />
+          </div>
+        </section>
+
+        {/* Design Sprint Info Section */}
+        <section className="relative z-20 -mt-12 mb-20 flex flex-col items-center">
+          <div className="relative flex flex-col md:flex-row justify-center items-center gap-8 bg-gradient-to-r from-blue-200/80 via-cyan-100/80 to-indigo-100/80 px-16 py-12 rounded-[2.5rem] shadow-xl border border-blue-100/40 backdrop-blur-lg animate-fadeIn max-w-5xl w-full mx-auto overflow-visible">
+            <span className="text-xl font-black uppercase tracking-widest text-white bg-gradient-to-r from-blue-500 via-cyan-400 to-indigo-500 shadow-lg rounded-full px-8 py-3 animate-bounce absolute -top-7 left-1/2 -translate-x-1/2 z-20 border-4 border-white/60">Design Sprint</span>
+            <span className="text-lg font-semibold text-blue-900 bg-white/80 rounded-full px-8 py-3 shadow-md animate-fadeIn delay-100">5-day Process</span>
+            <span className="text-lg font-semibold text-cyan-900 bg-cyan-100/90 rounded-full px-8 py-3 shadow-md animate-fadeIn delay-200">Role: <span className="font-bold">Decider</span></span>
+          </div>
+          <p className="mt-8 text-xl text-gray-800 text-center max-w-2xl animate-fadeIn delay-300 font-semibold italic">
+            I led the team as the <span className="text-blue-700 font-bold">Decider</span>, guiding ideation, voting, and final product decisions in a fast-paced, collaborative environment.<br/>
+            <span className="text-cyan-600 font-bold">Google Design Sprint</span> allowed us to go from challenge to tested prototype in just 5 days.<br/>
+            <span className="text-sm text-gray-600 mt-2 block">
+              Based on <a href="https://www.thesprintbook.com/the-design-sprint" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">The Design Sprint methodology</a> by Jake Knapp & John Zeratsky.<br/>
+              Our sprint documentation and process tracked on <a href="https://coda.io/d/Group3-Design-Sprint_d7y1CAtYe0g/The-Official-5-Day-Design-Sprint_supbBBqR" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">Coda.io</a>.
+            </span>
+          </p>
+          <svg className="w-full h-12 md:h-16 -mb-2 animate-float opacity-70" viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 60C360 0 1080 120 1440 60V0H0V60Z" fill="url(#sprintwave)"/><defs><linearGradient id="sprintwave" x1="0" y1="0" x2="1440" y2="60" gradientUnits="userSpaceOnUse"><stop stopColor="#e0e7ff"/><stop offset="1" stopColor="#cffafe"/></linearGradient></defs></svg>
+        </section>
+
+        {/* Design Sprint Details Section */}
+        <section className="mb-20 flex flex-col items-center animate-fadeIn">
+          <div className="bg-gradient-to-br from-blue-50 via-cyan-50 to-indigo-100 rounded-3xl shadow-xl border border-blue-100/40 p-8 max-w-5xl w-full mx-auto flex flex-col items-center gap-8 hover:shadow-2xl transition hover-lift">
+            <h3 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-blue-500 via-cyan-500 to-indigo-500 bg-clip-text text-transparent mb-2 tracking-tight drop-shadow-xl text-center animate-slideInLeft">
+              Our Design Sprint Journey
+            </h3>
+
+            {/* 5-Day Process Overview */}
+            <div className="w-full max-w-4xl animate-fadeIn delay-100">
+              <h4 className="text-xl font-bold text-blue-700 mb-6 text-center">The 5-Day Sprint Process</h4>
+              <div className="grid md:grid-cols-5 gap-4">
+                {[
+                  { day: 'Monday', title: 'Map', desc: 'Define the problem and create a user journey map' },
+                  { day: 'Tuesday', title: 'Sketch', desc: 'Generate solutions through Lightning Demos & Crazy 8' },
+                  { day: 'Wednesday', title: 'Decide', desc: 'Choose the best solutions and create storyboard' },
+                  { day: 'Thursday', title: 'Prototype', desc: 'Build a realistic prototype in Figma' },
+                  { day: 'Friday', title: 'Test', desc: 'Validate with 5 target users' }
+                ].map((item, i) => (
+                  <div key={i} className="bg-white/70 rounded-2xl p-4 shadow-md border border-blue-100/30 hover:shadow-lg transition-shadow text-center">
+                    <div className="text-sm font-bold text-blue-600 mb-1">{item.day}</div>
+                    <div className="text-lg font-bold text-blue-800 mb-2">{item.title}</div>
+                    <div className="text-sm text-gray-700">{item.desc}</div>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="text-center">
-              <a
-                href="https://www.gv.com/sprint/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-2xl hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl"
-              >
-                <Icon icon="mdi:external-link" className="w-5 h-5 mr-2" />
-                {currentLang === "en" ? "Learn More About Design Sprints" : "デザインスプリントについて詳しく"}
-              </a>
+            {/* Tools & Resources */}
+            <div className="w-full max-w-4xl animate-fadeIn delay-200">
+              <h4 className="text-xl font-bold text-blue-700 mb-6 text-center">Tools & Resources</h4>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white/70 rounded-2xl p-6 shadow-md border border-blue-100/30 hover:shadow-lg transition-shadow">
+                  <h5 className="text-lg font-bold text-blue-800 mb-3">Methodology & Documentation</h5>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <span className="text-blue-500 text-xl">📚</span>
+                      <a href="https://www.thesprintbook.com/the-design-sprint" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline font-medium">
+                        The Design Sprint by Jake Knapp & John Zeratsky
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-blue-500 text-xl">📋</span>
+                      <a href="https://coda.io/d/Group3-Design-Sprint_d7y1CAtYe0g/The-Official-5-Day-Design-Sprint_supbBBqR" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline font-medium">
+                        Our Sprint Documentation on Coda.io
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white/70 rounded-2xl p-6 shadow-md border border-blue-100/30 hover:shadow-lg transition-shadow">
+                  <h5 className="text-lg font-bold text-blue-800 mb-3">Design & Prototyping</h5>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <span className="text-blue-500 text-xl">🎨</span>
+                      <span className="text-gray-800 font-medium">Figma for prototyping</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-blue-500 text-xl">✏️</span>
+                      <span className="text-gray-800 font-medium">Pen & paper for sketching</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-blue-500 text-xl">📱</span>
+                      <span className="text-gray-800 font-medium">User testing with real devices</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Team & Role */}
+            <div className="w-full max-w-4xl animate-fadeIn delay-300">
+              <h4 className="text-xl font-bold text-blue-700 mb-6 text-center">Team & My Role</h4>
+              <div className="bg-white/70 rounded-2xl p-6 shadow-md border border-blue-100/30 hover:shadow-lg transition-shadow text-center">
+                <p className="text-lg text-gray-800 mb-4">
+                  As the <span className="text-blue-700 font-bold">Decider</span>, I led the team through critical decision-making moments,
+                  ensuring we stayed focused and moved efficiently through each phase of the sprint.
+                </p>
+                <p className="text-gray-700">
+                  Our diverse team brought together different perspectives and skills,
+                  allowing us to tackle the ADHD student challenge from multiple angles
+                  and create a solution that truly addresses user needs.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Project Sections */}
-        <div className="space-y-20">
-          {/* Background Section */}
-          <section className="bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl border border-white/50 p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">{t.background.title}</h2>
-            <div className="prose prose-lg max-w-none text-blue-800">
-              <p className="whitespace-pre-line">{t.background.text}</p>
-            </div>
-          </section>
-
-          {/* Research Section */}
-          <section className="bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl border border-white/50 p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">{t.research.title}</h2>
-            <div className="prose prose-lg max-w-none text-blue-800">
-              <p className="whitespace-pre-line">{t.research.text}</p>
-            </div>
-          </section>
-
-          {/* Insights Section */}
-          <section className="bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl border border-white/50 p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">{t.insight.title}</h2>
-            <div className="prose prose-lg max-w-none text-blue-800 mb-8">
-              <p className="whitespace-pre-line">{t.insight.text}</p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {t.insight.hmw.map((question, index) => (
-                <div key={index} className="bg-blue-50 rounded-2xl p-6 border border-blue-200">
-                  <div className="text-lg font-semibold text-blue-800 mb-3">
-                    {currentLang === "en" ? "How might we..." : "どうすれば..."}
-                  </div>
-                  <p className="text-blue-700">{question}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Ideation Section */}
-          <section className="bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl border border-white/50 p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">{t.ideation.title}</h2>
-            <div className="prose prose-lg max-w-none text-blue-800">
-              <p className="whitespace-pre-line">{t.ideation.text}</p>
-            </div>
-          </section>
-
-          {/* Design Section */}
-          <section className="bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl border border-white/50 p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">{t.design.title}</h2>
-            <div className="prose prose-lg max-w-none text-blue-800">
-              <p className="whitespace-pre-line">{t.design.text}</p>
-            </div>
-          </section>
-
-          {/* Testing Section */}
-          <section className="bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl border border-white/50 p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">{t.testing.title}</h2>
-            <div className="prose prose-lg max-w-none text-blue-800">
-              <p className="whitespace-pre-line">{t.testing.text}</p>
-            </div>
-          </section>
-
-          {/* Results Section */}
-          <section className="bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl border border-white/50 p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">{t.result.title}</h2>
-            <div className="prose prose-lg max-w-none text-blue-800">
-              <p className="whitespace-pre-line">{t.result.text}</p>
-            </div>
-          </section>
-
-          {/* Quote Section */}
-          <section className="text-center">
-            <div className="bg-gradient-to-r from-blue-100 to-cyan-100 rounded-3xl p-8 md:p-12 border border-blue-200">
-              <blockquote className="text-2xl md:text-3xl font-bold text-blue-900 italic">
-                &quot;{t.quote}&quot;
-              </blockquote>
-            </div>
-          </section>
-
-          {/* Figma Prototype Section */}
-          <section className="bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl border border-white/50 p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6 text-center">
-              {currentLang === "en" ? "Interactive Prototype" : "インタラクティブプロトタイプ"}
-            </h2>
-            <div className="aspect-video rounded-2xl overflow-hidden shadow-xl">
+        {/* The Final Solution Section (Prototype) */}
+        <section className="mb-20 flex flex-col items-center animate-fadeIn">
+          <div className="bg-gradient-to-br from-blue-50 via-cyan-50 to-indigo-100 rounded-3xl shadow-xl border border-blue-100/40 p-8 max-w-5xl w-full mx-auto flex flex-col items-center gap-6 hover:shadow-2xl transition hover-lift">
+            <h3 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-blue-500 via-cyan-500 to-indigo-500 bg-clip-text text-transparent mb-2 tracking-tight drop-shadow-xl text-center animate-slideInLeft">
+              The Final Solution
+            </h3>
+            <p className="text-lg text-gray-700 text-center max-w-2xl animate-fadeIn delay-100 font-medium">
+              Explore the interactive prototype that brings all our ideas to life. This is the culmination of our 5-day sprint—tested, refined, and ready to inspire confidence for ADHD students.<br/>
+              <span className="text-blue-700 font-bold">Try the Figma prototype below!</span>
+            </p>
+            <div className="flex justify-center w-full animate-fadeIn delay-200">
               <iframe
-                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FYourPrototypeID%2FAchievy%3Fnode-id%3D1%253A2%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D1%253A2"
+                style={{ border: '1px solid rgba(0, 0, 0, 0.1)', borderRadius: '1rem', boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.15)' }}
+                width="800"
+                height="450"
+                src="https://embed.figma.com/proto/KvN4jj4vxZxKCYMOcljRlI/Kento_Nene_Sayumi_Inori_DesignSprint?page-id=12751%3A7378&node-id=12754-12361&embed-host=share"
                 allowFullScreen
-                className="w-full h-full"
-              ></iframe>
+                title="Achievy Figma Prototype"
+              />
             </div>
-            <div className="text-center mt-6">
-              <a
-                href="https://www.figma.com/proto/YourPrototypeID/Achievy?node-id=1%3A2&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A2"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-2xl hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl"
-              >
-                <Icon icon="mdi:external-link" className="w-5 h-5 mr-2" />
-                {currentLang === "en" ? "Open in Figma" : "Figmaで開く"}
-              </a>
-            </div>
-          </section>
-        </div>
-      </main>
+          </div>
+        </section>
 
+        {/* Results, Learnings & Next Steps - 読みたくなるデザイン */}
+        <section className="mb-20 flex flex-col items-center animate-fadeIn">
+          <div className="bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-100 rounded-3xl shadow-xl border border-blue-100/40 p-8 max-w-5xl w-full mx-auto flex flex-col items-center gap-6 hover:shadow-2xl transition hover-lift">
+            <h3 className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 bg-clip-text text-transparent mb-2 tracking-tight drop-shadow-xl text-center animate-slideInLeft">
+              {t.result.title}
+            </h3>
+            <p className="text-lg text-gray-800 text-center max-w-2xl animate-fadeIn delay-100 font-medium leading-relaxed">
+              <span className="block text-xl font-bold text-blue-700 mb-2">What did we learn? What&apos;s next?</span>
+              <span className="block mb-2">{t.result.text.split('\n')[0]}</span>
+              <span className="block mb-2 text-cyan-700 font-semibold">{t.result.text.split('\n')[1]}</span>
+              <span className="block italic text-gray-600">{t.result.text.split('\n').slice(2).join(' ')}</span>
+            </p>
+          </div>
+        </section>
+
+        {/* サイトマップ画像セクション */}
+        <section className="mb-20 flex flex-col items-center animate-fadeIn">
+          <div className="bg-gradient-to-br from-indigo-50 via-blue-50 to-cyan-100 rounded-3xl shadow-xl border border-blue-100/40 p-8 max-w-5xl w-full mx-auto flex flex-col items-center gap-6 hover:shadow-2xl transition hover-lift">
+            <h3 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-indigo-500 via-blue-500 to-cyan-500 bg-clip-text text-transparent mb-2 tracking-tight drop-shadow-xl text-center animate-slideInLeft">
+              Sitemap
+            </h3>
+            <p className="text-lg text-gray-700 text-center max-w-2xl animate-fadeIn delay-100 font-medium">
+              The blueprint of our app&apos;s structure—every screen, every flow, every interaction designed with ADHD students in mind.<br/>
+              <span className="text-blue-700 font-bold">See how we organized the experience!</span>
+            </p>
+            <div className="flex justify-center w-full animate-fadeIn delay-200">
+              <Image
+                src="projects/achievy/sitemap.svg"
+                alt={'Achievy Sitemap'}
+                width={600}
+                height={800}
+                className="rounded-2xl shadow-2xl border border-blue-100/30 hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Background / Problem */}
+        <section className="mb-20 flex flex-col items-center animate-fadeIn">
+          <div className="bg-gradient-to-br from-red-50 via-orange-50 to-yellow-100 rounded-3xl shadow-xl border border-orange-100/40 p-8 max-w-5xl w-full mx-auto flex flex-col items-center gap-6 hover:shadow-2xl transition hover-lift">
+            <h3 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent mb-2 tracking-tight drop-shadow-xl text-center animate-slideInLeft">
+              {t.background.title}
+            </h3>
+            <p className="text-lg text-gray-800 text-center max-w-3xl animate-fadeIn delay-100 font-medium leading-relaxed">
+              <span className="block text-xl font-bold text-red-700 mb-4">The Challenge We Faced</span>
+              <span className="block mb-3 text-lg">{t.background.text.split('\n')[0]}</span>
+              <span className="block mb-3 text-orange-700 font-semibold">{t.background.text.split('\n')[1]}</span>
+              <span className="block mb-3 text-yellow-700 font-semibold">{t.background.text.split('\n')[2]}</span>
+              <span className="block italic text-gray-600">{t.background.text.split('\n').slice(3).join(' ')}</span>
+            </p>
+          </div>
+        </section>
+
+        {/* Research & Discovery */}
+        <section className="mb-20 flex flex-col items-center animate-fadeIn">
+          <div className="bg-gradient-to-br from-green-50 via-emerald-50 to-teal-100 rounded-3xl shadow-xl border border-green-100/40 p-8 max-w-5xl w-full mx-auto flex flex-col items-center gap-6 hover:shadow-2xl transition hover-lift">
+            <h3 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 bg-clip-text text-transparent mb-2 tracking-tight drop-shadow-xl text-center animate-slideInLeft">
+              {t.research.title}
+            </h3>
+            <p className="text-lg text-gray-800 text-center max-w-3xl animate-fadeIn delay-100 font-medium leading-relaxed">
+              <span className="block text-xl font-bold text-green-700 mb-4">Understanding the Real Needs</span>
+              <span className="block mb-3">{t.research.text.split('\n')[0]}</span>
+              <span className="block mb-3 text-emerald-700 font-semibold">{t.research.text.split('\n')[1]}</span>
+              <span className="block mb-3 text-teal-700 font-semibold">{t.research.text.split('\n')[2]}</span>
+              <span className="block italic text-gray-600">{t.research.text.split('\n').slice(3).join(' ')}</span>
+            </p>
+            {/* Journey Map画像 */}
+            <div className="w-full flex flex-col items-center animate-fadeIn delay-200">
+              <span className="text-lg font-bold text-green-700 mb-4">User Journey Map</span>
+              <div className="bg-white/60 rounded-2xl p-8 shadow-2xl border border-green-100/30 hover:shadow-3xl transition-shadow">
+                <Image
+                  src="projects/achievy/map.svg"
+                  alt={'Journey Map'}
+                  width={600}
+                  height={300}
+                  className="rounded-xl hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Insights & HMW */}
+        <section className="mb-20 flex flex-col items-center animate-fadeIn">
+          <div className="bg-gradient-to-br from-purple-50 via-violet-50 to-fuchsia-100 rounded-3xl shadow-xl border border-purple-100/40 p-8 max-w-5xl w-full mx-auto flex flex-col items-center gap-6 hover:shadow-2xl transition hover-lift">
+            <h3 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-purple-500 via-violet-500 to-fuchsia-500 bg-clip-text text-transparent mb-2 tracking-tight drop-shadow-xl text-center animate-slideInLeft">
+              {t.insight.title}
+            </h3>
+            <p className="text-lg text-gray-800 text-center max-w-3xl animate-fadeIn delay-100 font-medium leading-relaxed">
+              <span className="block text-xl font-bold text-purple-700 mb-4">The Key Questions That Guided Us</span>
+              <span className="block mb-3">{t.insight.text.split('\n')[0]}</span>
+              <span className="block mb-3 text-violet-700 font-semibold">{t.insight.text.split('\n')[1]}</span>
+              <span className="block mb-4 italic text-gray-600">{t.insight.text.split('\n').slice(2).join(' ')}</span>
+            </p>
+            <div className="w-full max-w-3xl animate-fadeIn delay-200">
+              <h4 className="text-xl font-bold text-purple-700 mb-4 text-center">Our &quot;How Might We&quot; Statements</h4>
+              <div className="grid gap-4">
+                {t.insight.hmw.map((item, i) => (
+                  <div key={i} className="bg-white/60 rounded-2xl p-4 shadow-md border border-purple-100/30 hover:shadow-lg transition-shadow">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl font-bold text-purple-500 bg-purple-100 rounded-full w-8 h-8 flex items-center justify-center text-sm">
+                        {i + 1}
+                      </span>
+                      <p className="text-lg text-gray-800 font-medium">{item}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Ideation */}
+        <section className="mb-20 flex flex-col items-center animate-fadeIn">
+          <div className="bg-gradient-to-br from-pink-50 via-rose-50 to-red-100 rounded-3xl shadow-xl border border-pink-100/40 p-8 max-w-5xl w-full mx-auto flex flex-col items-center gap-6 hover:shadow-2xl transition hover-lift">
+            <h3 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-pink-500 via-rose-500 to-red-500 bg-clip-text text-transparent mb-2 tracking-tight drop-shadow-xl text-center animate-slideInLeft">
+              {t.ideation.title}
+            </h3>
+            <p className="text-lg text-gray-800 text-center max-w-3xl animate-fadeIn delay-100 font-medium leading-relaxed">
+              <span className="block text-xl font-bold text-pink-700 mb-4">From Lightning Speed to Crazy Ideas</span>
+              <span className="block mb-3">{t.ideation.text.split('\n')[0]}</span>
+              <span className="block mb-3 text-rose-700 font-semibold">{t.ideation.text.split('\n')[1]}</span>
+              <span className="block italic text-gray-600">{t.ideation.text.split('\n').slice(2).join(' ')}</span>
+            </p>
+            {/* Lightning Demos, Crazy 8画像 */}
+            <div className="w-full grid md:grid-cols-2 gap-8 justify-center animate-fadeIn delay-200">
+              <div className="flex flex-col items-center bg-white/60 rounded-2xl p-6 shadow-md border border-pink-100/30 hover:shadow-lg transition-shadow">
+                <span className="text-lg font-bold text-pink-700 mb-4">Crazy 8 Sketch</span>
+                <Image
+                  src="projects/achievy/crazy8.jpg"
+                  alt={'Crazy 8 Sketch'}
+                  width={400}
+                  height={200}
+                  className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="flex flex-col items-center bg-white/60 rounded-2xl p-6 shadow-md border border-pink-100/30 hover:shadow-lg transition-shadow">
+                <span className="text-lg font-bold text-pink-700 mb-4">Lightning Demos</span>
+                <Image
+                  src="projects/achievy/LightningDemos.svg"
+                  alt={'Lightning Demos'}
+                  width={400}
+                  height={200}
+                  className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Design & Iteration */}
+        <section className="mb-20 flex flex-col items-center animate-fadeIn">
+          <div className="bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-100 rounded-3xl shadow-xl border border-amber-100/40 p-8 max-w-5xl w-full mx-auto flex flex-col items-center gap-6 hover:shadow-2xl transition hover-lift">
+            <h3 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 bg-clip-text text-transparent mb-2 tracking-tight drop-shadow-xl text-center animate-slideInLeft">
+              {t.design.title}
+            </h3>
+            <p className="text-lg text-gray-800 text-center max-w-3xl animate-fadeIn delay-100 font-medium leading-relaxed">
+              <span className="block text-xl font-bold text-amber-700 mb-4">From Wireframes to Working Prototypes</span>
+              <span className="block mb-3">{t.design.text.split('\n')[0]}</span>
+              <span className="block mb-3 text-yellow-700 font-semibold">{t.design.text.split('\n')[1]}</span>
+              <span className="block italic text-gray-600">{t.design.text.split('\n').slice(2).join(' ')}</span>
+            </p>
+            {/* Storyboard, Prototype画像 */}
+            <div className="w-full grid md:grid-cols-2 gap-8 justify-center animate-fadeIn delay-200">
+              <div className="flex flex-col items-center bg-white/60 rounded-2xl p-6 shadow-md border border-amber-100/30 hover:shadow-lg transition-shadow">
+                <span className="text-lg font-bold text-amber-700 mb-4">Storyboard</span>
+                <Image
+                  src="projects/achievy/storyboard.svg"
+                  alt={'Storyboard'}
+                  width={400}
+                  height={200}
+                  className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="flex flex-col items-center bg-white/60 rounded-2xl p-6 shadow-md border border-amber-100/30 hover:shadow-lg transition-shadow">
+                <span className="text-lg font-bold text-amber-700 mb-4">Prototype Screen</span>
+                <Image
+                  src="projects/achievy/prototype.svg"
+                  alt={'Prototype Screen'}
+                  width={400}
+                  height={200}
+                  className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Usability Testing & Evaluation */}
+        <section className="mb-20 flex flex-col items-center animate-fadeIn">
+          <div className="bg-gradient-to-br from-slate-50 via-gray-50 to-zinc-100 rounded-3xl shadow-xl border border-slate-100/40 p-8 max-w-5xl w-full mx-auto flex flex-col items-center gap-6 hover:shadow-2xl transition hover-lift">
+            <h3 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-slate-500 via-gray-500 to-zinc-500 bg-clip-text text-transparent mb-2 tracking-tight drop-shadow-xl text-center animate-slideInLeft">
+              {t.testing.title}
+            </h3>
+            <p className="text-lg text-gray-800 text-center max-w-3xl animate-fadeIn delay-100 font-medium leading-relaxed">
+              <span className="block text-xl font-bold text-slate-700 mb-4">Putting Our Ideas to the Test</span>
+              <span className="block mb-3">{t.testing.text.split('\n')[0]}</span>
+              <span className="block mb-3 text-gray-700 font-semibold">{t.testing.text.split('\n')[1]}</span>
+              <span className="block mb-3 text-zinc-700 font-semibold">{t.testing.text.split('\n')[2]}</span>
+              <span className="block italic text-gray-600">{t.testing.text.split('\n').slice(3).join(' ')}</span>
+            </p>
+            <div className="w-full max-w-2xl animate-fadeIn delay-200">
+              <div className="bg-white/60 rounded-2xl p-6 shadow-md border border-slate-100/30 hover:shadow-lg transition-shadow">
+                <h4 className="text-lg font-bold text-slate-700 mb-3 text-center">Key Testing Insights</h4>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <span className="text-green-500 text-xl">✓</span>
+                    <p className="text-gray-800">&quot;Feels like a friend, not just a to-do list&quot;</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-blue-500 text-xl">💡</span>
+                    <p className="text-gray-800">Areas for improvement: color design, engagement</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-purple-500 text-xl">🎯</span>
+                    <p className="text-gray-800">User feedback validated our core concept</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Quote / Testimonial - キャッチーな演出 */}
+        <section className="mb-20 flex flex-col items-center animate-fadeIn">
+          <div className="bg-gradient-to-r from-blue-100 via-cyan-50 to-indigo-100 rounded-2xl shadow-lg border border-blue-100/40 p-8 max-w-5xl w-full mx-auto flex flex-col items-center gap-4 hover:shadow-2xl transition hover-lift">
+            <span className="text-2xl md:text-3xl font-extrabold text-blue-700 italic text-center animate-slideInLeft">{t.quote}</span>
+            <span className="text-base text-gray-500 text-center animate-fadeIn delay-100">— User Feedback</span>
+          </div>
+        </section>
+      </main>
       <Footer currentLang={currentLang} />
     </div>
   );
