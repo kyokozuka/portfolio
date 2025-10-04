@@ -1,0 +1,721 @@
+{
+  "routes": {
+    "home": {
+      "title": "Home"
+    },
+    "software": {
+      "title": "Software"
+    },
+    "uiux": {
+      "title": "UI/UX"
+    },
+    "contact": {
+      "title": "Contact"
+    }
+  },
+  "home": {
+    "title": "Kento Yokozuka",
+    "subtitle": "Software Engineer & UI/UX Designer",
+    "description": "Passionate technologist with 8+ years of experience building scalable cloud infrastructure and creating intuitive user experiences. Specialized in AWS, Python, and modern design practices with a proven track record of delivering measurable business impact.",
+    "achievements": {
+      "deployments": "Faster Deployments",
+      "effort": "Dev Effort Reduction",
+      "loadTime": "Page Load Time",
+      "experience": "Years Experience"
+    },
+    "resume": {
+      "button": "View Resume",
+      "download": "Download PDF"
+    },
+    "software": {
+      "title": "Software Engineer",
+      "description": "Full-stack development, cloud infrastructure, data analytics platforms, and DevOps practices. Experience with major manufacturers and healthcare systems.",
+      "skills": ["AWS", "Python", "TypeScript", "React", "Terraform"]
+    },
+    "uiux": {
+      "title": "UI/UX Designer",
+      "description": "User-centered design thinking, design sprints, prototyping, and usability testing. Creating intuitive digital experiences through research-driven design.",
+      "skills": ["Figma", "Design Sprints", "User Research", "Prototyping", "Design Systems"]
+    },
+    "about": {
+      "title": "About Me",
+      "experience": {
+        "title": "Professional Journey",
+        "content": "With 8+ years of software engineering experience, I've led development teams at major manufacturers, healthcare platforms, and e-commerce systems. Recently expanded into UI/UX design, completing design sprints and creating user-centered solutions."
+      },
+      "philosophy": {
+        "title": "Design Philosophy",
+        "content": "I believe in the power of user-centered design combined with technical excellence. Whether building infrastructure or designing interfaces, I focus on creating solutions that are both beautiful and functional, scalable and maintainable."
+      }
+    },
+    "highlights": {
+      "title": "Recent Projects",
+      "software": "Software Engineering",
+      "uiux": "UI/UX Design"
+    },
+    "projects": {
+      "software": [
+        {
+          "name": "JMA Systems",
+          "description": "Data Analytics Platform",
+          "tags": ["AWS", "Python", "PySpark"]
+        },
+        {
+          "name": "TechDoctor",
+          "description": "Healthcare Platform",
+          "tags": ["Python", "FastAPI", "AWS"]
+        },
+        {
+          "name": "One Stop Innovation",
+          "description": "E-commerce & Analytics",
+          "tags": ["PHP", "WordPress", "Terraform"]
+        }
+      ],
+      "uiux": [
+        {
+          "name": "Six Acres Restaurant",
+          "description": "Website Redesign",
+          "tags": ["Figma", "User Research", "Prototyping"]
+        },
+        {
+          "name": "Task Management System",
+          "description": "Design Sprint Project",
+          "tags": ["Design Sprint", "Figma", "User Testing"]
+        }
+      ]
+    },
+    "images": {
+      "profile": "self/PXL_20250401_232454450.PORTRAIT.jpg",
+      "profileAlt": "Kento Yokozuka",
+      "backgroundAlt": "Kento Yokozuka Background"
+    },
+    "links": {
+      "resume": "https://docs.google.com/document/d/1jPtRuI8ydBeFbcl2gWQsps6JiGIwFDlwDu46G_BHDLQ/edit?usp=sharing"
+    }
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "subtitle": "Ready to bring your ideas to life?",
+    "description": "I'm always excited to hear about new projects and opportunities. Whether you have a specific project in mind or just want to chat about design and development, feel free to reach out!",
+    "form": {
+      "name": "Full Name",
+      "email": "kento.yokozuka@gmail.com",
+      "message": "Your Message",
+      "sendButton": "Send Message",
+      "sending": "Sending..."
+    },
+    "contactInfo": {
+      "title": "Get in Touch",
+      "subtitle": "Choose your preferred way to connect",
+      "email": {
+        "title": "Email",
+        "emailAddress": "kento.yokozuka@gmail.com",
+        "href": "mailto:kento.yokozuka@gmail.com"
+      },
+      "github": {
+        "title": "GitHub",
+        "account": "@kyokozuka",
+        "href": "https://github.com/kyokozuka"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "account": "Kento Yokozuka",
+        "href": "https://www.linkedin.com/in/kento-yokozuka-26a1731b4/"
+      }
+    },
+    "message": "Looking forward to hearing from you! 🚀"
+  },
+  "technicalSkills": {
+    "categories": {
+      "cloudInfrastructure": "Cloud & Infrastructure",
+      "programmingLanguages": "Programming Languages",
+      "frameworksTools": "Frameworks & Tools",
+      "databasesAnalytics": "Databases & Analytics",
+      "developmentTools": "Development Tools"
+    },
+    "levels": {
+      "expert": "Expert",
+      "advanced": "Advanced",
+      "intermediate": "Intermediate",
+      "beginner": "Beginner"
+    }
+  },
+  "uiux": {
+    "page": {
+      "title": "UI/UX Designer",
+      "subtitle": "Turning ideas into beautiful experiences",
+      "description": "Passionate about creating intuitive, accessible, and beautiful user interfaces. Currently studying UI/UX Design at CICCC, focusing on user-centered design principles and modern design systems.",
+      "contact": "Let's Create Something Amazing",
+      "projects": [
+        {
+          "id": "six-acres",
+          "title": "Six Acres Restaurant",
+          "description": "Website redesign focusing on improving usability, visual appeal, and overall dining experience",
+          "category": "Web Design",
+          "image": "/projects/sixacres/hero.jpg",
+          "tools": ["Figma", "User Research", "Prototyping"],
+          "color": "from-yellow-500 to-orange-600"
+        },
+        {
+          "id": "achievy",
+          "title": "Achievy",
+          "description": "Task management app designed for ADHD students, focusing on reducing overwhelm and building confidence",
+          "category": "Mobile App Design",
+          "image": "/projects/achievy/hero.jpg",
+          "tools": ["Figma", "Design Sprint", "User Testing"],
+          "color": "from-blue-500 to-purple-600"
+        }
+      ],
+      "skills": [
+        { "name": "Figma", "icon": "mdi:vector-square", "color": "from-purple-500 to-pink-500", "category": "Design Tools" },
+        { "name": "Adobe XD", "icon": "mdi:adobe", "color": "from-pink-500 to-red-500", "category": "Design Tools" },
+        { "name": "Sketch", "icon": "mdi:sketch", "color": "from-yellow-500 to-orange-500", "category": "Design Tools" },
+        { "name": "Photoshop", "icon": "mdi:image-edit", "color": "from-blue-500 to-cyan-500", "category": "Design Tools" },
+        { "name": "User Research", "icon": "mdi:account-search", "color": "from-green-500 to-emerald-500", "category": "Research & Strategy" },
+        { "name": "Personas", "icon": "mdi:account-group", "color": "from-indigo-500 to-purple-500", "category": "Research & Strategy" },
+        { "name": "User Flows", "icon": "mdi:flow-chart", "color": "from-teal-500 to-blue-500", "category": "Research & Strategy" },
+        { "name": "Wireframing", "icon": "mdi:page-layout-body", "color": "from-gray-500 to-slate-500", "category": "Design Process" },
+        { "name": "Prototyping", "icon": "mdi:cellphone-link", "color": "from-violet-500 to-purple-500", "category": "Design Process" },
+        { "name": "Usability Testing", "icon": "mdi:test-tube", "color": "from-orange-500 to-red-500", "category": "Design Process" },
+        { "name": "Design Systems", "icon": "mdi:view-grid-plus", "color": "from-cyan-500 to-blue-500", "category": "Design Process" },
+        { "name": "Responsive Design", "icon": "mdi:responsive", "color": "from-lime-500 to-green-500", "category": "Design Principles" },
+        { "name": "Accessibility", "icon": "mdi:human-wheelchair", "color": "from-rose-500 to-pink-500", "category": "Design Principles" },
+        { "name": "Design Sprints", "icon": "mdi:run-fast", "color": "from-amber-500 to-yellow-500", "category": "Design Principles" }
+      ],
+      "experience": [
+        {
+          "title": "UI/UX Design Program",
+          "institution": "Cornerstone International Community College of Canada (CICCC)",
+          "period": "2024 - Present",
+          "description": "Intensive program focusing on user-centered design, design thinking, and modern UX methodologies",
+          "highlights": [
+            "Completed design sprints for real-world client projects",
+            "Conducted user research and usability testing",
+            "Created comprehensive design systems and style guides",
+            "Developed high-fidelity prototypes using Figma"
+          ],
+          "color": "from-blue-500 to-purple-500"
+        },
+        {
+          "title": "Self-Directed Learning",
+          "institution": "Online Courses & Practice Projects",
+          "period": "2023 - Present",
+          "description": "Continuous learning through online courses, workshops, and personal projects",
+          "highlights": [
+            "Completed Google UX Design Certificate",
+            "Studied interaction design principles",
+            "Built portfolio of practice projects",
+            "Participated in design community critiques"
+          ],
+          "color": "from-green-500 to-emerald-500"
+        }
+      ],
+      "academicProjects": [
+        {
+          "title": "Achievy - Task Management App",
+          "description": "Design sprint project creating a task management app for ADHD students, focusing on reducing overwhelm and building confidence through small wins",
+          "tools": ["Figma", "Design Sprint", "User Research", "Usability Testing"],
+          "status": "Completed",
+          "color": "from-blue-500 to-purple-500"
+        },
+        {
+          "title": "Six Acres Restaurant Redesign",
+          "description": "Website redesign project improving usability, visual appeal, and overall user experience for a local restaurant",
+          "tools": ["Figma", "User Research", "Wireframing", "Prototyping"],
+          "status": "Completed",
+          "color": "from-yellow-500 to-orange-500"
+        }
+      ],
+      "categoryColors": {
+        "Design Tools": "from-purple-600 to-pink-600",
+        "Research & Strategy": "from-green-600 to-emerald-600",
+        "Design Process": "from-blue-600 to-cyan-600",
+        "Design Principles": "from-orange-600 to-red-600"
+      }
+    },
+    "achievy": {
+      "hero": {
+        "title": "Achievy",
+        "subtitle": "Task Management App for ADHD Students",
+        "tagline": "Designing experiences for confidence, not overwhelm"
+      },
+      "background": {
+        "title": "Background / The Problem",
+        "text": "\"There are so many things to do, I don't know where to start.\"\nCollege students with ADHD struggle daily with self-management, task breakdown, time perception, and emotional regulation.\nMost existing task apps don't consider neurodiversity or the feeling of overwhelm.\n\nAs a UI/UX designer, I set out to create a product that helps users build confidence through small wins."
+      },
+      "research": {
+        "title": "Research & Empathy",
+        "text": "Interviewed 7 teachers, 1 social worker, 1 public health nurse, and 2 ADHD students.\nWe dug deep into \"When do you struggle?\" and \"What support feels good?\"\nKey insights: breaking tasks down, visualizing progress, only notifying today's tasks, and positive feedback for achievements.\nAll design ideas were rooted in empathy."
+      },
+      "insight": {
+        "title": "Insights & How Might We",
+        "text": "How might we help ADHD students manage tasks without overwhelm?\nHow might we help them build confidence through small wins?\n\nThese empathy-driven questions guided the experience design.",
+        "hmw": [
+          "Break down tasks and visualize progress",
+          "Notify only today's tasks to reduce overload",
+          "Celebrate every achievement with positive feedback"
+        ]
+      },
+      "ideation": {
+        "title": "Ideation",
+        "text": "Analyzed reference apps (Lightning Demos) and generated 8 ideas in 8 minutes (Crazy 8).\nFocused on \"How can the UI feel like a supportive friend?\" and prioritized approachability, simplicity, and a sense of accomplishment."
+      },
+      "design": {
+        "title": "Design & Iteration",
+        "text": "Created user flows, wireframes, and Figma prototypes.\nIteratively improved the UI based on user testing feedback: Add Task button visibility, color consistency, timeline clarity, and engagement."
+      },
+      "testing": {
+        "title": "Usability Testing & Evaluation",
+        "text": "Conducted user testing with 4 ADHD students.\nThe app was praised as \"feels like a friend, not just a to-do list.\"\nWe also identified areas for improvement: color design, engagement, and more."
+      },
+      "result": {
+        "title": "Results, Learnings & Next Steps",
+        "text": "The prototype was highly rated as \"an app that feels like a friend.\"\nNext steps: improve color, engagement, and AI features.\n\nUI/UX designer's takeaway:\nSupporting ADHD means building empathy and celebrating small wins.\nI'll keep evolving the product with users' voices at the center."
+      },
+      "quote": "\"The app should feel like a friend — not a to-do list.\""
+    },
+    "sixAcres": {
+      "title": "Redesign",
+      "subtitle": "Six Acres Restaurant",
+      "role": "UX/UI Designer",
+      "tools": "Figma, Notion",
+      "duration": "1 Week",
+      "finalSolution": "A comprehensive redesign of the Six Acres restaurant website, focused on improving usability, visual appeal, and the overall dining experience. The new design features a modern, friendly look and clear navigation, making it easy for users to find information and book a table.",
+      "beforeAfter": {
+        "welcome": { "before": "/projects/sixacres/Before/Welcome.svg", "after": "/projects/sixacres/After/Welcome.svg" },
+        "menu": { "before": "/projects/sixacres/Before/Menu.svg", "after": "/projects/sixacres/After/Menu.svg" },
+        "event": { "before": "/projects/sixacres/Before/Event.svg", "after": "/projects/sixacres/After/Event.svg" },
+        "reservation": { "before": "/projects/sixacres/Before/Reservation.svg", "after": "/projects/sixacres/After/Reservation.svg" },
+        "contact": { "before": "/projects/sixacres/Before/Contact.svg", "after": "/projects/sixacres/After/Contact.svg" }
+      },
+      "process": {
+        "tasks": [
+          "Find the happy hour time",
+          "Locate the restaurant's address",
+          "Discover details about the 'Good Wing Mondays' event",
+          "Find the Instagram page",
+          "Find out how much it costs to rent the restaurant space"
+        ],
+        "findingsGood": [
+          "Most users found the overall layout clear and appreciated the structure compared to the original version.",
+          "The colorful design and improved alignment created a more lively, approachable feel.",
+          "Information was easier to locate compared to the original, which had a gray, flat atmosphere."
+        ],
+        "findingsBad": [
+          "The hero image lacked contrast, making the text hard to read.",
+          "The logo was not very visible. Using a bolder gold or switching to black was suggested.",
+          "Users struggled to find social links like Instagram, as they were just text links without icons.",
+          "Menu navigation was inconvenient due to PDF links.",
+          "Some inconsistencies were noted between the location details on the contact and reservation pages.",
+          "UI elements like input font size, button spacing, and section icons were cited as areas to improve.",
+          "There was no clear happy hour info, and footer content (e.g. contact info) was minimal."
+        ],
+        "styleGuide": {
+          "typography": "DIN Condensed for modern, minimal, slightly industrial character. Large headings, clean body text, multiple weights.",
+          "colors": "Warm, welcoming tones. Primary Yellow #FFF865, Deep Burgundy #6D0E0F, Cream #FFF7EB, balanced text colors.",
+          "buttons": "Rounded, clear, with strong contrast for CTAs."
+        },
+        "wireframe": "Started with low-fidelity wireframes to define layout and user flow, then created high-fidelity prototypes in Figma. This allowed for realistic interaction testing and clear team communication. The goal was intuitive navigation, visual clarity, and a seamless user experience before development."
+      },
+      "reflection": [
+        "This project helped me realize how essential communication is when working on a team. Throughout the redesign process, I noticed that without consistent conversations, the project could easily drift in different directions. Aligning on a shared vision early and maintaining that alignment was key to delivering a cohesive experience.",
+        "I also learned how valuable user feedback is — hearing real impressions helped me understand how each page could better serve its purpose. This shaped how I approached design decisions and deepened my sense of user empathy.",
+        "Additionally, I gained hands-on experience with design tools like Figma and Notion, and I became more confident in building and applying a style guide. Establishing visual consistency through reusable components helped improve both design speed and quality.",
+        "If I were to do this project again, I would spend more time upfront defining foundational elements like the style guide, component system, and user flow. That way, I could cycle through design and evaluation more effectively — leading to faster iterations and a stronger final product."
+      ],
+      "back": "Back to UI/UX Projects",
+      "imageCredit": "All images are quoted from the official Six Acres website for design study purposes."
+    }
+  },
+  "software": {
+    "ecommerce": {
+      "title": "E-Commerce Platform",
+      "subtitle": "Full-Stack Development & Performance Optimization",
+      "role": "Full-Stack Software Engineer",
+      "tools": "React, Node.js, MongoDB, AWS, Stripe, Redux",
+      "duration": "6 Months",
+      "overview": "A comprehensive e-commerce platform built with modern technologies, focusing on performance optimization, scalability, and user experience. The project involved full-stack development with microservices architecture.",
+      "finalSolution": "A high-performance e-commerce platform featuring real-time inventory management, secure payment processing, and personalized user experience. Achieved 35% improvement in conversion rates and 25% reduction in cart abandonment.",
+      "keyFeatures": [
+        "Real-time inventory management",
+        "Secure payment processing with Stripe",
+        "Personalized product recommendations",
+        "Mobile-first responsive design",
+        "Microservices architecture",
+        "Performance optimization"
+      ],
+      "technicalDetails": {
+        "frontend": {
+          "title": "Frontend Technologies",
+          "description": "React-based SPA with Redux for state management and Material-UI for components",
+          "technologies": ["React 18", "Redux Toolkit", "Material-UI", "TypeScript", "Axios"]
+        },
+        "backend": {
+          "title": "Backend Technologies",
+          "description": "Node.js microservices with Express.js and MongoDB for data persistence",
+          "technologies": ["Node.js", "Express.js", "MongoDB", "JWT", "Bcrypt", "Multer"]
+        },
+        "infrastructure": {
+          "title": "Infrastructure & DevOps",
+          "description": "AWS-based infrastructure with CI/CD pipeline and monitoring",
+          "technologies": ["AWS EC2", "AWS S3", "Docker", "GitHub Actions", "CloudWatch"]
+        }
+      },
+      "performance": {
+        "title": "Performance Metrics",
+        "metrics": [
+          { "label": "Page Load Time", "value": "< 2 seconds", "improvement": "60% faster" },
+          { "label": "Conversion Rate", "value": "35% improvement", "improvement": "vs previous platform" },
+          { "label": "Cart Abandonment", "value": "25% reduction", "improvement": "vs industry average" },
+          { "label": "Uptime", "value": "99.9%", "improvement": "High availability" }
+        ]
+      },
+      "back": "Back to Software Projects",
+      "nextProject": "Data Analytics Platform",
+      "nextProjectLink": "/software/jma-systems"
+    },
+    "jmaSystems": {
+      "title": "JMA Systems - Data Analytics Platform",
+      "subtitle": "AWS-based Data Lake & Analytics Infrastructure",
+      "role": "Lead Software Engineer",
+      "tools": "AWS, Python, PySpark, Redshift, Glue, Lambda, CDK",
+      "duration": "12 Months",
+      "overview": "Built a comprehensive data analytics platform for a major manufacturing client using AWS services. The platform integrates sales data, web logs, and operational data to provide real-time insights for business decision-making.",
+      "finalSolution": "A scalable data lake and analytics platform featuring ELT pipelines, automated monitoring, and self-service BI dashboards. Achieved 80% faster deployments and 50% reduction in development effort through CI/CD and Infrastructure as Code.",
+      "keyFeatures": [
+        "ELT data pipeline with PySpark",
+        "Real-time data visualization with QuickSight",
+        "Automated monitoring and alerting",
+        "Infrastructure as Code with AWS CDK",
+        "CI/CD pipeline for data processing",
+        "Multi-format data integration"
+      ],
+      "technicalDetails": {
+        "frontend": {
+          "title": "Data Visualization",
+          "description": "Amazon QuickSight dashboards for business intelligence and real-time analytics",
+          "technologies": ["Amazon QuickSight", "AWS Athena", "SQL", "Data Visualization"]
+        },
+        "backend": {
+          "title": "Data Processing & ETL",
+          "description": "Python-based data processing with PySpark and AWS Glue for data transformation",
+          "technologies": ["Python", "PySpark", "AWS Glue", "Pandas", "ETL Pipelines"]
+        },
+        "infrastructure": {
+          "title": "Cloud Infrastructure & DevOps",
+          "description": "AWS-based data lake with automated CI/CD and monitoring systems",
+          "technologies": ["AWS S3", "AWS Redshift", "AWS CDK", "CodePipeline", "CloudWatch"]
+        }
+      },
+      "performance": {
+        "title": "Performance Metrics",
+        "metrics": [
+          { "label": "Deployment Time", "value": "80% reduction", "improvement": "Through CI/CD automation" },
+          { "label": "Development Effort", "value": "50% reduction", "improvement": "Via Infrastructure as Code" },
+          { "label": "Data Processing", "value": "Real-time", "improvement": "Daily batch processing" },
+          { "label": "System Uptime", "value": "99.9%", "improvement": "Automated monitoring" }
+        ]
+      },
+      "back": "Back to Software Projects",
+      "nextProject": "Healthcare Platform",
+      "nextProjectLink": "/software/techdoctor"
+    },
+    "techDoctor": {
+      "title": "TechDoctor - Healthcare Platform",
+      "subtitle": "Digital Biomarker Development Platform",
+      "role": "Software Engineer",
+      "tools": "Python, FastAPI, AWS, MySQL, Docker, GraphQL",
+      "duration": "6 Months",
+      "overview": "Developed a comprehensive digital biomarker development platform for healthcare services using FastAPI and AWS. The platform enables healthcare providers to develop, test, and deploy digital biomarkers for patient monitoring and diagnosis.",
+      "finalSolution": "A robust healthcare platform featuring comprehensive testing, automated CI/CD, and detailed documentation. Achieved 0% to 80% test coverage and eliminated knowledge silos through improved documentation practices.",
+      "keyFeatures": [
+        "Digital biomarker development tools",
+        "Comprehensive testing framework",
+        "Automated CI/CD pipeline",
+        "Real-time patient monitoring",
+        "Secure data handling",
+        "API-first architecture"
+      ],
+      "technicalDetails": {
+        "frontend": {
+          "title": "Frontend & API",
+          "description": "GraphQL API with comprehensive documentation and testing",
+          "technologies": ["GraphQL", "FastAPI", "Swagger", "API Documentation"]
+        },
+        "backend": {
+          "title": "Backend Development",
+          "description": "Python-based backend with FastAPI and comprehensive testing",
+          "technologies": ["Python", "FastAPI", "Pytest", "MySQL", "Docker"]
+        },
+        "infrastructure": {
+          "title": "Cloud Infrastructure",
+          "description": "AWS-based infrastructure with automated deployment and monitoring",
+          "technologies": ["AWS Fargate", "AWS S3", "Docker", "CI/CD", "Monitoring"]
+        }
+      },
+      "performance": {
+        "title": "Performance Metrics",
+        "metrics": [
+          { "label": "Test Coverage", "value": "0% to 80%", "improvement": "Comprehensive testing" },
+          { "label": "Documentation", "value": "100% coverage", "improvement": "Eliminated knowledge silos" },
+          { "label": "Deployment", "value": "Automated", "improvement": "CI/CD pipeline" },
+          { "label": "Security", "value": "HIPAA compliant", "improvement": "Healthcare standards" }
+        ]
+      },
+      "back": "Back to Software Projects",
+      "nextProject": "E-Commerce Platform",
+      "nextProjectLink": "/software/ecommerce"
+    }
+  },
+  "softwarePage": {
+    "title": "Software Engineer",
+    "description": "8+ years building scalable cloud infrastructure, data platforms, and full-stack applications. Specialized in AWS, Python, and modern DevOps practices with a proven track record of delivering measurable business impact.",
+    "coreExpertise": {
+      "title": "Core Expertise"
+    },
+    "skills": {
+      "title": "Technical Skills"
+    },
+    "experience": {
+      "title": "Professional Experience",
+      "showMore": "Show More Experience",
+      "showLess": "Show Less"
+    },
+    "projects": {
+      "title": "Featured Projects"
+    },
+    "keyAchievements": [
+      {
+        "icon": "⚡",
+        "metric": "80%",
+        "description": "Faster Deployments"
+      },
+      {
+        "icon": "🚀",
+        "metric": "50%",
+        "description": "Dev Effort Reduction"
+      },
+      {
+        "icon": "📊",
+        "metric": "35%",
+        "description": "Performance Boost"
+      },
+      {
+        "icon": "🎯",
+        "metric": "99.9%",
+        "description": "System Uptime"
+      }
+    ],
+    "coreExpertiseList": [
+      {
+        "icon": "☁️",
+        "iconColor": "text-blue-400",
+        "color": "from-blue-500 to-cyan-600",
+        "category": "Cloud & Infrastructure",
+        "description": "AWS-based solutions with scalable architecture",
+        "technologies": ["AWS", "Docker", "Terraform", "Kubernetes"]
+      },
+      {
+        "icon": "💻",
+        "iconColor": "text-green-400",
+        "color": "from-green-500 to-emerald-600",
+        "category": "Backend Development",
+        "description": "Robust server-side applications and APIs",
+        "technologies": ["Python", "Node.js", "FastAPI", "GraphQL"]
+      },
+      {
+        "icon": "📊",
+        "iconColor": "text-purple-400",
+        "color": "from-purple-500 to-pink-600",
+        "category": "Data Engineering",
+        "description": "ETL pipelines and data analytics platforms",
+        "technologies": ["PySpark", "Redshift", "Glue", "QuickSight"]
+      },
+      {
+        "icon": "⚙️",
+        "iconColor": "text-orange-400",
+        "color": "from-orange-500 to-red-600",
+        "category": "DevOps & CI/CD",
+        "description": "Automated deployment and monitoring systems",
+        "technologies": ["GitHub Actions", "CDK", "CloudWatch", "Jenkins"]
+      }
+    ],
+    "experienceList": [
+      {
+        "en": {
+          "title": "Lead Software Engineer",
+          "company": "JMA Systems Corporation",
+          "focus": "Data Analytics Platform Development",
+          "period": "2023 - 2024",
+          "description": "Led development of a comprehensive data analytics platform for a major manufacturing client, integrating sales data, web logs, and operational data to provide real-time business insights.",
+          "keyTechnologies": ["AWS", "Python", "PySpark", "Redshift", "CDK"],
+          "achievements": [
+            "Built ELT data pipeline processing multi-format data (CSV, Parquet, JSON) with PySpark",
+            "Implemented real-time data visualization dashboards using Amazon QuickSight",
+            "Reduced deployment time by 80% through CI/CD automation with AWS CodePipeline",
+            "Decreased development effort by 50% using Infrastructure as Code with AWS CDK",
+            "Achieved 99.9% system uptime with automated monitoring and alerting"
+          ]
+        },
+        "ja": {
+          "title": "リードソフトウェアエンジニア",
+          "company": "JMAシステムズ株式会社",
+          "focus": "データ分析プラットフォーム開発",
+          "period": "2023年 - 2024年",
+          "description": "大手製造業クライアント向けに包括的なデータ分析プラットフォームの開発をリード。売上データ、Webログ、運用データを統合し、リアルタイムのビジネスインサイトを提供。",
+          "keyTechnologies": ["AWS", "Python", "PySpark", "Redshift", "CDK"],
+          "achievements": [
+            "PySparkを使用したマルチフォーマットデータ（CSV、Parquet、JSON）処理のELTパイプライン構築",
+            "Amazon QuickSightを使用したリアルタイムデータ可視化ダッシュボード実装",
+            "AWS CodePipelineによるCI/CD自動化でデプロイ時間を80%削減",
+            "AWS CDKによるInfrastructure as Codeで開発工数を50%削減",
+            "自動監視とアラートにより99.9%のシステム稼働率を達成"
+          ]
+        }
+      },
+      {
+        "en": {
+          "title": "Software Engineer",
+          "company": "TechDoctor Inc.",
+          "focus": "Healthcare Platform Development",
+          "period": "2022 - 2023",
+          "description": "Developed a digital biomarker development platform for healthcare services, enabling healthcare providers to develop, test, and deploy digital biomarkers for patient monitoring.",
+          "keyTechnologies": ["Python", "FastAPI", "AWS", "MySQL", "Docker"],
+          "achievements": [
+            "Implemented comprehensive testing framework, increasing test coverage from 0% to 80%",
+            "Built RESTful APIs using FastAPI with GraphQL integration",
+            "Deployed containerized applications on AWS Fargate",
+            "Created detailed API documentation, eliminating knowledge silos",
+            "Established automated CI/CD pipeline for continuous deployment"
+          ]
+        },
+        "ja": {
+          "title": "ソフトウェアエンジニア",
+          "company": "TechDoctor株式会社",
+          "focus": "ヘルスケアプラットフォーム開発",
+          "period": "2022年 - 2023年",
+          "description": "医療サービス向けデジタルバイオマーカー開発プラットフォームを開発。医療提供者が患者監視用のデジタルバイオマーカーを開発、テスト、デプロイできるシステムを構築。",
+          "keyTechnologies": ["Python", "FastAPI", "AWS", "MySQL", "Docker"],
+          "achievements": [
+            "包括的なテストフレームワークを実装し、テストカバレッジを0%から80%に向上",
+            "GraphQL統合を含むFastAPIを使用したRESTful API構築",
+            "AWS Fargateへのコンテナ化アプリケーションのデプロイ",
+            "詳細なAPIドキュメント作成により知識のサイロ化を解消",
+            "継続的デプロイのための自動化CI/CDパイプライン確立"
+          ]
+        }
+      },
+      {
+        "en": {
+          "title": "Full-Stack Developer",
+          "company": "One Stop Innovation Inc.",
+          "focus": "E-Commerce & Analytics Platform",
+          "period": "2020 - 2022",
+          "description": "Built and maintained e-commerce platform and analytics systems for multiple clients, focusing on performance optimization and user experience.",
+          "keyTechnologies": ["PHP", "WordPress", "React", "MySQL", "Terraform"],
+          "achievements": [
+            "Developed custom WordPress themes and plugins for e-commerce sites",
+            "Implemented real-time inventory management system",
+            "Reduced page load time by 60% through optimization",
+            "Integrated Stripe payment processing with 99.9% transaction success rate",
+            "Managed cloud infrastructure using Terraform for Infrastructure as Code"
+          ]
+        },
+        "ja": {
+          "title": "フルスタック開発者",
+          "company": "One Stop Innovation株式会社",
+          "focus": "Eコマース・分析プラットフォーム",
+          "period": "2020年 - 2022年",
+          "description": "複数クライアント向けのEコマースプラットフォームと分析システムを構築・保守。パフォーマンス最適化とユーザーエクスペリエンスに注力。",
+          "keyTechnologies": ["PHP", "WordPress", "React", "MySQL", "Terraform"],
+          "achievements": [
+            "Eコマースサイト向けカスタムWordPressテーマとプラグイン開発",
+            "リアルタイム在庫管理システム実装",
+            "最適化によりページ読み込み時間を60%削減",
+            "99.9%の取引成功率を持つStripe決済処理統合",
+            "Infrastructure as CodeのためのTerraformによるクラウドインフラ管理"
+          ]
+        }
+      }
+    ],
+    "featuredProjects": [
+      {
+        "id": "jma-systems",
+        "icon": "mdi:database-cog",
+        "color": "green",
+        "en": {
+          "title": "Data Analytics Platform",
+          "description": "AWS-based data lake and analytics infrastructure for a major manufacturer. Integrated sales data, web logs, and operational data to provide real-time business insights.",
+          "technologies": ["AWS", "Python", "PySpark", "Redshift", "Glue", "QuickSight"],
+          "period": "2023 - 2024",
+          "impact": "80% Faster Deployments"
+        },
+        "ja": {
+          "title": "データ分析プラットフォーム",
+          "description": "大手製造業向けAWSベースのデータレイクと分析インフラ。売上データ、Webログ、運用データを統合し、リアルタイムのビジネスインサイトを提供。",
+          "technologies": ["AWS", "Python", "PySpark", "Redshift", "Glue", "QuickSight"],
+          "period": "2023年 - 2024年",
+          "impact": "デプロイ時間80%削減"
+        }
+      },
+      {
+        "id": "techdoctor",
+        "icon": "mdi:medical-bag",
+        "color": "blue",
+        "en": {
+          "title": "Healthcare Platform",
+          "description": "Digital biomarker development platform for healthcare services. Enabled healthcare providers to develop, test, and deploy patient monitoring solutions.",
+          "technologies": ["Python", "FastAPI", "AWS", "MySQL", "Docker", "GraphQL"],
+          "period": "2022 - 2023",
+          "impact": "0% to 80% Test Coverage"
+        },
+        "ja": {
+          "title": "ヘルスケアプラットフォーム",
+          "description": "医療サービス向けデジタルバイオマーカー開発プラットフォーム。医療提供者が患者監視ソリューションを開発、テスト、デプロイできるシステム。",
+          "technologies": ["Python", "FastAPI", "AWS", "MySQL", "Docker", "GraphQL"],
+          "period": "2022年 - 2023年",
+          "impact": "テストカバレッジ0%→80%"
+        }
+      },
+      {
+        "id": "ecommerce",
+        "icon": "mdi:shopping",
+        "color": "emerald",
+        "en": {
+          "title": "E-Commerce Platform",
+          "description": "Full-stack e-commerce platform with real-time inventory management, secure payment processing, and personalized user experience.",
+          "technologies": ["React", "Node.js", "MongoDB", "AWS", "Stripe", "Redux"],
+          "period": "2020 - 2022",
+          "impact": "35% Conversion Rate Boost"
+        },
+        "ja": {
+          "title": "Eコマースプラットフォーム",
+          "description": "リアルタイム在庫管理、安全な決済処理、パーソナライズされたユーザーエクスペリエンスを備えたフルスタックEコマースプラットフォーム。",
+          "technologies": ["React", "Node.js", "MongoDB", "AWS", "Stripe", "Redux"],
+          "period": "2020年 - 2022年",
+          "impact": "コンバージョン率35%向上"
+        }
+      }
+    ]
+  },
+  "footer": {
+    "title": "Kento Yokozuka",
+    "subtitle": "Software Engineer & UI/UX Designer",
+    "navigation": {
+      "title": "Navigation",
+      "home": "Home",
+      "software": "Software",
+      "uiux": "UI/UX",
+      "contact": "Contact"
+    },
+    "social": {
+      "title": "Social",
+      "message": "Let's connect and create something amazing",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    },
+    "copyright": "Kento Yokozuka. All rights reserved.",
+    "madeWithLove": "Made with passion"
+  }
+}

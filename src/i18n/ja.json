@@ -1,0 +1,635 @@
+{
+  "routes": {
+    "home": {
+      "title": "ホーム"
+    },
+    "software": {
+      "title": "ソフトウェア"
+    },
+    "uiux": {
+      "title": "UI/UX"
+    },
+    "contact": {
+      "title": "お問い合わせ"
+    }
+  },
+  "home": {
+    "title": "横塚健人",
+    "subtitle": "フルスタックエンジニア & UI/UXデザイナー",
+    "description": "8年以上の経験を持つフルスタックエンジニアとして、革新的なソリューションを創造します。AWS、Python、最新のフロントエンド技術を活用し、ユーザー中心の体験を提供します。",
+    "achievements": {
+      "deployments": "デプロイ削減",
+      "effort": "工数削減",
+      "loadTime": "読み込み時間",
+      "experience": "年以上の経験"
+    },
+    "resume": {
+      "button": "履歴書を見る",
+      "download": "PDFをダウンロード"
+    },
+    "software": {
+      "title": "ソフトウェアエンジニア",
+      "description": "クラウドインフラとバックエンド開発、DevOpsに特化。スケーラブルでメンテナンス性の高いソリューションを構築します。",
+      "skills": ["AWS", "Python", "TypeScript", "React", "Terraform"]
+    },
+    "uiux": {
+      "title": "UI/UXデザイナー",
+      "description": "ユーザー中心のデザイン思考とプロトタイピングに情熱を注いでいます。美しく直感的なインターフェースを作成します。",
+      "skills": ["Figma", "デザイン思考", "プロトタイピング", "ユーザーリサーチ", "デザインシステム"]
+    },
+    "about": {
+      "title": "私について",
+      "experience": {
+        "title": "経験",
+        "content": "8年以上のソフトウェアエンジニアとして、スケーラブルでメンテナンス性の高いアプリケーション、効率的なクラウドインフラストラクチャを構築してきました。また、UI/UXデザインスキルを磨き、デザイン中心の開発アプローチでユーザー体験を向上させることに情熱を注いでいます。"
+      },
+      "philosophy": {
+        "title": "デザイン哲学",
+        "content": "ユーザー中心のデザインが成功の鍵だと信じています。技術的な卓越性と美しいデザインを組み合わせることで、単に機能するだけでなく、喜びをもたらす製品を作成することを目指しています。"
+      }
+    },
+    "highlights": {
+      "title": "注目のプロジェクト",
+      "software": "ソフトウェアエンジニアリング",
+      "uiux": "UI/UXデザイン"
+    },
+    "projects": {
+      "software": [
+        {
+          "name": "JMAシステムズ",
+          "description": "データ分析プラットフォーム",
+          "tags": ["AWS", "Python", "PySpark"]
+        },
+        {
+          "name": "TechDoctor",
+          "description": "医療プラットフォーム",
+          "tags": ["Python", "FastAPI", "AWS"]
+        },
+        {
+          "name": "One Stop Innovation",
+          "description": "Eコマース & アナリティクス",
+          "tags": ["PHP", "WordPress", "Terraform"]
+        }
+      ],
+      "uiux": [
+        {
+          "name": "Six Acres レストラン",
+          "description": "ウェブサイトリデザイン",
+          "tags": ["Figma", "ユーザーリサーチ", "プロトタイピング"]
+        },
+        {
+          "name": "タスク管理システム",
+          "description": "デザインスプリントプロジェクト",
+          "tags": ["デザインスプリント", "Figma", "ユーザーテスト"]
+        }
+      ]
+    },
+    "images": {
+      "profile": "self/PXL_20250401_232454450.PORTRAIT.jpg",
+      "profileAlt": "横塚健人",
+      "backgroundAlt": "横塚健人 背景"
+    },
+    "links": {
+      "resume": "https://docs.google.com/document/d/1jPtRuI8ydBeFbcl2gWQsps6JiGIwFDlwDu46G_BHDLQ/edit?usp=sharing"
+    }
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "アイデアを形にしませんか？",
+    "description": "新しいプロジェクトや機会について聞くのが大好きです。具体的なプロジェクトのご相談や、デザイン・開発についてお話ししたい方も、お気軽にご連絡ください！",
+    "form": {
+      "name": "お名前",
+      "email": "kento.yokozuka@gmail.com",
+      "message": "メッセージ",
+      "sendButton": "送信",
+      "sending": "送信中..."
+    },
+    "contactInfo": {
+      "title": "連絡方法",
+      "subtitle": "お好みの方法でお気軽に",
+      "email": {
+        "title": "メール",
+        "emailAddress": "kento.yokozuka@gmail.com",
+        "href": "mailto:kento.yokozuka@gmail.com"
+      },
+      "github": {
+        "title": "GitHub",
+        "account": "@kyokozuka",
+        "href": "https://github.com/kyokozuka"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "account": "Kento Yokozuka",
+        "href": "https://www.linkedin.com/in/kento-yokozuka-26a1731b4/"
+      }
+    },
+    "message": "あなたのアイデアを形にしましょう 🚀"
+  },
+  "technicalSkills": {
+    "categories": {
+      "cloudInfrastructure": "クラウド・インフラ",
+      "programmingLanguages": "プログラミング言語",
+      "frameworksTools": "フレームワーク・ツール",
+      "databasesAnalytics": "データベース・分析",
+      "developmentTools": "開発ツール"
+    },
+    "levels": {
+      "expert": "エキスパート",
+      "advanced": "上級",
+      "intermediate": "中級",
+      "beginner": "初級"
+    }
+  },
+  "uiux": {
+    "page": {
+      "title": "UI/UXデザイナー",
+      "subtitle": "アイデアを美しい体験に変える",
+      "description": "直感的でアクセシブル、美しいユーザーインターフェースの作成に情熱を持っています。現在CICCCでUI/UXデザインを学び、ユーザー中心のデザイン原則とモダンなデザインシステムに焦点を当てています。",
+      "contact": "素晴らしいものを作りましょう"
+    },
+    "achievy": {
+      "hero": {
+        "title": "Achievy",
+        "subtitle": "ADHD学生のためのタスク管理アプリ",
+        "tagline": "「圧倒されず、自信を積み重ねる」体験をデザイン"
+      },
+      "background": {
+        "title": "背景・課題",
+        "text": "「やるべきことが多すぎて、何から手をつけていいかわからない」\nADHD傾向の大学生は、自己管理やタスク分割、時間感覚、感情コントロールに日々苦労しています。\n既存のタスク管理アプリは、神経多様性や\"圧倒されやすさ\"に十分配慮されていません。\n\nUI/UXデザイナーとして、\n「小さな成功体験を積み重ね、自信を持てるプロダクト」を目指しました。"
+      },
+      "research": {
+        "title": "リサーチ・共感",
+        "text": "7名の教師、1名のソーシャルワーカー、1名の保健師、2名のADHD学生にインタビュー。\n「どんな時に困るのか」「どんなサポートが嬉しいか」を深掘りし、\n・タスクを細かく分けて見える化\n・今日やることだけを通知\n・達成時にポジティブなフィードバック\nなど、共感に基づく支援のヒントを抽出しました。"
+      },
+      "insight": {
+        "title": "インサイト・How Might We",
+        "text": "「どうすればADHD学生が圧倒されずにタスクを管理できるか？」\n「どうすれば小さな成功体験を積み重ね、自信を持てるか？」\n\n共感から生まれた問いを軸に、体験設計を進めました。",
+        "hmw": [
+          "タスクを細分化し、進捗を可視化する",
+          "今日やるべきことだけを通知し、圧倒感を減らす",
+          "達成時に「できた！」を実感できる演出を加える"
+        ]
+      },
+      "ideation": {
+        "title": "アイデア創出・発散",
+        "text": "Lightning Demosで参考アプリを分析し、Crazy 8で8分間に8案のスケッチを作成。\n「どんなUIなら\"友達のように寄り添える\"か？」を意識し、親しみやすさ・シンプルさ・達成感を重視した案を出しました。"
+      },
+      "design": {
+        "title": "設計・反復",
+        "text": "ユーザーフロー・ワイヤーフレーム・Figmaプロトタイプを作成。\n「Add Taskボタンの目立ちやすさ」「色彩・タイムラインの一貫性」「エンゲージメント向上」など、ユーザーテストで得た気づきをもとにUIを何度も磨きました。"
+      },
+      "testing": {
+        "title": "ユーザーテスト・評価",
+        "text": "ADHD学生4名によるユーザーテストを実施。\n「アプリがToDoリストではなく、友達のような存在に感じる」と好評を得ました。\n一方で、色彩設計やエンゲージメント強化など、今後の改善点も明確になりました。"
+      },
+      "result": {
+        "title": "成果・学び・今後の展望",
+        "text": "プロトタイプは「友達のようなアプリ」として高評価。\n今後は色彩設計・エンゲージメント・AI活用の強化へ。\n\nUI/UXデザイナーとしての学び：\n「ADHD支援は\"共感\"と\"小さな成功体験\"の積み重ねが鍵」。\nユーザーの声に寄り添い、プロダクトを進化させていきます。"
+      },
+      "quote": "「アプリはToDoリストではなく、友達のような存在であるべき」"
+    },
+    "sixAcres": {
+      "title": "リデザイン",
+      "subtitle": "Six Acres レストラン",
+      "role": "UX/UIデザイナー",
+      "tools": "Figma, Notion",
+      "duration": "1週間",
+      "finalSolution": "Six Acresレストランウェブサイトの包括的なリデザイン。使いやすさ、視覚的魅力、そして全体的な食事体験の向上に焦点を当てました。新しいデザインは、モダンで親しみやすい外観と明確なナビゲーションを特徴とし、ユーザーが情報を見つけやすく、テーブルを予約しやすくなっています。",
+      "beforeAfter": {
+        "welcome": { "before": "/projects/sixacres/Before/Welcome.svg", "after": "/projects/sixacres/After/Welcome.svg" },
+        "menu": { "before": "/projects/sixacres/Before/Menu.svg", "after": "/projects/sixacres/After/Menu.svg" },
+        "event": { "before": "/projects/sixacres/Before/Event.svg", "after": "/projects/sixacres/After/Event.svg" },
+        "reservation": { "before": "/projects/sixacres/Before/Reservation.svg", "after": "/projects/sixacres/After/Reservation.svg" },
+        "contact": { "before": "/projects/sixacres/Before/Contact.svg", "after": "/projects/sixacres/After/Contact.svg" }
+      },
+      "process": {
+        "tasks": [
+          "ハッピーアワーの時間を見つける",
+          "レストランの住所を確認する",
+          "'Good Wing Mondays'イベントの詳細を調べる",
+          "Instagramページを見つける",
+          "レストランスペースのレンタル料金を調べる"
+        ],
+        "findingsGood": [
+          "ほとんどのユーザーが全体的なレイアウトを明確だと感じ、元のバージョンと比較して構造を評価しました。",
+          "カラフルなデザインと改善された配置により、より活気があり親しみやすい印象を作り出しました。",
+          "元のグレーで平坦な雰囲気と比較して、情報が見つけやすくなりました。"
+        ],
+        "findingsBad": [
+          "ヒーロー画像のコントラストが不足し、テキストが読みにくい。",
+          "ロゴの視認性が低い。より太いゴールドまたは黒への変更が提案されました。",
+          "ユーザーがInstagramなどのソーシャルリンクを見つけるのに苦労。アイコンのないテキストリンクだったため。",
+          "PDFリンクによるメニューナビゲーションが不便。",
+          "連絡先ページと予約ページの場所の詳細に不整合が指摘されました。",
+          "入力フォントサイズ、ボタン間隔、セクションアイコンなどのUI要素が改善点として挙げられました。",
+          "ハッピーアワーの情報が明確でなく、フッターコンテンツ（連絡先情報など）が最小限でした。"
+        ],
+        "styleGuide": {
+          "typography": "モダンでミニマル、やや工業的な特徴を持つDIN Condensed。大きな見出し、クリーンな本文、複数のウェイト。",
+          "colors": "温かく親しみやすいトーン。プライマリーイエロー #FFF865、ディープバーガンディ #6D0E0F、クリーム #FFF7EB、バランスの取れたテキストカラー。",
+          "buttons": "角丸で明確、CTAには強いコントラスト。"
+        },
+        "wireframe": "レイアウトとユーザーフローを定義するための低解像度ワイヤーフレームから始め、Figmaで高解像度プロトタイプを作成しました。これにより、現実的なインタラクションテストと明確なチームコミュニケーションが可能になりました。目標は、開発前に直感的なナビゲーション、視覚的な明確さ、シームレスなユーザー体験を実現することでした。"
+      },
+      "reflection": [
+        "このプロジェクトを通じて、チームで働く際のコミュニケーションの重要性を実感しました。リデザインプロセス全体を通じて、一貫した会話がないと、プロジェクトが簡単に異なる方向に流れることに気づきました。早期に共通のビジョンに合わせ、その整合性を維持することが、一貫した体験を提供する鍵でした。",
+        "また、ユーザーフィードバックの価値も学びました。実際の印象を聞くことで、各ページがより良い目的を果たす方法を理解できました。これがデザイン決定へのアプローチを形作り、ユーザーエンパシーの感覚を深めました。",
+        "さらに、FigmaやNotionなどのデザインツールの実践的な経験を積み、スタイルガイドの構築と適用に自信を持つようになりました。再利用可能なコンポーネントによる視覚的一貫性の確立により、デザイン速度と品質の両方が向上しました。",
+        "このプロジェクトを再度行う場合、スタイルガイド、コンポーネントシステム、ユーザーフローなどの基盤要素の定義により多くの時間を費やします。そうすることで、デザインと評価をより効果的に循環させ、より迅速な反復とより強力な最終製品につながります。"
+      ],
+      "back": "UI/UXプロジェクトに戻る",
+      "imageCredit": "すべての画像はデザイン研究目的でSix Acres公式ウェブサイトから引用しています。"
+    }
+  },
+  "software": {
+    "ecommerce": {
+      "title": "Eコマースプラットフォーム",
+      "subtitle": "フルスタック開発とパフォーマンス最適化",
+      "role": "フルスタックソフトウェアエンジニア",
+      "tools": "React, Node.js, MongoDB, AWS, Stripe, Redux",
+      "duration": "6ヶ月",
+      "overview": "モダンな技術を使用した包括的なEコマースプラットフォーム。パフォーマンス最適化、スケーラビリティ、ユーザーエクスペリエンスに焦点を当て、マイクロサービスアーキテクチャによるフルスタック開発を実施。",
+      "finalSolution": "リアルタイム在庫管理、安全な決済処理、パーソナライズされたユーザーエクスペリエンスを特徴とする高性能Eコマースプラットフォーム。コンバージョン率35%向上、カート放棄率25%削減を達成。",
+      "keyFeatures": [
+        "リアルタイム在庫管理",
+        "Stripeによる安全な決済処理",
+        "パーソナライズされた商品推奨",
+        "モバイルファーストのレスポンシブデザイン",
+        "マイクロサービスアーキテクチャ",
+        "パフォーマンス最適化"
+      ],
+      "technicalDetails": {
+        "frontend": {
+          "title": "フロントエンド技術",
+          "description": "Reduxによる状態管理とMaterial-UIコンポーネントを使用したReactベースのSPA",
+          "technologies": ["React 18", "Redux Toolkit", "Material-UI", "TypeScript", "Axios"]
+        },
+        "backend": {
+          "title": "バックエンド技術",
+          "description": "Express.jsとMongoDBを使用したNode.jsマイクロサービス",
+          "technologies": ["Node.js", "Express.js", "MongoDB", "JWT", "Bcrypt", "Multer"]
+        },
+        "infrastructure": {
+          "title": "インフラストラクチャとDevOps",
+          "description": "CI/CDパイプラインと監視機能を備えたAWSベースのインフラ",
+          "technologies": ["AWS EC2", "AWS S3", "Docker", "GitHub Actions", "CloudWatch"]
+        }
+      },
+      "performance": {
+        "title": "パフォーマンス指標",
+        "metrics": [
+          { "label": "ページ読み込み時間", "value": "< 2秒", "improvement": "60%高速化" },
+          { "label": "コンバージョン率", "value": "35%向上", "improvement": "前プラットフォーム比" },
+          { "label": "カート放棄率", "value": "25%削減", "improvement": "業界平均比" },
+          { "label": "稼働率", "value": "99.9%", "improvement": "高可用性" }
+        ]
+      },
+      "back": "ソフトウェアプロジェクトに戻る",
+      "nextProject": "データ分析プラットフォーム",
+      "nextProjectLink": "/software/jma-systems"
+    },
+    "jmaSystems": {
+      "title": "JMA Systems - データ分析プラットフォーム",
+      "subtitle": "AWSベースのデータレイク・分析インフラ",
+      "role": "リードソフトウェアエンジニア",
+      "tools": "AWS, Python, PySpark, Redshift, Glue, Lambda, CDK",
+      "duration": "12ヶ月",
+      "overview": "大手製造業クライアント向けにAWSサービスを使用した包括的なデータ分析プラットフォームを構築。売上データ、Webログ、運用データを統合し、ビジネス意思決定のためのリアルタイムインサイトを提供。",
+      "finalSolution": "ELTパイプライン、自動監視、セルフサービスBIダッシュボードを特徴とするスケーラブルなデータレイク・分析プラットフォーム。CI/CDとInfrastructure as Codeにより、デプロイ時間80%短縮、開発工数50%削減を達成。",
+      "keyFeatures": [
+        "PySparkによるELTデータパイプライン",
+        "QuickSightによるリアルタイムデータ可視化",
+        "自動監視とアラート機能",
+        "AWS CDKによるInfrastructure as Code",
+        "データ処理のためのCI/CDパイプライン",
+        "マルチフォーマットデータ統合"
+      ],
+      "technicalDetails": {
+        "frontend": {
+          "title": "データ可視化",
+          "description": "ビジネスインテリジェンスとリアルタイム分析のためのAmazon QuickSightダッシュボード",
+          "technologies": ["Amazon QuickSight", "AWS Athena", "SQL", "データ可視化"]
+        },
+        "backend": {
+          "title": "データ処理・ETL",
+          "description": "データ変換のためのPySparkとAWS Glueを使用したPythonベースのデータ処理",
+          "technologies": ["Python", "PySpark", "AWS Glue", "Pandas", "ETLパイプライン"]
+        },
+        "infrastructure": {
+          "title": "クラウドインフラ・DevOps",
+          "description": "自動化されたCI/CDと監視システムを備えたAWSベースのデータレイク",
+          "technologies": ["AWS S3", "AWS Redshift", "AWS CDK", "CodePipeline", "CloudWatch"]
+        }
+      },
+      "performance": {
+        "title": "パフォーマンス指標",
+        "metrics": [
+          { "label": "デプロイ時間", "value": "80%削減", "improvement": "CI/CD自動化により" },
+          { "label": "開発工数", "value": "50%削減", "improvement": "Infrastructure as Codeにより" },
+          { "label": "データ処理", "value": "リアルタイム", "improvement": "日次バッチ処理から" },
+          { "label": "システム稼働率", "value": "99.9%", "improvement": "自動監視により" }
+        ]
+      },
+      "back": "ソフトウェアプロジェクトに戻る",
+      "nextProject": "ヘルスケアプラットフォーム",
+      "nextProjectLink": "/software/techdoctor"
+    },
+    "techDoctor": {
+      "title": "TechDoctor - ヘルスケアプラットフォーム",
+      "subtitle": "デジタルバイオマーカー開発プラットフォーム",
+      "role": "ソフトウェアエンジニア",
+      "tools": "Python, FastAPI, AWS, MySQL, Docker, GraphQL",
+      "duration": "6ヶ月",
+      "overview": "FastAPIとAWSを使用してヘルスケアサービスのための包括的なデジタルバイオマーカー開発プラットフォームを開発。医療提供者が患者監視と診断のためのデジタルバイオマーカーを開発、テスト、デプロイできるプラットフォーム。",
+      "finalSolution": "包括的なテスト、自動化されたCI/CD、詳細なドキュメントを特徴とする堅牢なヘルスケアプラットフォーム。テストカバレッジ0%から80%に向上し、改善されたドキュメントプラクティスにより知識のサイロ化を解消。",
+      "keyFeatures": [
+        "デジタルバイオマーカー開発ツール",
+        "包括的なテストフレームワーク",
+        "自動化されたCI/CDパイプライン",
+        "リアルタイム患者監視",
+        "安全なデータ処理",
+        "APIファーストアーキテクチャ"
+      ],
+      "technicalDetails": {
+        "frontend": {
+          "title": "フロントエンド・API",
+          "description": "包括的なドキュメントとテストを備えたGraphQL API",
+          "technologies": ["GraphQL", "FastAPI", "Swagger", "APIドキュメント"]
+        },
+        "backend": {
+          "title": "バックエンド開発",
+          "description": "FastAPIと包括的なテストを備えたPythonベースのバックエンド",
+          "technologies": ["Python", "FastAPI", "Pytest", "MySQL", "Docker"]
+        },
+        "infrastructure": {
+          "title": "クラウドインフラ",
+          "description": "自動化されたデプロイと監視を備えたAWSベースのインフラ",
+          "technologies": ["AWS Fargate", "AWS S3", "Docker", "CI/CD", "監視"]
+        }
+      },
+      "performance": {
+        "title": "パフォーマンス指標",
+        "metrics": [
+          { "label": "テストカバレッジ", "value": "0%から80%", "improvement": "包括的なテスト" },
+          { "label": "ドキュメント", "value": "100%カバレッジ", "improvement": "知識のサイロ化を解消" },
+          { "label": "デプロイ", "value": "自動化", "improvement": "CI/CDパイプライン" },
+          { "label": "セキュリティ", "value": "HIPAA準拠", "improvement": "ヘルスケア標準" }
+        ]
+      },
+      "back": "ソフトウェアプロジェクトに戻る",
+      "nextProject": "Eコマースプラットフォーム",
+      "nextProjectLink": "/software/ecommerce"
+    }
+  },
+  "softwarePage": {
+    "title": "ソフトウェアエンジニア",
+    "description": "8年以上のスケーラブルなクラウドインフラ、データプラットフォーム、フルスタックアプリケーション開発経験。AWS、Python、モダンなDevOpsプラクティスに特化し、実証された成果を持つエンジニア。",
+    "coreExpertise": {
+      "title": "コア専門分野"
+    },
+    "skills": {
+      "title": "技術スキル"
+    },
+    "experience": {
+      "title": "職務経歴",
+      "showMore": "もっと見る",
+      "showLess": "閉じる"
+    },
+    "projects": {
+      "title": "注目のプロジェクト"
+    },
+    "keyAchievements": [
+      {
+        "icon": "⚡",
+        "metric": "80%",
+        "description": "デプロイ時間削減"
+      },
+      {
+        "icon": "🚀",
+        "metric": "50%",
+        "description": "開発工数削減"
+      },
+      {
+        "icon": "📊",
+        "metric": "35%",
+        "description": "パフォーマンス向上"
+      },
+      {
+        "icon": "🎯",
+        "metric": "99.9%",
+        "description": "システム稼働率"
+      }
+    ],
+    "coreExpertiseList": [
+      {
+        "icon": "☁️",
+        "iconColor": "text-blue-400",
+        "color": "from-blue-500 to-cyan-600",
+        "category": "クラウド・インフラ",
+        "description": "スケーラブルなアーキテクチャのAWSソリューション",
+        "technologies": ["AWS", "Docker", "Terraform", "Kubernetes"]
+      },
+      {
+        "icon": "💻",
+        "iconColor": "text-green-400",
+        "color": "from-green-500 to-emerald-600",
+        "category": "バックエンド開発",
+        "description": "堅牢なサーバーサイドアプリケーションとAPI",
+        "technologies": ["Python", "Node.js", "FastAPI", "GraphQL"]
+      },
+      {
+        "icon": "📊",
+        "iconColor": "text-purple-400",
+        "color": "from-purple-500 to-pink-600",
+        "category": "データエンジニアリング",
+        "description": "ETLパイプラインとデータ分析プラットフォーム",
+        "technologies": ["PySpark", "Redshift", "Glue", "QuickSight"]
+      },
+      {
+        "icon": "⚙️",
+        "iconColor": "text-orange-400",
+        "color": "from-orange-500 to-red-600",
+        "category": "DevOps・CI/CD",
+        "description": "自動化されたデプロイと監視システム",
+        "technologies": ["GitHub Actions", "CDK", "CloudWatch", "Jenkins"]
+      }
+    ],
+    "experienceList": [
+      {
+        "en": {
+          "title": "Lead Software Engineer",
+          "company": "JMA Systems Corporation",
+          "focus": "Data Analytics Platform Development",
+          "period": "2023 - 2024",
+          "description": "Led development of a comprehensive data analytics platform for a major manufacturing client, integrating sales data, web logs, and operational data to provide real-time business insights.",
+          "keyTechnologies": ["AWS", "Python", "PySpark", "Redshift", "CDK"],
+          "achievements": [
+            "Built ELT data pipeline processing multi-format data (CSV, Parquet, JSON) with PySpark",
+            "Implemented real-time data visualization dashboards using Amazon QuickSight",
+            "Reduced deployment time by 80% through CI/CD automation with AWS CodePipeline",
+            "Decreased development effort by 50% using Infrastructure as Code with AWS CDK",
+            "Achieved 99.9% system uptime with automated monitoring and alerting"
+          ]
+        },
+        "ja": {
+          "title": "リードソフトウェアエンジニア",
+          "company": "JMAシステムズ株式会社",
+          "focus": "データ分析プラットフォーム開発",
+          "period": "2023年 - 2024年",
+          "description": "大手製造業クライアント向けに包括的なデータ分析プラットフォームの開発をリード。売上データ、Webログ、運用データを統合し、リアルタイムのビジネスインサイトを提供。",
+          "keyTechnologies": ["AWS", "Python", "PySpark", "Redshift", "CDK"],
+          "achievements": [
+            "PySparkを使用したマルチフォーマットデータ（CSV、Parquet、JSON）処理のELTパイプライン構築",
+            "Amazon QuickSightを使用したリアルタイムデータ可視化ダッシュボード実装",
+            "AWS CodePipelineによるCI/CD自動化でデプロイ時間を80%削減",
+            "AWS CDKによるInfrastructure as Codeで開発工数を50%削減",
+            "自動監視とアラートにより99.9%のシステム稼働率を達成"
+          ]
+        }
+      },
+      {
+        "en": {
+          "title": "Software Engineer",
+          "company": "TechDoctor Inc.",
+          "focus": "Healthcare Platform Development",
+          "period": "2022 - 2023",
+          "description": "Developed a digital biomarker development platform for healthcare services, enabling healthcare providers to develop, test, and deploy digital biomarkers for patient monitoring.",
+          "keyTechnologies": ["Python", "FastAPI", "AWS", "MySQL", "Docker"],
+          "achievements": [
+            "Implemented comprehensive testing framework, increasing test coverage from 0% to 80%",
+            "Built RESTful APIs using FastAPI with GraphQL integration",
+            "Deployed containerized applications on AWS Fargate",
+            "Created detailed API documentation, eliminating knowledge silos",
+            "Established automated CI/CD pipeline for continuous deployment"
+          ]
+        },
+        "ja": {
+          "title": "ソフトウェアエンジニア",
+          "company": "TechDoctor株式会社",
+          "focus": "ヘルスケアプラットフォーム開発",
+          "period": "2022年 - 2023年",
+          "description": "医療サービス向けデジタルバイオマーカー開発プラットフォームを開発。医療提供者が患者監視用のデジタルバイオマーカーを開発、テスト、デプロイできるシステムを構築。",
+          "keyTechnologies": ["Python", "FastAPI", "AWS", "MySQL", "Docker"],
+          "achievements": [
+            "包括的なテストフレームワークを実装し、テストカバレッジを0%から80%に向上",
+            "GraphQL統合を含むFastAPIを使用したRESTful API構築",
+            "AWS Fargateへのコンテナ化アプリケーションのデプロイ",
+            "詳細なAPIドキュメント作成により知識のサイロ化を解消",
+            "継続的デプロイのための自動化CI/CDパイプライン確立"
+          ]
+        }
+      },
+      {
+        "en": {
+          "title": "Full-Stack Developer",
+          "company": "One Stop Innovation Inc.",
+          "focus": "E-Commerce & Analytics Platform",
+          "period": "2020 - 2022",
+          "description": "Built and maintained e-commerce platform and analytics systems for multiple clients, focusing on performance optimization and user experience.",
+          "keyTechnologies": ["PHP", "WordPress", "React", "MySQL", "Terraform"],
+          "achievements": [
+            "Developed custom WordPress themes and plugins for e-commerce sites",
+            "Implemented real-time inventory management system",
+            "Reduced page load time by 60% through optimization",
+            "Integrated Stripe payment processing with 99.9% transaction success rate",
+            "Managed cloud infrastructure using Terraform for Infrastructure as Code"
+          ]
+        },
+        "ja": {
+          "title": "フルスタック開発者",
+          "company": "One Stop Innovation株式会社",
+          "focus": "Eコマース・分析プラットフォーム",
+          "period": "2020年 - 2022年",
+          "description": "複数クライアント向けのEコマースプラットフォームと分析システムを構築・保守。パフォーマンス最適化とユーザーエクスペリエンスに注力。",
+          "keyTechnologies": ["PHP", "WordPress", "React", "MySQL", "Terraform"],
+          "achievements": [
+            "Eコマースサイト向けカスタムWordPressテーマとプラグイン開発",
+            "リアルタイム在庫管理システム実装",
+            "最適化によりページ読み込み時間を60%削減",
+            "99.9%の取引成功率を持つStripe決済処理統合",
+            "Infrastructure as CodeのためのTerraformによるクラウドインフラ管理"
+          ]
+        }
+      }
+    ],
+    "featuredProjects": [
+      {
+        "id": "jma-systems",
+        "icon": "mdi:database-cog",
+        "color": "green",
+        "en": {
+          "title": "Data Analytics Platform",
+          "description": "AWS-based data lake and analytics infrastructure for a major manufacturer. Integrated sales data, web logs, and operational data to provide real-time business insights.",
+          "technologies": ["AWS", "Python", "PySpark", "Redshift", "Glue", "QuickSight"],
+          "period": "2023 - 2024",
+          "impact": "80% Faster Deployments"
+        },
+        "ja": {
+          "title": "データ分析プラットフォーム",
+          "description": "大手製造業向けAWSベースのデータレイクと分析インフラ。売上データ、Webログ、運用データを統合し、リアルタイムのビジネスインサイトを提供。",
+          "technologies": ["AWS", "Python", "PySpark", "Redshift", "Glue", "QuickSight"],
+          "period": "2023年 - 2024年",
+          "impact": "デプロイ時間80%削減"
+        }
+      },
+      {
+        "id": "techdoctor",
+        "icon": "mdi:medical-bag",
+        "color": "blue",
+        "en": {
+          "title": "Healthcare Platform",
+          "description": "Digital biomarker development platform for healthcare services. Enabled healthcare providers to develop, test, and deploy patient monitoring solutions.",
+          "technologies": ["Python", "FastAPI", "AWS", "MySQL", "Docker", "GraphQL"],
+          "period": "2022 - 2023",
+          "impact": "0% to 80% Test Coverage"
+        },
+        "ja": {
+          "title": "ヘルスケアプラットフォーム",
+          "description": "医療サービス向けデジタルバイオマーカー開発プラットフォーム。医療提供者が患者監視ソリューションを開発、テスト、デプロイできるシステム。",
+          "technologies": ["Python", "FastAPI", "AWS", "MySQL", "Docker", "GraphQL"],
+          "period": "2022年 - 2023年",
+          "impact": "テストカバレッジ0%→80%"
+        }
+      },
+      {
+        "id": "ecommerce",
+        "icon": "mdi:shopping",
+        "color": "emerald",
+        "en": {
+          "title": "E-Commerce Platform",
+          "description": "Full-stack e-commerce platform with real-time inventory management, secure payment processing, and personalized user experience.",
+          "technologies": ["React", "Node.js", "MongoDB", "AWS", "Stripe", "Redux"],
+          "period": "2020 - 2022",
+          "impact": "35% Conversion Rate Boost"
+        },
+        "ja": {
+          "title": "Eコマースプラットフォーム",
+          "description": "リアルタイム在庫管理、安全な決済処理、パーソナライズされたユーザーエクスペリエンスを備えたフルスタックEコマースプラットフォーム。",
+          "technologies": ["React", "Node.js", "MongoDB", "AWS", "Stripe", "Redux"],
+          "period": "2020年 - 2022年",
+          "impact": "コンバージョン率35%向上"
+        }
+      }
+    ]
+  },
+  "footer": {
+    "title": "Kento Yokozuka",
+    "subtitle": "Software Engineer & UI/UX Designer",
+    "navigation": {
+      "title": "Navigation",
+      "home": "Home",
+      "software": "Software",
+      "uiux": "UI/UX",
+      "contact": "Contact"
+    },
+    "social": {
+      "title": "Social",
+      "message": "Let's connect and create something amazing",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    },
+    "copyright": "Kento Yokozuka. All rights reserved.",
+    "madeWithLove": "Made with passion"
+  }
+}

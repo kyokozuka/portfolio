@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(for file in src/features/uiux/components/*.tsx)",
+      "Bash(do echo \"=== $file ===\")",
+      "Bash(cat:*)",
+      "Bash(done)",
+      "Bash(npx jsonlint:*)",
+      "Bash(python3:*)",
+      "Bash(/dev/null)",
+      "Bash(npx tsc:*)",
+      "Bash(git log:*)",
+      "Bash(npx next build:*)",
+      "Bash(npm run type-check:*)",
+      "Bash(ls:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

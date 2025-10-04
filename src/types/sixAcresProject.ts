@@ -2,10 +2,7 @@
  * Six Acres project specific interfaces
  */
 
-export interface BeforeAfterImages {
-  before: string;
-  after: string;
-}
+import { BeforeAfterImages } from './uiuxProjectCommon';
 
 export interface ProcessData {
   tasks: string[];
