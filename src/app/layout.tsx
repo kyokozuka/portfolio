@@ -1,23 +1,25 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Kento Yokozuka - Portfolio",
-  description: "UI/UX Designer & Software Engineer Portfolio - Creative solutions for digital experiences",
+  title: "Kento Yokozuka — Software Engineer & UI/UX Designer",
+  description:
+    "Portfolio of Kento Yokozuka — 8+ years building scalable cloud infrastructure and crafting user-centered experiences.",
 };
 
 export default function RootLayout({
@@ -27,9 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${poppins.variable} antialiased`}
-      >
+      <body className={`${cormorant.variable} ${dmSans.variable}`}>
         {children}
       </body>
     </html>

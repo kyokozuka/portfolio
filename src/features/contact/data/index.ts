@@ -1,0 +1,1 @@
+export { contactData } from './contactData';

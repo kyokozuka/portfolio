@@ -1,2 +1,2 @@
-// Shared hooks can be exported here
-// Example: export { useLocalStorage } from './useLocalStorage';
+export * from './useLanguage';
+export * from './useReveal';

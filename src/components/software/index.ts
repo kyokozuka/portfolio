@@ -1,1 +1,0 @@
-export { default as SoftwareProjectLayout } from './SoftwareProjectLayout';

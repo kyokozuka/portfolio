@@ -1,17 +1,16 @@
 "use client";
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import MatrixBackground from "@/components/software/MatrixBackground";
-import HeroSection from "@/components/software/HeroSection";
-import KeyAchievements from "@/components/software/KeyAchievements";
-import CoreExpertise from "@/components/software/CoreExpertise";
-import ExperienceSection from "@/components/software/ExperienceSection";
-import FeaturedProjects from "@/components/software/FeaturedProjects";
-import ContactSection from "@/components/software/ContactSection";
-import SoftwareStyles from "@/components/software/SoftwareStyles";
-import SoftwareSkillsSection from "@/components/software/SoftwareSkillsSection";
-import { useSoftwarePage } from "@/hooks/software/useSoftwarePage";
+import { Header, Footer } from "@/shared/ui";
+import {
+  HeroSection,
+  KeyAchievements,
+  CoreExpertise,
+  ExperienceSection,
+  FeaturedProjects,
+  ContactSection,
+  SoftwareSkillsSection,
+} from "@/features/software/ui";
+import { useSoftwarePage } from "@/features/software/model";
 
 export default function SoftwarePage() {
   const {
@@ -24,34 +23,28 @@ export default function SoftwarePage() {
     keyAchievements,
     coreExpertise,
     allExperience,
-    featuredProjects
+    featuredProjects,
   } = useSoftwarePage();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
-      <MatrixBackground />
-
+    <div className="min-h-screen bg-canvas">
       <Header currentLang={currentLang} onLanguageChange={setCurrentLang} />
 
-      <div className="relative z-10 container mx-auto px-4 py-12">
+      <main>
         <HeroSection
           title={currentContent.title}
           description={currentContent.description}
           isLoaded={isLoaded}
         />
-
         <KeyAchievements achievements={keyAchievements} />
-
         <CoreExpertise
           expertise={coreExpertise}
           title={currentContent.coreExpertise.title}
         />
-
         <SoftwareSkillsSection
           title={currentContent.skills.title}
           currentLang={currentLang}
         />
-
         <ExperienceSection
           experience={allExperience}
           title={currentContent.experience.title}
@@ -61,19 +54,15 @@ export default function SoftwarePage() {
           onToggleExperience={() => setShowAllExperience(!showAllExperience)}
           currentLang={currentLang}
         />
-
         <FeaturedProjects
           projects={featuredProjects}
           title={currentContent.projects.title}
           currentLang={currentLang}
         />
-
         <ContactSection />
-      </div>
+      </main>
 
       <Footer currentLang={currentLang} />
-
-      <SoftwareStyles />
     </div>
   );
 }

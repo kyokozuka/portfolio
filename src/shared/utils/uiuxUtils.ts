@@ -1,4 +1,4 @@
-import { UIUXSkill } from '@/data/uiux/uiuxData';
+import { UIUXSkill } from '@/features/uiux/data';
 
 /**
  * Groups skills by category for display purposes

@@ -1,0 +1,11 @@
+export { default as ContactSection } from './ContactSection';
+export { default as CoreExpertise } from './CoreExpertise';
+export { default as ExperienceSection } from './ExperienceSection';
+export { default as FeaturedProjects } from './FeaturedProjects';
+export { default as HeroSection } from './HeroSection';
+export { default as KeyAchievements } from './KeyAchievements';
+export { default as MatrixBackground } from './MatrixBackground';
+export { default as SoftwareProjectLayout } from './SoftwareProjectLayout';
+export { default as SoftwareProjectPage } from './SoftwareProjectPage';
+export { default as SoftwareSkillsSection } from './SoftwareSkillsSection';
+export { default as SoftwareStyles } from './SoftwareStyles';

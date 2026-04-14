@@ -1,0 +1,1 @@
+export { useContactPage } from './useContactPage';
