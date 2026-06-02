@@ -194,313 +194,342 @@ export const codeElements: AnimationElement[] = [
 export const allExperience: Experience[] = [
   {
     en: {
-      title: "Solution Architect", company: "Jitera", period: "Jan 2026 - Present",
-      focus: "Business System Assessment & DX Proposal",
-      description: "Business system assessment and DX consulting for clients as primary employment",
-      keyTechnologies: [],
+      title: "Solution Architect",
+      company: "Jitera",
+      period: "Jul 2025 - Present",
+      focus: "Enterprise AI PoC & DX Consulting",
+      description: "Leading enterprise-focused AI-driven PoC development and end-to-end DX consulting. Conducting business process analysis, technology prototyping, and technical proposals for major manufacturers and investment companies.",
+      keyTechnologies: ["Claude API", "Claude Code", "Next.js", "Vercel", "Langfuse", "GCP"],
       achievements: [
-        "Conducted direct interviews with client stakeholders to identify pain points in existing business systems",
+        "Designed and implemented AI-powered impact finance investment data analysis and visualization PoC dashboard (frontend to API integration)",
+        "Built data interpretation and insight generation features using Anthropic API (Claude)",
+        "Achieved rapid prototyping with AI-assisted development using Claude Code, building and deploying demo environment with Next.js + Vercel",
+        "Introduced Langfuse for prompt version management, response quality visualization, and API cost optimization",
+        "Conducted direct stakeholder interviews to identify existing business system pain points",
         "Visualized and documented As-Is (current business flow) processes",
-        "Designed To-Be (ideal state) business processes and defined HLD for system improvement direction",
-        "Created proposal materials including ROM estimates and presented directly to clients",
-        "Led requirements definition upstream phase independently",
+        "Designed To-Be (ideal state) business processes and HLD for system improvement direction",
+        "Created proposal materials with ROM estimates and conducted direct client presentations",
+        "Led upstream requirements definition phase independently",
         "Delivered proposals combining technical and business perspectives"
       ]
     },
     ja: {
-      title: "Solution Architect", company: "株式会社Jitera", period: "2026年01月 - 現在",
-      focus: "業務システムアセスメント・DX提案",
-      description: "本業として水産業（海藻）企業向け業務システムアセスメントおよびDXコンサルティングを担当",
-      keyTechnologies: [],
+      title: "ソリューションアーキテクト",
+      company: "株式会社Jitera",
+      period: "2025年07月 - 現在",
+      focus: "エンタープライズAI駆動PoC・DXコンサルティング",
+      description: "エンタープライズ向けAI駆動PoC開発とエンドツーエンドDXコンサルティングを主導。技術プロトタイピングからビジネス提案まで一貫して担当。",
+      keyTechnologies: ["Claude API", "Claude Code", "Next.js", "Vercel", "Langfuse", "GCP"],
       achievements: [
-        "クライアント担当者への直接ヒアリングを実施し、既存業務システムの課題・ペインポイントを抽出・整理",
-        "AsIs（現状業務フロー）の可視化・ドキュメント化",
-        "ToBe（あるべき姿）の業務プロセス設計・HLD（高位設計）によるシステム改善方針の策定",
-        "ROM（概算見積）を含む提案資料を作成し、クライアントへ直接提案・説明を実施",
-        "要件定義上流フェーズを単独でリード",
-        "技術視点と業務視点を掛け合わせた提案を実現"
+        "インパクトファイナンス投資データの分析・可視化を行うAI駆動PoCダッシュボードをフロントエンドからAPI連携まで設計・実装",
+        "Anthropic API（Claude）を活用してデータ解釈・インサイト生成機能を構築",
+        "Claude Codeによる AI支援開発で急速プロトタイピングを実施し、Next.js・Vercelによるクライアントデモ環境を構築・デプロイ",
+        "Langfuseを導入しプロンプトバージョン管理・レスポンス品質可視化・APIコスト最適化を実現",
+        "クライアントのステークホルダーへの直接インタビューを実施し、既存業務システムの課題・ペインポイントを特定",
+        "As-Is（現状業務フロー）プロセスを可視化・ドキュメント化",
+        "To-Be（理想状態）の業務プロセスとシステム改善方針のHLDを設計",
+        "ROMスケジュメント含む提案資料を作成しクライアントに直接プレゼンテーション",
+        "上流工程の要件定義フェーズを独立して主導",
+        "技術・ビジネス両視点を融合した提案を実現"
       ]
     }
   },
   {
     en: {
-      title: "Solution Architect", company: "Jitera (Side Job)", period: "Jul 2025 - Dec 2025",
-      focus: "AI PoC Development & DX Consulting",
-      description: "Developed AI-powered data visualization PoC and conducted business system assessment as side employment",
-      keyTechnologies: ["Next.js", "Vercel", "Anthropic API (Claude)", "Claude Code", "Langfuse"],
+      title: "Software Engineer",
+      company: "JMA Systems",
+      period: "Apr 2024 - Apr 2026",
+      focus: "Data Analytics Platform Development",
+      description: "Leading development, operation, and maintenance of sales data analytics platform for major manufacturers. Building scalable data infrastructure with AWS and Python.",
+      keyTechnologies: ["Python", "PySpark", "Pandas", "Apache Spark", "AWS", "Athena", "Glue", "Redshift", "S3", "Step Functions", "CDK", "CloudWatch", "EventBridge", "IAM", "CodeCommit", "CodePipeline", "IaC", "ETL"],
       achievements: [
-        "Designed and implemented end-to-end PoC dashboard for analyzing and visualizing impact finance investment data using AI (frontend to API integration)",
-        "Designed and implemented data interpretation and insight generation features using Anthropic API (Claude)",
-        "Built rapid prototyping and client demo environment using Next.js + Vercel",
-        "Accelerated prototyping through AI-assisted development using Claude Code",
-        "Introduced Langfuse for prompt version management, response quality visualization, and API cost optimization",
-        "Achieved integrated visualization of qualitative and quantitative data using AI with MLOps-oriented quality and cost management",
-        "Conducted client interviews, As-Is analysis, To-Be design, HLD, and ROM for DX proposal independently"
-      ]
-    },
-    ja: {
-      title: "Solution Architect", company: "株式会社Jitera（副業）", period: "2025年07月 - 2025年12月",
-      focus: "AI活用PoC開発・DXコンサルティング",
-      description: "副業としてAIを活用したデータ可視化PoCの開発および業務システムアセスメントを担当",
-      keyTechnologies: ["Next.js", "Vercel", "Anthropic API（Claude）", "Claude Code", "Langfuse"],
-      achievements: [
-        "インパクトファイナンスの投資・社会的効果データをAIで分析・可視化するダッシュボードをPoC実装（フロントエンド〜API連携を一気通貫で担当）",
-        "Anthropic API（Claude）を活用したデータ解釈・インサイト生成機能の設計・実装",
-        "Next.js + Vercelによる高速プロトタイピングとクライアントへのデモ環境構築",
-        "Claude Codeを活用したAI支援開発によりプロタイピングを高速化",
-        "Langfuseを導入しプロンプトのバージョン管理・レスポンス品質の可視化・APIコスト最適化の設計を実施",
-        "AIによる定性・定量データの統合可視化を実現し、LLMの品質・コスト両面を管理できるMLOps的な観点を持った実装を実現",
-        "クライアントへのヒアリング・AsIs分析・ToBe設計・HLD・ROMによるDX提案を単独でリード"
-      ]
-    }
-  },
-  {
-    en: {
-      title: "Software Engineer", company: "JMA Systems (Side Job)", period: "Feb 2024 - Present",
-      focus: "Data Analytics Platform Construction",
-      description: "New development and operation of data analytics infrastructure for major clients",
-      keyTechnologies: ["Python", "SQL", "Apache Spark", "AWS", "S3", "Glue", "Redshift", "Step Functions", "CloudWatch", "IaC"],
-      achievements: [
-        "Implemented ETL pipelines for collecting, transforming, and storing data from multiple business systems (processing MB to hundreds of GB daily)",
+        "Designed, implemented, and operated ETL pipelines processing MB to hundreds of GB of data daily from multiple business systems",
         "Developed large-scale batch processing using Apache Spark",
-        "Implemented workflow control using AWS Step Functions",
-        "Built AWS infrastructure from scratch using IaC, enabling reproducible environment setup and code-managed infrastructure",
-        "Contributed to development and production environment setup and internal standardization",
+        "Implemented workflow orchestration using AWS Step Functions",
+        "Built AWS infrastructure from scratch using IaC (AWS CDK), enabling reproducible environment setup and code-managed infrastructure — reduced development effort by 50%",
+        "Designed IAM policies and implemented CloudWatch + EventBridge monitoring and alerting to significantly reduce incident detection time",
+        "Built CI/CD environment using CodeCommit + CodePipeline, automating test and release processes — reduced deployment time by 80%",
         "Designed pipeline monitoring using CloudWatch and handled incident investigation and recovery",
-        "Reduced handover and maintenance costs through operational documentation"
+        "Contributed to standardizing development and production environments, reducing handover and maintenance costs through operational documentation"
       ]
     },
     ja: {
-      title: "ソフトウェアエンジニア", company: "株式会社ジェーエムエーシステムズ（副業）", period: "2024年02月 - 現在",
-      focus: "データ分析基盤新規構築・保守運用",
-      description: "大手クライアント向けデータ分析基盤の新規構築および保守運用を担当",
-      keyTechnologies: ["Python", "SQL", "Apache Spark", "AWS", "S3", "Glue", "Redshift", "Step Functions", "CloudWatch", "IaC"],
+      title: "ソフトウェアエンジニア",
+      company: "株式会社ジェーエムエーシステムズ",
+      period: "2024年04月 - 2026年04月",
+      focus: "データ分析基盤開発・運用",
+      description: "大手メーカーの売上データ分析プラットフォームの開発、運用、保守を主導。AWSとPythonを活用し、スケーラブルなデータインフラを構築。",
+      keyTechnologies: ["Python", "PySpark", "Pandas", "Apache Spark", "AWS", "Athena", "Glue", "Redshift", "S3", "Step Functions", "CDK", "CloudWatch", "EventBridge", "IAM", "CodeCommit", "CodePipeline", "IaC", "ETL"],
       achievements: [
-        "複数業務システムからのデータ収集・変換・蓄積を行うETLパイプラインを実装（日次 数MB〜数百GB規模のデータを処理）",
-        "Apache Sparkを活用した大規模バッチ処理の開発",
-        "AWS Step Functionsを用いたワークフロー制御の実装",
-        "AWSインフラをIaCでゼロから構築し、インフラのコード管理・再現性のある環境構築を実現",
-        "開発・本番環境の整備および社内標準化に貢献",
-        "CloudWatchを活用したパイプライン監視設計と障害発生時の調査・復旧対応",
-        "運用ドキュメント整備による引き継ぎ・保守コストの低減"
+        "AWS（Athena、Glue、Redshift、S3）とPython（PySpark、Pandas）を用いたETLパイプラインを設計・実装・運用し、複数の業務システムから毎日MBから数百GBのデータを処理",
+        "Apache Sparkによる大規模バッチ処理を開発し、大容量データ変換ワークロードに対応",
+        "AWS Step Functionsを使用したワークフロー調整を実装し、確実で自動化されたパイプライン実行を実現",
+        "AWS CDKを用いたAWSインフラをスクラッチで構築し、再現可能な環境セットアップとコード管理インフラを実現——開発工数を50%削減",
+        "IAMポリシーの設計およびCloudWatch・EventBridgeによるログ監視・アラート設計を実施し、障害検知時間を大幅に短縮",
+        "CodeCommit・CodePipelineを活用したCI/CD環境を構築し、テスト・リリースプロセスを自動化——デプロイ時間を80%削減",
+        "CloudWatchによるパイプライン監視を設計し、インシデント調査・復旧を担当",
+        "開発・本番環境の標準化に貢献し、運用ドキュメントの整備により引き継ぎ・保守コストを削減"
       ]
     }
   },
   {
     en: {
-      title: "Support Engineer", company: "Microsoft Japan", period: "Oct 2022 - Aug 2023",
-      focus: "Azure App Service Support",
-      description: "Technical support for Azure App Service and related cloud services for domestic enterprises",
-      keyTechnologies: ["Microsoft Azure", "App Service"],
+      title: "Support Engineer",
+      company: "Microsoft Japan",
+      period: "Oct 2022 - Jul 2023",
+      focus: "Azure App Service Technical Support",
+      description: "Provided technical support for Azure App Service and related cloud services for domestic enterprises. Conducted root cause analysis and knowledge management.",
+      keyTechnologies: ["Microsoft Azure", "App Service", "Application Insights", "Kusto Query Language", "SQL", "GitLab", "CI/CD"],
       achievements: [
         "Handled technical inquiries, investigation, and resolution for Azure App Service from domestic enterprises",
-        "Managed incident and failure investigation, recovery support, and escalation response",
-        "Documented knowledge gained through support operations to improve knowledge base quality",
-        "Contributed to knowledge management frameworks for preventing recurrence and improving efficiency"
+        "Managed incident investigation, recovery support, and escalation response for business-critical issues",
+        "Used Application Insights and Kusto Query Language (KQL) to analyze logs and identify root causes of customer issues",
+        "Developed automation scripts for recurring issues to improve system reliability and reduce resolution time",
+        "Documented support knowledge gained and organized knowledge base to reduce duplicate inquiries and onboarding costs",
+        "Contributed to building knowledge management framework for incident prevention and continuous operational efficiency improvement"
       ]
     },
     ja: {
-      title: "サポートエンジニア", company: "日本マイクロソフト", period: "2022年10月 - 2023年08月",
-      focus: "Azure App Serviceサポート",
-      description: "国内企業向けAzure App Serviceおよび関連クラウドサービスのテクニカルサポートを担当",
-      keyTechnologies: ["Microsoft Azure", "App Service"],
+      title: "サポートエンジニア",
+      company: "日本マイクロソフト",
+      period: "2022年10月 - 2023年07月",
+      focus: "Azure App Service テクニカルサポート",
+      description: "国内エンタープライズ向けにAzure App ServiceおよびAzure関連クラウドサービスのテクニカルサポートを担当。フロントライン対応から根本原因分析、ナレッジ体系化まで一貫して従事。",
+      keyTechnologies: ["Microsoft Azure", "App Service", "Application Insights", "Kusto Query Language", "SQL", "GitLab", "CI/CD"],
       achievements: [
-        "国内企業向けAzure App Serviceに関する技術問い合わせの調査・回答・解決対応を担当",
-        "障害・インシデント発生時の原因調査・復旧支援・エスカレーション対応を実施",
-        "サポート対応で得た知見をドキュメント化しナレッジベースの整備・品質向上に貢献",
-        "再発防止・対応効率化を目的としたナレッジ蓄積の仕組みづくりに貢献"
+        "エンタープライズクライアントからのAzure App Serviceに関する技術的な問い合わせ・調査・解決を担当し、迅速かつ正確なインシデント対応を実現",
+        "障害調査・復旧支援・エスカレーション対応を管理し、ビジネスへの影響を最小化",
+        "GitLabを使用したCI/CDスクリプトを開発し、Azure App Serviceへのアプリケーションデプロイワークフローを効率化",
+        "Application InsightsおよびKusto Query Language（KQL）を活用してログを分析し、顧客の問題の根本原因を特定・トレース",
+        "再発する問題に対し自動化スクリプトを開発し、システム信頼性の向上と解決時間の短縮を実現",
+        "サポート業務で得たナレッジをドキュメント化・ナレッジベースとして整備し、チーム全体の重複問い合わせとオンボーディングコストを削減",
+        "再発防止と継続的な業務効率改善のためのナレッジマネジメントフレームワークの構築に貢献"
       ]
     }
   },
   {
     en: {
-      title: "Software Engineer", company: "One Stop Innovation (Freelance)", period: "Sep 2021 - Sep 2024",
-      focus: "E-Commerce & Data Analytics Platform",
-      description: "End-to-end development and operation of e-commerce system and data analytics platform for major stationery manufacturer",
-      keyTechnologies: ["PHP", "Node.js", "MySQL", "WordPress", "AWS", "Terraform", "BI Tools"],
+      title: "Software Engineer",
+      company: "TechDoctor",
+      period: "Jul 2023 - Dec 2023",
+      focus: "Healthcare Platform Development",
+      description: "Built healthcare service systems and digital biomarker development platform. Utilized AWS Fargate and Python with DDD and TDD methodologies.",
+      keyTechnologies: ["Python", "FastAPI", "Domain-Driven Design", "AWS", "Fargate", "S3", "Pytest", "unittest", "Test-Driven Development"],
       achievements: [
-        "Managed end-to-end development and operation of e-commerce system and analytics platform for major stationery/office equipment manufacturer",
-        "Managed e-commerce site operations using WordPress (content updates, product uploads)",
-        "Built data analytics infrastructure from scratch including DB design, API integration, and BI dashboard creation",
-        "Improved page load time from 15 seconds to 400ms (~97% improvement) through performance tuning",
-        "Improved data display time from 100 seconds to 10 seconds (90% improvement) through MySQL query tuning",
-        "Introduced Terraform for AWS resource IaC management, enabling reproducibility and change management",
-        "Reduced development effort by 50% through IaC adoption"
+        "Introduced test-driven design using Python (Pytest, unittest), improving test coverage from 0% to 80%",
+        "Conducted documentation improvements to eliminate knowledge silos and reduce operational costs",
+        "Designed and developed healthcare service system and digital biomarker development platform using Python (FastAPI, DDD) and AWS (Fargate, S3)"
       ]
     },
     ja: {
-      title: "Software Engineer", company: "One Stop Innovation（フリーランス）", period: "2021年09月 - 2024年09月",
-      focus: "Eコマース・データ分析基盤",
-      description: "大手文具・事務器具メーカー向けEコマースシステムおよびデータ分析基盤の開発・運用を一貫して担当",
-      keyTechnologies: ["PHP", "Node.js", "MySQL", "WordPress", "AWS", "Terraform", "BIツール"],
+      title: "ソフトウェアエンジニア",
+      company: "TechDoctor",
+      period: "2023年07月 - 2023年12月",
+      focus: "ヘルスケアプラットフォーム開発",
+      description: "ヘルスケアサービスシステムの構築・運用を担当。デジタルバイオマーカー開発プラットフォームを含む。AWS（Fargate、S3）とPython（FastAPI、DDD）を活用し、プラットフォームを開発・運用。",
+      keyTechnologies: ["Python", "FastAPI", "Domain-Driven Design", "AWS", "Fargate", "S3", "Pytest", "unittest", "Test-Driven Development"],
       achievements: [
-        "大手文具・事務器具メーカー向けEコマースシステムおよび分析基盤の構築・運用までを一貫して担当",
-        "WordPressを使用し、ハンコ会社のEコマースサイト運営を管理（コンテンツ更新・商品アップロード等）",
-        "分析基盤のためのデータ基盤をスクラッチで構築、DB設計・API連携およびBIツールを用いたダッシュボード作成を実施",
-        "Eコマースサイトのページ表示時間をパフォーマンスチューニングにより15秒 → 400ミリ秒（約97%改善）に大幅改善",
-        "MySQLのクエリチューニングによりデータ表示時間を 100秒 → 10秒（90%改善）に改善",
-        "TerraformによるAWSリソースのIaC管理を導入し、インフラの再現性・変更管理を実現",
-        "IaC化により開発工数を50%削減"
+        "Python（Pytest、unittest）でテスト駆動設計（TDD）を導入し、カバレッジを0%から80%に改善",
+        "ドキュメントの整備を実施し、属人化をなくすことによりコストを削減",
+        "ヘルスケアサービスシステムおよびデジタルバイオマーカー開発プラットフォームをPython（FastAPI、DDD）とAWS（Fargate、S3）で設計・実装"
       ]
     }
   },
   {
     en: {
-      title: "SRE", company: "Luup (Side Job)", period: "Aug 2021 - Aug 2023",
-      focus: "Electric Micro-Mobility Service SRE",
-      description: "Product development and SRE for electric micro-mobility service",
-      keyTechnologies: ["GCP", "Cloud Logging", "Cloud Monitoring"],
+      title: "Software Engineer",
+      company: "Luup",
+      period: "Jun 2021 - Oct 2022",
+      focus: "Electric Micro-Mobility Platform SRE",
+      description: "Contributed to product development and SRE for electric micro-mobility IoT service from both development and operations perspectives. Worked across GCP, Firebase, and AWS.",
+      keyTechnologies: ["TypeScript", "Node.js", "Express", "Python", "GCP", "Cloud Functions", "Firestore", "Cloud Logging", "Cloud Monitoring", "Firebase", "AWS", "Infrastructure as Code", "GitHub Actions", "REST API", "MQTT"],
       achievements: [
-        "Worked as backend engineer for electric micro-mobility service product development",
-        "Continuously implemented feature development and improvements",
-        "Designed and built logging infrastructure using Cloud Logging",
-        "Designed alert monitoring system using Cloud Monitoring to ensure service stability",
-        "Designed SLI/SLO to establish quantitative service quality management and improvement cycles",
-        "Contributed as an engineer with both developer and operations perspectives",
-        "Gained hands-on experience in reliability design for real-time mobility services"
+        "Developed and operated REST and MQTT APIs for real-time mobility service using GCP + Firebase (Cloud Functions, Firestore) and TypeScript (Express)",
+        "Designed and built logging infrastructure using Cloud Logging and alert monitoring system using Cloud Monitoring to significantly reduce failure detection time",
+        "Designed SLI/SLO framework to establish quantitative service quality management and continuous improvement cycles",
+        "Implemented AWS and GCP infrastructure using IaC, reducing development and operations costs by 50%",
+        "Introduced automated testing with GitHub Actions and CI/CD pipelines, eliminating 100% of manual testing and deployment effort",
+        "Practiced SRE for real-time mobility service reliability design, gaining cross-functional engineering experience spanning development and operations"
       ]
     },
     ja: {
-      title: "SRE", company: "株式会社Luup（副業）", period: "2021年08月 - 2023年08月",
-      focus: "電動マイクロモビリティサービス SRE",
-      description: "電動マイクロモビリティサービスのプロダクト開発およびSREを担当",
-      keyTechnologies: ["GCP", "Cloud Logging", "Cloud Monitoring"],
+      title: "ソフトウェアエンジニア",
+      company: "株式会社Luup",
+      period: "2021年06月 - 2022年10月",
+      focus: "電動マイクロモビリティ SRE",
+      description: "電動マイクロモビリティIoTサービスのプロダクト開発およびSREを担当し、開発・運用の両視点からGCP・Firebase・AWSを横断して貢献。",
+      keyTechnologies: ["TypeScript", "Node.js", "Express", "Python", "GCP", "Cloud Functions", "Firestore", "Cloud Logging", "Cloud Monitoring", "Firebase", "AWS", "Infrastructure as Code", "GitHub Actions", "REST API", "MQTT"],
       achievements: [
-        "電動マイクロモビリティサービスのプロダクト開発をバックエンドエンジニアとして担当",
-        "機能開発・改善を継続的に実施",
-        "Cloud Loggingを活用したログ基盤の設計・構築を担当",
-        "Cloud Monitoringによるアラート設計・監視体制を構築しサービスの安定稼働を実現",
-        "SLI/SLOを設計し、サービス品質の定量的な管理・改善サイクルを確立",
-        "プロダクト開発とSREを同等に担当し、開発者視点と運用者視点の両方を持つエンジニアとして貢献",
-        "リアルタイム性が求められるモビリティサービスにおける信頼性設計の実務経験を習得"
+        "GCP・Firebase（Cloud Functions、Firestore）とTypeScript（Express）を活用し、リアルタイムモビリティサービス向けのREST・MQTT APIを開発・運用",
+        "Cloud Loggingによるログ基盤、Cloud Monitoringによるアラート監視システムを設計・構築し、障害検知時間を大幅に短縮",
+        "SLI/SLOフレームワークを設計し、定量的なサービス品質管理と継続的改善サイクルを確立",
+        "AWS・GCP両環境のインフラをIaCで実装し、開発・運用コストを50%削減",
+        "GitHub Actionsによる自動テストとCI/CDパイプラインを導入し、手動テスト・デプロイ工数を100%削減",
+        "リアルタイムモビリティサービスにおける信頼性設計のSREを実践し、開発と運用を横断するエンジニアリング経験を獲得"
       ]
     }
   },
   {
     en: {
-      title: "Backend Engineer", company: "Asial Corporation", period: "Apr 2021 - Dec 2021",
-      focus: "New Graduate Recruitment Site Backend",
-      description: "Backend development and maintenance of major new graduate recruitment information site (outsourced)",
-      keyTechnologies: ["Node.js", "TypeScript", "NestJS", "AWS", "Docker", "Nginx", "Jira"],
+      title: "Software Engineer",
+      company: "snaq.me",
+      period: "Mar 2022 - Aug 2022",
+      focus: "Subscription Service Platform",
+      description: "Built and operated snack subscription service platform using AWS and Python FastAPI.",
+      keyTechnologies: ["Python", "FastAPI", "JavaScript", "AWS", "Lambda", "S3", "Github"],
       achievements: [
-        "Designed and implemented backend of recruitment information site from scratch",
-        "Designed, developed, and built RESTful API server",
-        "Performed DB schema design and query optimization for performance tuning",
+        "Built and operated content delivery batch processing using AWS (Lambda, S3) and Python (FastAPI)",
+        "Created custom in-house library, achieving 40% development cost reduction"
+      ]
+    },
+    ja: {
+      title: "ソフトウェアエンジニア",
+      company: "snaq.me",
+      period: "2022年03月 - 2022年08月",
+      focus: "サブスクリプション提供サービス",
+      description: "AWSを使用してスナックのサブスクリプション提供サービスの構築・運用を担当。",
+      keyTechnologies: ["Python", "FastAPI", "JavaScript", "AWS", "Lambda", "S3", "Github"],
+      achievements: [
+        "AWS（Lambda、S3）とPython（FastAPI）を使用してコンテンツ配信バッチ処理を構築・運用",
+        "自社カスタムライブラリを作成することにより、40%の開発コストの削減を実現"
+      ]
+    }
+  },
+  {
+    en: {
+      title: "Backend Engineer",
+      company: "Asial Corporation",
+      period: "Apr 2021 - Nov 2021",
+      focus: "New Graduate Recruitment Platform",
+      description: "Backend development and maintenance of major new graduate recruitment information site and university entrance exam system (outsourced).",
+      keyTechnologies: ["TypeScript", "JavaScript", "Node.js", "NestJS", "Docker", "MySQL", "AWS", "VPC", "EC2", "RDS", "Jira", "RESTful API"],
+      achievements: [
+        "Designed and built backend of new graduate recruitment platform from scratch using AWS (VPC), Docker, NestJS (Node.js), and MySQL",
+        "Built and operated university entrance exam system using Docker, NestJS (Node.js), and MySQL",
+        "Designed RESTful API server architecture and developed database schema design with query optimization for performance tuning",
+        "Optimized MySQL for job matching platform serving 1+ million users annually — improved query execution time from 2 seconds to 200ms (90% reduction)",
         "Implemented authentication and security features to build secure system infrastructure",
-        "Managed defect and incident response for live services",
-        "Continuously implemented new features as backend engineer",
-        "Promoted task and issue management using Jira"
+        "Handled incident response and incident resolution for live service operations",
+        "Promoted task and issue management using Jira across the team"
       ]
     },
     ja: {
-      title: "バックエンドエンジニア", company: "アジアル株式会社", period: "2021年04月 - 2021年12月",
-      focus: "新卒採用情報サイト バックエンド",
-      description: "大手新卒採用情報サイトのバックエンド開発・運用保守（受託）",
-      keyTechnologies: ["Node.js", "TypeScript", "NestJS", "AWS", "Docker", "Nginx", "Jira"],
+      title: "バックエンドエンジニア",
+      company: "アジアル株式会社",
+      period: "2021年04月 - 2021年11月",
+      focus: "新卒採用プラットフォーム",
+      description: "新卒採用プラットフォームおよび大学入試システムのバックエンド開発・保守を担当（受託）。",
+      keyTechnologies: ["TypeScript", "JavaScript", "Node.js", "NestJS", "Docker", "MySQL", "AWS", "VPC", "EC2", "RDS", "Jira", "RESTful API"],
       achievements: [
-        "採用情報サイトのバックエンドをゼロから設計・実装",
-        "RESTful APIサーバーの設計・開発・構築を担当",
-        "DBスキーマ設計およびクエリ最適化・パフォーマンスチューニングを実施",
-        "認証機能・セキュリティ実装を担当し、安全なシステム基盤を構築",
-        "稼働中サービスの瑕疵対応・障害対応を担当",
-        "新機能開発をバックエンドエンジニアとして継続実施",
-        "Jiraを活用したタスク・課題管理を推進"
+        "AWS（VPC）、Docker、NestJS（Node.js）、MySQLを用いた新卒採用プラットフォームのバックエンドをスクラッチで設計・構築",
+        "Docker、NestJS（Node.js）、MySQLによる大学入試システムの構築・運用を担当",
+        "RESTful APIサーバーのアーキテクチャ設計・開発、DBスキーマ設計およびパフォーマンスチューニングのためのクエリ最適化を実施",
+        "年間100万人以上が利用する求人マッチングプラットフォームのMySQL最適化を担当し、クエリロジックとインデックスを改善——クエリ実行時間を2秒から200msに短縮（90%削減）",
+        "認証・セキュリティ機能を実装し、セキュアなシステムインフラを構築",
+        "本番サービスの障害対応・インシデントレスポンスを担当し、プラットフォームの安定稼働を維持",
+        "Jiraを活用したタスク・課題管理をチーム全体で推進"
       ]
     }
   },
   {
     en: {
-      title: "Executive Director / CTO", company: "T2Lab", period: "Mar 2020 - Feb 2021",
-      focus: "IoT Odor Sensor Platform & AWS Cloud Migration",
-      description: "Full-stack development of IoT odor visualization platform and AWS cloud migration consulting for enterprise clients",
-      keyTechnologies: ["Python", "Node.js", "TypeScript", "React.js", "AWS", "Serverless Framework", "Web Bluetooth API", "Terraform", "Selenium"],
+      title: "Software Engineer / CTO",
+      company: "T2Lab",
+      period: "Feb 2020 - Mar 2021",
+      focus: "IoT Odor Visualization Platform & Cloud Migration",
+      description: "Led full-stack development of IoT odor visualization platform for major global manufacturers and provided AWS cloud migration consulting for enterprise clients.",
+      keyTechnologies: ["React.js", "Node.js", "TypeScript", "Python", "Flask", "AWS", "Lambda", "DynamoDB", "API Gateway", "S3", "EC2", "RDS", "IAM", "Terraform", "Web Bluetooth API", "Selenium", "Github"],
       achievements: [
-        "Collected and preprocessed odor data from gas sensors and built ML-based odor classification model",
-        "Improved classification accuracy by combining data from multiple sensors",
-        "Designed and built IoT integration for real-time data acquisition from odor measurement devices via Web Bluetooth API",
-        "Designed, developed, and built client-side using React.js and backend APIs using AWS Serverless (Lambda) and Node.js/TypeScript",
+        "Collected and preprocessed odor data from gas sensors and built ML-based odor classification model to improve classification accuracy by combining data from multiple sensors",
+        "Designed and built IoT integration for real-time odor measurement device data acquisition via Web Bluetooth API",
+        "Designed, developed, and built frontend using React.js and backend APIs using AWS Serverless (Lambda, DynamoDB, API Gateway, S3) and Node.js/TypeScript",
         "Designed and built automated email delivery system",
-        "Designed AWS education curriculum from scratch for enterprise cloud migration and provided training",
-        "Developed cloud migration automation using Terraform-based IaC and built business system software in Node.js/TypeScript for AWS migration",
-        "Implemented RPA and business automation using Selenium",
+        "Designed AWS training curriculum from scratch for enterprise cloud migration and conducted hands-on training for client engineers",
+        "Implemented cloud migration automation using Terraform IaC and built business system software in Node.js/TypeScript for AWS migration",
+        "Implemented RPA and business process automation using Selenium",
         "Handled end-to-end upstream project management from estimation to requirements definition, design, and testing"
       ]
     },
     ja: {
-      title: "執行役員・CTO", company: "T2Lab", period: "2020年03月 - 2021年02月",
-      focus: "IoTニオイセンサープラットフォーム・AWSクラウド移行",
-      description: "大手メーカー向けニオイ可視化プラットフォームのフルスタック開発およびクライアント企業向けAWSクラウド移行支援・教育を担当",
-      keyTechnologies: ["Python", "Node.js", "TypeScript", "React.js", "AWS", "Serverless Framework", "Web Bluetooth API", "Terraform", "Selenium"],
+      title: "ソフトウェアエンジニア・CTO",
+      company: "T2Lab",
+      period: "2020年02月 - 2021年03月",
+      focus: "IoT臭気可視化プラットフォーム・クラウド移行",
+      description: "大手グローバルメーカー向けIoT臭気可視化プラットフォームのフルスタック開発を主導し、エンタープライズクライアントへのAWSクラウド移行コンサルティングを提供。",
+      keyTechnologies: ["React.js", "Node.js", "TypeScript", "Python", "Flask", "AWS", "Lambda", "DynamoDB", "API Gateway", "S3", "EC2", "RDS", "IAM", "Terraform", "Web Bluetooth API", "Selenium", "Github"],
       achievements: [
-        "ガスセンサーから取得したニオイデータの収集・前処理を担当し、機械学習を用いたニオイ判定モデルを構築・実装",
-        "複数センサーのデータを組み合わせたニオイの種類・強度の判別精度向上に貢献",
-        "Web Bluetooth APIを用いニオイ計測デバイスからリアルタイムでデータ取得するIoT連携機能を設計・開発・構築",
-        "React.jsによるクライアントサイドの設計・開発・構築、AWSサーバーレス（Lambda等）によるバックエンドAPI設計・開発・構築",
-        "自動メール配信システムの設計・開発・構築",
-        "オンプレミスからAWSクラウド移行を目的としたAWS教育カリキュラム・教材をゼロから設計・作成し、クライアント企業のエンジニアを対象に講師として担当",
-        "Terraformを用いたIaC構成によるクラウド移行の自動デプロイ設計・開発および業務管理システムのAWS移行向けソフトウェア開発（Node.js/TypeScript）を担当",
-        "Seleniumを活用したRPA開発・業務自動化を実装",
-        "見積もり・要件定義・設計〜テストまで一連の上流工程を一貫して担当"
+        "ガスセンサーから取得した臭いデータの収集・前処理を行い、MLベースの臭気分類モデルを構築、複数センサーのデータ統合により分類精度を向上",
+        "Web Bluetooth APIを活用し、臭気測定デバイスからのリアルタイムデータ取得のためのIoT連携を設計・構築",
+        "フロントエンドはReact.js、バックエンドAPIはAWS Serverless（Lambda、DynamoDB、API Gateway、S3）とNode.js/TypeScript、Python（Flask、Clean Architecture）で開発",
+        "自動メール配信システムを設計・構築し、手動労力の工数を削減",
+        "EC2・S3・RDS・Lambda・IAMを網羅したAWSトレーニングカリキュラムをスクラッチから設計し、エンタープライズクライアントへのハンズオン研修を実施",
+        "Terraformによるコードクラウド移行自動化を実現し、AWSへ移行のビジネスシステムをNode.js/TypeScriptで構築",
+        "SeleniumによるRPAとビジネスプロセス自動化を実装",
+        "要件もり・要件定義・設計・テストまでの上流工程プロジェクトマネジメントをエンドツーエンドで担当"
       ]
     }
   },
   {
     en: {
-      title: "Software Engineer", company: "Micro CAD", period: "Feb 2017 - Jan 2020",
-      focus: "IP Management System & Internal Systems Management",
-      description: "BtoB intellectual property management system customization and internal IT department management",
-      keyTechnologies: ["PHP", "HTML", "JavaScript", "MySQL", "Subversion", "Redmine", "AWS", "Lambda", "DynamoDB", "API Gateway", "Flask", "jQuery"],
+      title: "Systems Manager",
+      company: "Micro CAD",
+      period: "Feb 2018 - Jan 2020",
+      focus: "IT Systems Department Management",
+      description: "Managed IT systems department as department head, overseeing organization management and technical requirement coordination while ensuring continuous improvement and operational stability of enterprise systems.",
+      keyTechnologies: ["ISMS Information Security Management", "System Requirements Definition", "AWS Operations", "Team Management"],
       achievements: [
-        "Led end-to-end design, development, and testing of customization features for enterprise IP management system (team size: 4-10)",
-        "Covered full development lifecycle from basic design and detailed design to test design and execution",
-        "Implemented object-oriented design in PHP and designed/developed expense integration feature between enterprise systems",
-        "Led new feature proposals, design, development, and architecture",
-        "Managed development schedules, team members' tasks, progress, evaluation, and development",
-        "Coordinated requirements with parent company and handled ISMS information security management",
-        "Developed full-stack attendance management system using AWS (Lambda, DynamoDB, API Gateway, VPC) and Flask/jQuery, released within ~1 month from requirements definition"
+        "Managed team of 4-10 engineers including schedule planning, task distribution, progress tracking, and performance evaluation",
+        "Led technical requirement coordination with parent company and ISMS information security management",
+        "Continuously optimized enterprise IP management system to ensure system stability and availability",
+        "Improved AWS infrastructure operational stability and cost optimization"
       ]
     },
     ja: {
-      title: "ソフトウェアエンジニア", company: "株式会社マイクロ・シー・エー・デー", period: "2017年02月 - 2020年01月",
-      focus: "知財管理システム・社内システム部門長",
-      description: "BtoB向け知財管理システムのカスタマイズ開発・運用保守と社内システム部門の部門長を担当",
-      keyTechnologies: ["PHP", "HTML", "JavaScript", "MySQL", "Subversion", "Redmine", "AWS", "Lambda", "DynamoDB", "API Gateway", "Flask", "jQuery"],
+      title: "システム部門マネージャー",
+      company: "株式会社マイクロ・シー・エー・デー",
+      period: "2018年02月 - 2020年01月",
+      focus: "システム部門長",
+      description: "情報システム部門の部門長として組織マネジメントと技術要件調整を主導しながら、エンタープライズシステムの継続的な改善と運用安定性を確保。",
+      keyTechnologies: ["チームマネジメント", "ISMS情報セキュリティ管理", "システム要件定義", "AWS運用"],
       achievements: [
-        "企業向けカスタマイズ機能・機能拡張の設計〜開発〜テストを一貫して担当（チーム規模：4〜10名）",
-        "基本設計・詳細設計からテスト設計書の作成・実施まで上流〜下流を網羅、PHPによるオブジェクト指向設計・実装",
-        "企業向け経費システムと知財管理システムの経費機能連携機能を設計・開発、新機能の提案〜設計・開発・構築をリード",
-        "開発スケジュールの計画・進捗管理および部門メンバーのタスク管理・進捗管理・評価・育成を担当",
-        "予算・コスト管理を含む部門運営を統括し、親会社との要件調整・折衝を担い社内外の橋渡し役を担当",
-        "社内ISMSの情報セキュリティ領域を担当し、関係部門へのインタビュー実施・情報収集・ドキュメント整備を推進",
-        "AWS（Lambda / DynamoDB / API Gateway / VPC）＋Flask / jQueryによるフルスタック勤怠管理システムを担当し、要件定義から約1ヶ月という短期間でリリースを実現"
+        "スケジュール管理・タスク配分・進捗管理・評価を含むチームマネジメント業務を横断的に担当（チームサイズ: 4-10名）",
+        "親会社との技術要件調整およびISMS情報セキュリティ管理を主導",
+        "エンタープライズIP管理システムの継続的な最適化を推進し、システム安定性と可用性を維持",
+        "AWS基盤の運用安定性向上とコスト最適化を実現"
       ]
     }
   },
   {
     en: {
-      title: "Infrastructure Engineer", company: "Xincor miXell", period: "Apr 2015 - Feb 2017",
+      title: "Infrastructure Engineer",
+      company: "XINCOR MIXELL CO. LTD",
+      period: "Apr 2015 - Jan 2017",
       focus: "Network Infrastructure",
-      description: "Network infrastructure configuration and construction for major telecommunications company",
-      keyTechnologies: ["Linux", "RedHat", "VBScript"],
+      description: "Managed network infrastructure configuration and construction for major telecommunications company. Handled daily network operations and infrastructure optimization.",
+      keyTechnologies: ["Linux", "RedHat", "VBA", "Network Infrastructure", "Batch Processing", "Telecommunications Systems"],
       achievements: [
-        "Configured L3 switch and router settings and initial infrastructure for major telecommunications company (team size: 2-5)",
-        "Implemented enterprise routing configuration and DNS zone configuration and setup",
+        "Managed L3 switch and router configuration and initial infrastructure setup for major telecommunications company (team size: 2-5)",
+        "Implemented enterprise routing configuration and DNS zone setup",
         "Performed server and network equipment configuration via Linux (RedHat) command line",
-        "Analyzed daily manual routine tasks and independently developed automation tool using VBScript",
-        "Automated data retrieval and Excel recording workflow, reducing work time by 50%+"
+        "Identified daily operational bottlenecks and independently developed VBA batch processing automation solution to eliminate manual tasks",
+        "Reduced processing execution time from 60 minutes to under 5 minutes, achieving ~92% effort reduction",
+        "Delivered quantitative operational improvements at zero additional cost and enabled team to focus on higher-value tasks"
       ]
     },
     ja: {
-      title: "インフラエンジニア", company: "株式会社シンカー・ミクセル", period: "2015年04月 - 2017年02月",
+      title: "インフラストラクチャエンジニア",
+      company: "シンカー・ミクセル",
+      period: "2015年04月 - 2017年01月",
       focus: "ネットワークインフラ",
-      description: "大手通信企業向けネットワークインフラの設定・構築業務を担当",
-      keyTechnologies: ["Linux", "RedHat", "VBScript"],
+      description: "大手通信事業者におけるマネージドネットワークサービスの運用業務を担当し、ネットワークインフラ全体のサービス品質と運用安定性を維持。",
+      keyTechnologies: ["Linux", "RedHat", "VBA", "ネットワークインフラ", "バッチ処理", "通信システム"],
       achievements: [
+        "チームの業務フローにおける毎日のボトルネックを特定し、VBAによるバッチ処理ソリューションを独自開発して手作業を排除",
+        "処理実行時間を60分から5分以内に短縮し、約92%の工数削減を実現",
+        "追加コストなしで定量的な業務改善を達成し、チームが付加価値の高い業務へのリソース集中を実現",
         "大手通信企業のL3スイッチ・ルーターの設定変更・初期構築を担当（チーム規模：2〜5名）",
         "企業向けルーティング設定・構築およびDNS（ゾーン設定・初期構築）の設計・構築を担当",
-        "Linux（RedHat）コマンドラインによるサーバー・ネットワーク機器の設定作業を実施",
-        "毎日発生していた手動定期作業を業務分析し、VBScriptによる自動化ツールを独自に開発",
-        "特定サイトからのデータ取得〜Excel転記作業を自動化し、作業時間を50%以上削減"
+        "Linux（RedHat）コマンドラインによるサーバー・ネットワーク機器の設定作業を実施"
       ]
     }
   }
