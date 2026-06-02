@@ -1,155 +1,157 @@
-# Portfolio Project — Development Guidelines
+# Portfolio Project — 開発ガイドライン
 
-## Frontend Architecture: Feature-based + Layered Architecture
-
-### Directory Structure
-
-```
-src/
-├── app/                        # Next.js App Router (thin routing layer only)
-│   ├── layout.tsx
-│   ├── page.tsx
-│   ├── software/
-│   ├── uiux/
-│   └── contact/
-│
-├── features/                   # Feature-based modules
-│   ├── home/
-│   │   ├── ui/                 # UI layer: React components
-│   │   ├── model/              # Logic layer: custom hooks
-│   │   └── data/               # Data layer: content, constants
-│   ├── software/
-│   │   ├── ui/
-│   │   ├── model/
-│   │   ├── data/
-│   │   └── types/
-│   ├── uiux/
-│   │   ├── ui/
-│   │   ├── model/
-│   │   ├── data/
-│   │   └── types/
-│   └── contact/
-│       ├── ui/
-│       ├── model/
-│       ├── data/
-│       └── types/
-│
-└── shared/                     # Truly cross-feature shared code
-    ├── ui/                     # Header, Footer, LanguageSwitcher, etc.
-    ├── data/                   # siteConfig, constants, particles
-    ├── hooks/
-    ├── types/
-    └── utils/
-```
-
-### Layer Responsibilities
-
-| Layer | Directory | Responsibility |
-|-------|-----------|----------------|
-| UI | `ui/` | React components (presentational + container) |
-| Logic | `model/` | Custom hooks, state management, side effects |
-| Data | `data/` | Content objects, API data, constants |
-| Types | `types/` | TypeScript interfaces and type definitions |
-
-### Rules
-
-- **`app/` is a thin routing layer only.** Pages import from `features/` and compose layouts. No business logic or inline content in page files.
-- **Features are self-contained.** A feature owns its own ui, model, data, and types. Cross-feature imports are not allowed; use `shared/` instead.
-- **`shared/` is for truly reusable code** used by 2+ features. Do not pre-emptively move things there.
-- **Each layer has a barrel export** (`index.ts`) so imports are clean: `import { HeroSection } from '@/features/software/ui'`.
-- **Import direction:** `app` → `features` → `shared`. Never import upward.
+**目的**: このドキュメントはコンテキスト構造、開発アーキテクチャ、実装パターンを定義します。AIエージェントと開発者がこのコードベースで協力する際のナラティブレイヤー（Layer 5）として機能します。
 
 ---
 
-## Semantic HTML
+## コンテキストエンジニアリング原則
 
-Always use semantic HTML elements instead of generic `<div>` wrappers.
+このプロジェクトは、効果的なコンテキストエンジニアリングの実践に従い、**6つのコンテキスト種類**を**5つの実装レイヤー**に分散させています。これにより、AIエージェントと開発者は各決定ポイントで明確で重複のない情報を参照できます。
 
-### Required Elements
+### 6つのコンテキスト種類（追跡すべき情報）
 
-| Context | Use |
-|---------|-----|
-| Page-level navigation | `<header>`, `<nav>`, `<footer>` |
-| Main content area | `<main>` |
-| Thematic sections | `<section aria-labelledby="...">` |
-| Self-contained content | `<article>` |
-| Complementary content | `<aside>` |
-| Skill/project lists | `<ul>` + `<li>` |
-| Key-value pairs (skills, metadata) | `<dl>` + `<dt>` + `<dd>` |
-| Images with captions | `<figure>` + `<figcaption>` |
-| Dates and times | `<time datetime="...">` |
-| Contact information | `<address>` |
-| Buttons (actions) | `<button type="button">` |
-| Navigation links | `<a>` |
-
-### Examples
-
-```tsx
-// Page structure
-<body>
-  <header>
-    <nav aria-label="Main navigation">...</nav>
-  </header>
-  <main>
-    <section aria-labelledby="hero-heading">
-      <h1 id="hero-heading">...</h1>
-    </section>
-    <section aria-labelledby="projects-heading">
-      <h2 id="projects-heading">Featured Projects</h2>
-      <ul>
-        <li><article>...</article></li>
-      </ul>
-    </section>
-  </main>
-  <footer>...</footer>
-</body>
-
-// Experience timeline
-<section aria-labelledby="experience-heading">
-  <h2 id="experience-heading">Experience</h2>
-  <ol>
-    <li>
-      <article>
-        <h3>Job Title</h3>
-        <p><time datetime="2022-04">April 2022</time> – Present</p>
-      </article>
-    </li>
-  </ol>
-</section>
-
-// Skills list
-<section aria-labelledby="skills-heading">
-  <h2 id="skills-heading">Skills</h2>
-  <ul>
-    <li>AWS</li>
-    <li>Python</li>
-  </ul>
-</section>
-
-// Contact info
-<address>
-  <a href="mailto:kento@example.com">kento@example.com</a>
-</address>
-```
-
-### Heading Hierarchy
-
-- `<h1>`: One per page, the primary page title
-- `<h2>`: Major sections (Hero, Experience, Projects, Skills, Contact)
-- `<h3>`: Items within a section (individual project titles, job titles)
-- `<h4>` and below: Sub-items only when genuinely needed
+| コンテキスト | 目的 | 例 |
+|-----------|-----|-----|
+| **システムコンテキスト** | システムの動作と制約 | Tech stack（Next.js, TypeScript, Tailwind）、パフォーマンス要件 |
+| **タスクコンテキスト** | やるべき作業と成功基準 | 機能実装仕様、受け入れ基準 |
+| **ドメインコンテキスト** | このドメイン固有の技術知識 | ポートフォリオ設計パターン、コンポーネントアーキテクチャ |
+| **ユーザーコンテキスト** | このプロジェクトを使う人と彼らのニーズ | 開発経験レベル、コミュニケーション環境設定 |
+| **プロジェクトコンテキスト** | 現在の目標、制約、決定理由 | ローンチ期限、デザインシステム制約 |
+| **リファレンスコンテキスト** | 外部情報の場所 | デザインシステムドキュメント、パフォーマンスダッシュボード |
 
 ---
 
-## Import Path Aliases
+## 5つの実装レイヤー
 
-```ts
-'@/features/software/ui'    // software UI components
-'@/features/software/model' // software hooks
-'@/features/software/data'  // software content
-'@/features/uiux/ui'
-'@/features/contact/ui'
-'@/shared/ui'               // Header, Footer, LanguageSwitcher
-'@/shared/data'             // siteConfig, constants
-'@/shared/utils'
 ```
+Portfolio Project/
+├── adr/                          ← Layer 1: 決定記録（重要な決定を正式記録）
+│   └── README.md
+│
+├── .claude/
+│   └── projects/portfolio/
+│       └── memory/               ← Layer 2: セッション横断的なメモリ
+│           ├── MEMORY.md
+│           ├── user/             ← ユーザーコンテキスト
+│           ├── feedback/         ← 過去の学習と制約
+│           ├── project/          ← プロジェクトコンテキスト（目標、制約）
+│           └── reference/        ← リファレンスコンテキスト
+│
+├── src/
+│   ├── features/                 ← Layer 4: コード埋め込みコンテキスト
+│   │   └── [feature]/
+│   │       ├── ui/
+│   │       ├── model/
+│   │       ├── data/
+│   │       ├── types/
+│   │       └── README.md          ← ドメインコンテキスト
+│   ├── shared/
+│   └── app/
+│
+└── CLAUDE.md                     ← Layer 5: ナラティブレイヤー（このファイル）
+```
+
+### レイヤー定義
+
+| レイヤー | 場所 | 更新頻度 | 目的 |
+|---------|------|---------|------|
+| **1. 決定記録（ADR）** | `adr/` | 低（重要な決定時） | アーキテクチャ決定の正式記録（Status, Context, Decision, Consequences） |
+| **2. メモリ** | `.claude/projects/portfolio/memory/` | 高（各セッション） | セッション横断的なコンテキスト（ユーザー、フィードバック、プロジェクト、リファレンス） |
+| **3. タスク定義** | GitHub Issues / TaskCreate | 中（週単位） | 離散的な作業単位と成功基準 |
+| **4. コード埋め込み** | ソースコードコメント | 中（実装時） | "なぜ"の説明 + インシデント参照 |
+| **5. ナラティブ** | このファイル | 低（月単位） | 高レベルなプロジェクト概要、アーキテクチャ、慣例 |
+
+---
+
+## システムコンテキスト
+
+詳細なアーキテクチャ、テックスタック、パフォーマンス要件は **`docs/architecture.md`** を参照。
+
+主な特徴：
+- **フロントエンド**: Next.js + TypeScript + Tailwind CSS
+- **アーキテクチャ**: フィーチャーベース + レイヤード（UI, Model, Data, Types）
+- **セマンティック HTML**: 常にセマンティック要素を使用
+- **インポート方向**: `app` → `features` → `shared`（上方向インポート禁止）
+
+---
+
+## コード埋め込みコンテキスト: WHYコメント
+
+実装時、"何"ではなく"なぜ"を説明する。インシデント参照を含める。
+
+### ガイドライン
+
+```typescript
+// ✅ いい例：なぜを説明
+// 再試行を追加するのは、Signal/Noise API が不安定なため
+// 参照: memory/reference/incident_api_instability.md
+const MAX_RETRIES = 3;
+
+// ✅ いい例：重要な制約を記載
+// IMPORTANT: DOM更新を同期的に実行する必要がある
+// 非同期版は状態更新順序を壊す
+// 参照: memory/feedback/rendering_order_bug.md
+function updatePortfolioData(data: PortfolioData) {
+  // ...
+}
+
+// ❌ 悪い例：何を説明しているだけ
+// Loop 3 times
+for (let i = 0; i < 3; i++) {
+  // ...
+}
+```
+
+---
+
+## メモリシステム: セッション横断的なコンテキスト
+
+`.claude/projects/portfolio/memory/` で永続的なコンテキストを管理。各セッションで検証・更新。
+
+### ディレクトリ構造
+
+```
+.claude/projects/portfolio/memory/
+├── MEMORY.md               # インデックス（200行以下）
+├── user/
+│   └── expertise.md        # チームの技術レベル、スタイル
+├── feedback/
+│   └── pitfalls.md         # 何が失敗したか、学習
+├── project/
+│   ├── goals.md            # 現在のマイルストーン、期限
+│   ├── constraints.md      # 制約（時間、設計）
+│   └── decisions.md        # 軽微な決定ログ
+└── reference/
+    └── tools.md            # 外部リンク、ツール
+```
+
+### 更新ガイド
+
+- **非自明な学習を記録**。毎セッション確認・検証。
+- **古い情報は削除**。日付がある場合、それが最後に検証された時刻。
+- **重要な決定は `adr/` に昇格**。メモリは軽微な決定のみ。
+
+---
+
+## 決定記録（ADR）: アーキテクチャ決定の正式化
+
+重要なアーキテクチャ決定は **`adr/` ディレクトリ** に記録します。
+
+### 現在の ADR
+
+- **ADR-001**: TypeScript strict モード採用
+- **ADR-002**: フィーチャーベース + レイヤード アーキテクチャ
+- **ADR-003**: Signal/Noise デザインシステム採用
+- **ADR-004**: セマンティックHTML必須化
+- **ADR-005**: Tailwind CSS によるスタイリング
+
+詳細は **`adr/README.md`** を参照。
+
+### コード内での参照
+
+```typescript
+// See ADR-001: TypeScript strict mode
+// See ADR-002: Feature-based architecture
+const portfolio: Portfolio = { /* ... */ };
+```
+

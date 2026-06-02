@@ -1,0 +1,32 @@
+# mise configuration for Portfolio Project
+# Reference: https://mise.jdx.dev
+
+[env]
+# Environment variables for development
+
+[tools]
+# Node.js - runtime for Next.js, npm
+node = "25.6.1"
+
+[tasks]
+# Development tasks
+
+[tasks."dev"]
+description = "Start development server"
+run = "npm run dev"
+
+[tasks."build"]
+description = "Build for production"
+run = "npm run build"
+
+[tasks."lint"]
+description = "Run ESLint"
+run = "npm run lint"
+
+[tasks."type-check"]
+description = "Run TypeScript type check"
+run = "npm run type-check"
+
+[tasks."start"]
+description = "Start production server"
+run = "npm start"
