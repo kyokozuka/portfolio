@@ -1,4 +1,4 @@
-import { promises as fs } from 'fs';
+import { promises as fs, readFileSync } from 'fs';
 import path from 'path';
 import YAML from 'yaml';
 import { ResumeData } from './resume.types';
@@ -19,9 +19,8 @@ export async function loadResume(): Promise<ResumeData> {
  * Useful for static generation but avoid in server functions
  */
 export function loadResumeSync(): ResumeData {
-  const fs = require('fs');
   const filePath = path.join(process.cwd(), 'src/data/resume.yaml');
-  const fileContent = fs.readFileSync(filePath, 'utf-8');
+  const fileContent = readFileSync(filePath, 'utf-8');
   const data = YAML.parse(fileContent) as ResumeData;
   return data;
 }
