@@ -1,157 +1,64 @@
-# Portfolio Project — 開発ガイドライン
+# Portfolio — 開発ガイド
 
-**目的**: このドキュメントはコンテキスト構造、開発アーキテクチャ、実装パターンを定義します。AIエージェントと開発者がこのコードベースで協力する際のナラティブレイヤー（Layer 5）として機能します。
-
----
-
-## コンテキストエンジニアリング原則
-
-このプロジェクトは、効果的なコンテキストエンジニアリングの実践に従い、**6つのコンテキスト種類**を**5つの実装レイヤー**に分散させています。これにより、AIエージェントと開発者は各決定ポイントで明確で重複のない情報を参照できます。
-
-### 6つのコンテキスト種類（追跡すべき情報）
-
-| コンテキスト | 目的 | 例 |
-|-----------|-----|-----|
-| **システムコンテキスト** | システムの動作と制約 | Tech stack（Next.js, TypeScript, Tailwind）、パフォーマンス要件 |
-| **タスクコンテキスト** | やるべき作業と成功基準 | 機能実装仕様、受け入れ基準 |
-| **ドメインコンテキスト** | このドメイン固有の技術知識 | ポートフォリオ設計パターン、コンポーネントアーキテクチャ |
-| **ユーザーコンテキスト** | このプロジェクトを使う人と彼らのニーズ | 開発経験レベル、コミュニケーション環境設定 |
-| **プロジェクトコンテキスト** | 現在の目標、制約、決定理由 | ローンチ期限、デザインシステム制約 |
-| **リファレンスコンテキスト** | 外部情報の場所 | デザインシステムドキュメント、パフォーマンスダッシュボード |
+**目的**: このコードベースの構造・技術・規約をまとめた実用ガイド。設計判断の理由は [docs/design-decisions.md](./docs/design-decisions.md)、デザインシステムは [docs/design.md](./docs/design.md) を参照。
 
 ---
 
-## 5つの実装レイヤー
+## 技術スタック
 
-```
-Portfolio Project/
-├── adr/                          ← Layer 1: 決定記録（重要な決定を正式記録）
-│   └── README.md
-│
-├── .claude/
-│   └── projects/portfolio/
-│       └── memory/               ← Layer 2: セッション横断的なメモリ
-│           ├── MEMORY.md
-│           ├── user/             ← ユーザーコンテキスト
-│           ├── feedback/         ← 過去の学習と制約
-│           ├── project/          ← プロジェクトコンテキスト（目標、制約）
-│           └── reference/        ← リファレンスコンテキスト
-│
-├── src/
-│   ├── features/                 ← Layer 4: コード埋め込みコンテキスト
-│   │   └── [feature]/
-│   │       ├── ui/
-│   │       ├── model/
-│   │       ├── data/
-│   │       ├── types/
-│   │       └── README.md          ← ドメインコンテキスト
-│   ├── shared/
-│   └── app/
-│
-└── CLAUDE.md                     ← Layer 5: ナラティブレイヤー（このファイル）
-```
-
-### レイヤー定義
-
-| レイヤー | 場所 | 更新頻度 | 目的 |
-|---------|------|---------|------|
-| **1. 決定記録（ADR）** | `adr/` | 低（重要な決定時） | アーキテクチャ決定の正式記録（Status, Context, Decision, Consequences） |
-| **2. メモリ** | `.claude/projects/portfolio/memory/` | 高（各セッション） | セッション横断的なコンテキスト（ユーザー、フィードバック、プロジェクト、リファレンス） |
-| **3. タスク定義** | GitHub Issues / TaskCreate | 中（週単位） | 離散的な作業単位と成功基準 |
-| **4. コード埋め込み** | ソースコードコメント | 中（実装時） | "なぜ"の説明 + インシデント参照 |
-| **5. ナラティブ** | このファイル | 低（月単位） | 高レベルなプロジェクト概要、アーキテクチャ、慣例 |
+| 項目 | 技術 |
+| ---- | ---- |
+| フレームワーク | Next.js App Router（`output: 'export'` で静的書き出し） |
+| 言語 | TypeScript（`strict: true`） |
+| UI | React 19 |
+| スタイリング | Tailwind CSS |
+| テスト | Vitest（ユニット）/ Playwright（E2E） |
+| ツール管理 | mise |
 
 ---
 
-## システムコンテキスト
+## ディレクトリ構造
 
-詳細なアーキテクチャ、テックスタック、パフォーマンス要件は **`docs/architecture.md`** を参照。
+```text
+src/
+├── app/
+│   ├── layout.tsx              # ルート layout（<html>）
+│   ├── page.tsx                # / → /en リダイレクト
+│   ├── globals.css
+│   └── [lang]/                 # /en /ja ロケールルーティング
+│       ├── page.tsx            # home
+│       ├── software/{page,[slug]/page}.tsx
+│       ├── uiux/{page,[slug]/page}.tsx
+│       └── contact/{page,_contact-content}.tsx
+├── components/                 # 横断再利用 UI（header/footer/language-switcher）
+├── content/                    # 型付きコンテンツ + slug マップ + dictionaries
+└── lib/                        # i18n（isLocale/getDictionary）・hooks（useReveal）
+```
 
-主な特徴：
-- **フロントエンド**: Next.js App Router + TypeScript + Tailwind CSS
-- **アーキテクチャ**: Next.js 流儀（ロケールルーティング `app/[lang]/`、ルート近接コロケーション `app/**/_components/`、Server Component 既定）。詳細は [ADR-006](./adr/ADR-006-nextjs-idiomatic-architecture.md)。旧 FSD（ADR-002）は置き換え済み
-- **セマンティック HTML**: 常にセマンティック要素を使用
-- **インポート方向**: `app` → `components` → `lib`（`content` は型付きコンテンツ）。`shared/` は撤去済み。`features/*` は移行途中の残存（後続で `_components/`・`content/` へ移設予定）
+> `features/*` は旧構造の残存（UI セクション・data・types を RSC ページから再利用中）。将来的に `_components/`・`content/` へ移設予定。
 
 ---
 
-## コード埋め込みコンテキスト: WHYコメント
+## 規約
 
-実装時、"何"ではなく"なぜ"を説明する。インシデント参照を含める。
-
-### ガイドライン
-
-```typescript
-// ✅ いい例：なぜを説明
-// 再試行を追加するのは、Signal/Noise API が不安定なため
-// 参照: memory/reference/incident_api_instability.md
-const MAX_RETRIES = 3;
-
-// ✅ いい例：重要な制約を記載
-// IMPORTANT: DOM更新を同期的に実行する必要がある
-// 非同期版は状態更新順序を壊す
-// 参照: memory/feedback/rendering_order_bug.md
-function updatePortfolioData(data: PortfolioData) {
-  // ...
-}
-
-// ❌ 悪い例：何を説明しているだけ
-// Loop 3 times
-for (let i = 0; i < 3; i++) {
-  // ...
-}
-```
+- **ロケール**: URL セグメント `app/[lang]`（`/en` `/ja`）。`lib/i18n` の `locales`/`isLocale`/`getDictionary` が単一ソース。`/` はデフォルトロケールへリダイレクト。
+- **レンダリング**: Server Component 既定。`'use client'` はインタラクティブな葉（言語切替・`useReveal` を使う節など）に限定。
+- **セマンティック HTML**: 意味があればセマンティック要素、意味がなくスタイル目的だけなら `<div>`/`<span>`（詳細は design-decisions）。
+- **インポート方向**: `app → components → lib`。上方向・逆流 import を禁止。
+- **コメント**: "何" ではなく "なぜ" を書く。
 
 ---
 
-## メモリシステム: セッション横断的なコンテキスト
+## 開発フロー
 
-`.claude/projects/portfolio/memory/` で永続的なコンテキストを管理。各セッションで検証・更新。
+- `main` への直接 push は禁止。トピックブランチを切り PR 経由でマージ（forge の共通ルールに従う）。
+- 主なコマンド:
 
-### ディレクトリ構造
-
+```bash
+mise run dev          # 開発サーバー（:3000）
+mise run build        # 本番ビルド（静的書き出し）
+mise run lint         # ESLint
+mise run type-check   # tsc --noEmit
+mise run test         # Vitest（ユニット）
+mise run e2e          # Playwright（E2E）
 ```
-.claude/projects/portfolio/memory/
-├── MEMORY.md               # インデックス（200行以下）
-├── user/
-│   └── expertise.md        # チームの技術レベル、スタイル
-├── feedback/
-│   └── pitfalls.md         # 何が失敗したか、学習
-├── project/
-│   ├── goals.md            # 現在のマイルストーン、期限
-│   ├── constraints.md      # 制約（時間、設計）
-│   └── decisions.md        # 軽微な決定ログ
-└── reference/
-    └── tools.md            # 外部リンク、ツール
-```
-
-### 更新ガイド
-
-- **非自明な学習を記録**。毎セッション確認・検証。
-- **古い情報は削除**。日付がある場合、それが最後に検証された時刻。
-- **重要な決定は `adr/` に昇格**。メモリは軽微な決定のみ。
-
----
-
-## 決定記録（ADR）: アーキテクチャ決定の正式化
-
-重要なアーキテクチャ決定は **`adr/` ディレクトリ** に記録します。
-
-### 現在の ADR
-
-- **ADR-001**: TypeScript strict モード採用
-- **ADR-002**: フィーチャーベース + レイヤード アーキテクチャ
-- **ADR-003**: Signal/Noise デザインシステム採用
-- **ADR-004**: セマンティックHTML必須化
-- **ADR-005**: Tailwind CSS によるスタイリング
-
-詳細は **`adr/README.md`** を参照。
-
-### コード内での参照
-
-```typescript
-// See ADR-001: TypeScript strict mode
-// See ADR-002: Feature-based architecture
-const portfolio: Portfolio = { /* ... */ };
-```
-
