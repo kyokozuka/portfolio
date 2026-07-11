@@ -27,8 +27,11 @@ const routes: Route[] = [
     path: '/en/uiux/achievy',
     marker: /Task Management App for ADHD Students/i,
   },
-  { name: 'contact', path: '/contact', marker: /@kyokozuka/i },
+  { name: 'contact (en)', path: '/en/contact', marker: /@kyokozuka/i },
 ];
+
+// 日本語ロケールでも各ルートが日本語ナビで描画されることを確認する（i18n 回帰）。
+const jaRoutes = ['/ja', '/ja/software', '/ja/uiux', '/ja/contact'];
 
 for (const route of routes) {
   test(`${route.name} (${route.path}) が現状どおり描画される`, async ({ page }) => {
@@ -51,8 +54,12 @@ test('/ はデフォルトロケール /en へリダイレクトする', async (
   await expect.poll(() => new URL(page.url()).pathname).toMatch(/^\/en\/?$/);
 });
 
-test('/ja は日本語ナビで描画される', async ({ page }) => {
-  await page.goto('/ja');
-  await expect(page.getByRole('navigation').first()).toBeVisible();
-  await expect(page.getByText(/ソフトウェア/).first()).toBeVisible();
-});
+for (const path of jaRoutes) {
+  test(`${path} が日本語ナビで描画される`, async ({ page }) => {
+    const response = await page.goto(path);
+    expect(response?.status(), 'HTTP ステータス').toBeLessThan(400);
+    await expect(page.getByRole('navigation').first()).toBeVisible();
+    // ナビの日本語ラベル（辞書由来）が表示される
+    await expect(page.getByText(/ソフトウェア/).first()).toBeVisible();
+  });
+}

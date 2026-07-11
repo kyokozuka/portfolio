@@ -1,12 +1,10 @@
-"use client";
+'use client';
 
 import { Icon } from '@iconify/react';
-import { Header, Footer } from "@/shared/ui";
-import { contactData } from '@/features/contact/data';
-import { useContactPage } from '@/features/contact/model';
 import { useReveal } from '@/shared/hooks';
 
-function ContactContent() {
+// contact の本文。スクロール反映アニメ（useReveal）を使うため client の葉。
+export default function ContactContent() {
   const { ref, visible } = useReveal<HTMLElement>();
 
   return (
@@ -87,21 +85,5 @@ function ContactContent() {
         </address>
       </div>
     </section>
-  );
-}
-
-export default function ContactPage() {
-  const { currentLang, setCurrentLang } = useContactPage(contactData);
-
-  return (
-    <div className="min-h-screen bg-canvas">
-      <Header currentLang={currentLang} onLanguageChange={setCurrentLang} />
-
-      <main>
-        <ContactContent />
-      </main>
-
-      <Footer currentLang={currentLang} />
-    </div>
   );
 }
