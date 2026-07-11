@@ -1,7 +1,7 @@
 'use client';
 
 import { HomeContent } from '@/features/home/data';
-import { useReveal } from '@/shared/hooks';
+import { useReveal } from '@/lib/hooks';
 
 interface HomeAboutSectionProps {
   about: HomeContent['about'];

@@ -1,7 +1,7 @@
 'use client';
 
 import { Icon } from '@iconify/react';
-import { useReveal } from '@/shared/hooks';
+import { useReveal } from '@/lib/hooks';
 
 // contact の本文。スクロール反映アニメ（useReveal）を使うため client の葉。
 export default function ContactContent() {

@@ -5,7 +5,37 @@
 
 ---
 
-## フロントエンドアーキテクチャ: フィーチャーベース + レイヤード設計
+## フロントエンドアーキテクチャ
+
+> **重要（2026-07-11 更新）**: 本プロジェクトは FSD から **Next.js App Router 流儀** へ再設計済み（[ADR-006](../adr/ADR-006-nextjs-idiomatic-architecture.md)、[docs/refactoring_20260711.md](./refactoring_20260711.md)）。以下の「フィーチャーベース + レイヤード」記述は旧構造（ADR-002）の歴史的経緯であり、現行の正はロケールルーティング構造。
+
+### 現行のディレクトリ構造（Next.js 流儀）
+
+```text
+src/
+├── app/
+│   ├── layout.tsx              # ルート layout（<html>）
+│   ├── page.tsx                # / → /en リダイレクト
+│   ├── globals.css
+│   └── [lang]/                 # /en /ja ロケールルーティング（generateStaticParams）
+│       ├── layout.tsx
+│       ├── page.tsx            # home
+│       ├── software/{page,[slug]/page}.tsx
+│       ├── uiux/{page,[slug]/page}.tsx
+│       └── contact/{page,_contact-content}.tsx
+├── components/                 # 横断再利用 UI（header/footer/language-switcher）
+├── content/                    # 型付きコンテンツ + slug マップ（dictionaries 含む）
+├── lib/                        # i18n（isLocale/getDictionary）・hooks（useReveal）
+└── features/                   # 移行途中の残存（ui セクション・data・types。後続で _components/・content/ へ移設予定）
+```
+
+- **言語**: URL セグメント `[lang]` 由来。`lib/i18n` の `locales`/`isLocale`/`getDictionary` が単一ソース。
+- **レンダリング**: Server Component 既定。`'use client'` はインタラクティブな葉（language-switcher・useReveal を使う節）に限定。
+- **インポート方向**: `app → components → lib`。`shared/` は撤去済み。
+
+---
+
+### （歴史的経緯）旧フィーチャーベース + レイヤード設計
 
 ### ディレクトリ構造
 

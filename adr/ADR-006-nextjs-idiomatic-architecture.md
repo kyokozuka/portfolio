@@ -2,9 +2,11 @@
 
 ## Status
 
-Proposed (2026-07-11)
+Accepted (2026-07-11)
 
 Supersedes [ADR-002](./ADR-002-feature-based-layered-architecture.md)
+
+実装状況: Phase 1–6 を実施し、全ルートを `app/[lang]/` のロケールルーティングへ移行、`src/shared/` を撤去、i18n を URL 駆動に是正した。`src/features/*/{ui,data,types}` は RSC ページから再利用中で物理的に残存しており、`content/`・`app/**/_components/` への完全移設は後続作業とする（詳細は [docs/refactoring_20260711.md](../docs/refactoring_20260711.md)）。
 
 ## Context
 

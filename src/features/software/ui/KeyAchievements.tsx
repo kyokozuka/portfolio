@@ -1,7 +1,7 @@
 "use client";
 
 import { KeyAchievement } from "@/features/software/data";
-import { useReveal } from "@/shared/hooks";
+import { useReveal } from "@/lib/hooks";
 
 interface KeyAchievementsProps {
   achievements: KeyAchievement[];

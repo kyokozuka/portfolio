@@ -1,7 +1,7 @@
 'use client';
 
 import { UIUXExperience } from '@/features/uiux/data';
-import { useReveal } from '@/shared/hooks';
+import { useReveal } from '@/lib/hooks';
 
 interface UIUXExperienceSectionProps {
   experience: UIUXExperience[];

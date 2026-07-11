@@ -1,7 +1,7 @@
 'use client';
 
 import { UIUXSkill } from '@/features/uiux/data';
-import { useReveal } from '@/shared/hooks';
+import { useReveal } from '@/lib/hooks';
 
 interface UIUXSkillsSectionProps {
   skillsByCategory: Record<string, UIUXSkill[]>;

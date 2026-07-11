@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useReveal } from '@/shared/hooks';
+import { useReveal } from '@/lib/hooks';
 
 interface UIUXContactSectionProps {
   contactText: string;

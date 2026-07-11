@@ -1,7 +1,7 @@
 'use client';
 
 import { UIUXAcademicProject } from '@/features/uiux/data';
-import { useReveal } from '@/shared/hooks';
+import { useReveal } from '@/lib/hooks';
 
 interface UIUXAcademicProjectsSectionProps {
   academicProjects: UIUXAcademicProject[];

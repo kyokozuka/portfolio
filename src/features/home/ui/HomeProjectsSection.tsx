@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { HomeContent, softwareProjects, uiuxProjects } from '@/features/home/data';
-import { useReveal } from '@/shared/hooks';
+import { useReveal } from '@/lib/hooks';
 
 interface HomeProjectsSectionProps {
   highlights: HomeContent['highlights'];

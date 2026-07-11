@@ -5,6 +5,5 @@ export { default as FeaturedProjects } from './FeaturedProjects';
 export { default as HeroSection } from './HeroSection';
 export { default as KeyAchievements } from './KeyAchievements';
 export { default as MatrixBackground } from './MatrixBackground';
-export { default as SoftwareProjectLayout } from './SoftwareProjectLayout';
 export { default as SoftwareProjectPage } from './SoftwareProjectPage';
 export { default as SoftwareSkillsSection } from './SoftwareSkillsSection';

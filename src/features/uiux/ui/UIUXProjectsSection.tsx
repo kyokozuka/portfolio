@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { UIUXProject } from '@/features/uiux/data';
-import { useReveal } from '@/shared/hooks';
+import { useReveal } from '@/lib/hooks';
 
 interface UIUXProjectsSectionProps {
   projects: UIUXProject[];
