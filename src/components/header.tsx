@@ -21,10 +21,10 @@ export default function Header({ lang }: { lang: Locale }) {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // software は移設済み → /[lang]/software。uiux/contact は後続 Phase で移設予定のため現状パス。
+  // software/uiux は移設済み → /[lang]/...。contact は後続 Phase で移設予定のため現状パス。
   const navLinks = [
     { href: `/${lang}/software`, label: dict.nav.software },
-    { href: '/uiux', label: dict.nav.uiux },
+    { href: `/${lang}/uiux`, label: dict.nav.uiux },
     { href: '/contact', label: dict.nav.contact },
   ];
 

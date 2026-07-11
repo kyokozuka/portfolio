@@ -1,3 +1,2 @@
-export { useUIUXPage } from './useUIUXPage';
-export type { UseUIUXPageReturn } from './useUIUXPage';
-export { useUIUXProjectPage } from './useUIUXProjectPage';
+// uiux の model 層は Phase 4 で撤去（ロケールルーティング + Server Component 化）。
+export {};

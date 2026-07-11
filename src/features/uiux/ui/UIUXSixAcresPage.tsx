@@ -2,13 +2,13 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Header, Footer } from '@/shared/ui';
+import Header from '@/components/header';
+import Footer from '@/components/footer';
+import type { Locale } from '@/lib/i18n';
 import { sixAcresData } from '@/features/uiux/data';
-import { useUIUXProjectPage } from '@/features/uiux/model';
 
-export default function UIUXSixAcresPage() {
-  const { currentLang, setCurrentLang } = useUIUXProjectPage();
-  const t = sixAcresData[currentLang as keyof typeof sixAcresData] ?? sixAcresData.en;
+export default function UIUXSixAcresPage({ lang }: { lang: Locale }) {
+  const t = sixAcresData[lang] ?? sixAcresData.en;
 
   const beforeAfterEntries = Object.entries(t.beforeAfter) as [
     string,
@@ -17,7 +17,7 @@ export default function UIUXSixAcresPage() {
 
   return (
     <div className="min-h-screen bg-canvas">
-      <Header currentLang={currentLang} onLanguageChange={(l) => setCurrentLang(l as 'en' | 'ja')} />
+      <Header lang={lang} />
 
       <main>
         <article>
@@ -28,7 +28,7 @@ export default function UIUXSixAcresPage() {
             className="max-w-7xl mx-auto px-6 lg:px-12 pt-24 pb-16"
           >
             <Link
-              href="/uiux"
+              href={`/${lang}/uiux`}
               className="font-body text-sm text-ink-muted hover:text-accent transition-colors duration-200 inline-flex items-center gap-2 mb-12"
             >
               <span aria-hidden="true">←</span> {t.back}
@@ -57,19 +57,19 @@ export default function UIUXSixAcresPage() {
             <dl className="hero-l4 grid grid-cols-1 sm:grid-cols-3 border-t border-hairline">
               <div className="py-6 sm:pr-10 sm:border-r border-b sm:border-b-0 border-hairline">
                 <dt className="font-body text-xs text-ink-muted tracking-[0.12em] uppercase mb-1.5">
-                  {currentLang === 'en' ? 'Role' : '役割'}
+                  {lang === 'en' ? 'Role' : '役割'}
                 </dt>
                 <dd className="font-body text-sm text-ink">{t.role}</dd>
               </div>
               <div className="py-6 sm:px-10 sm:border-r border-b sm:border-b-0 border-hairline">
                 <dt className="font-body text-xs text-ink-muted tracking-[0.12em] uppercase mb-1.5">
-                  {currentLang === 'en' ? 'Tools' : 'ツール'}
+                  {lang === 'en' ? 'Tools' : 'ツール'}
                 </dt>
                 <dd className="font-body text-sm text-ink">{t.tools}</dd>
               </div>
               <div className="py-6 sm:pl-10">
                 <dt className="font-body text-xs text-ink-muted tracking-[0.12em] uppercase mb-1.5">
-                  {currentLang === 'en' ? 'Duration' : '期間'}
+                  {lang === 'en' ? 'Duration' : '期間'}
                 </dt>
                 <dd className="font-body text-sm text-ink">{t.duration}</dd>
               </div>
@@ -85,7 +85,7 @@ export default function UIUXSixAcresPage() {
                     id="overview-heading"
                     className="font-body text-xs text-ink-muted tracking-[0.12em] uppercase lg:sticky lg:top-24"
                   >
-                    {currentLang === 'en' ? 'Overview' : '概要'}
+                    {lang === 'en' ? 'Overview' : '概要'}
                   </h2>
                 </div>
                 <div className="lg:col-span-9">
@@ -104,7 +104,7 @@ export default function UIUXSixAcresPage() {
                 id="redesign-heading"
                 className="font-body text-xs text-ink-muted tracking-[0.12em] uppercase mb-10"
               >
-                {currentLang === 'en' ? 'Before / After' : 'Before / After'}
+                {lang === 'en' ? 'Before / After' : 'Before / After'}
               </h2>
 
               <div className="space-y-16">
@@ -162,7 +162,7 @@ export default function UIUXSixAcresPage() {
                     id="tasks-heading"
                     className="font-body text-xs text-ink-muted tracking-[0.12em] uppercase lg:sticky lg:top-24"
                   >
-                    {currentLang === 'en' ? 'Usability Tasks' : 'ユーザビリティタスク'}
+                    {lang === 'en' ? 'Usability Tasks' : 'ユーザビリティタスク'}
                   </h2>
                 </div>
                 <div className="lg:col-span-9">
@@ -188,13 +188,13 @@ export default function UIUXSixAcresPage() {
                 id="findings-heading"
                 className="font-body text-xs text-ink-muted tracking-[0.12em] uppercase mb-10"
               >
-                {currentLang === 'en' ? 'Findings' : '調査結果'}
+                {lang === 'en' ? 'Findings' : '調査結果'}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-hairline border border-hairline">
                 {/* Good */}
                 <div className="bg-surface p-8">
                   <h3 className="font-body text-xs text-ink-muted uppercase tracking-[0.1em] mb-6">
-                    {currentLang === 'en' ? 'What worked' : '良かった点'}
+                    {lang === 'en' ? 'What worked' : '良かった点'}
                   </h3>
                   <ul className="space-y-3">
                     {t.process.findingsGood.map((item, i) => (
@@ -208,7 +208,7 @@ export default function UIUXSixAcresPage() {
                 {/* Bad */}
                 <div className="bg-surface p-8">
                   <h3 className="font-body text-xs text-ink-muted uppercase tracking-[0.1em] mb-6">
-                    {currentLang === 'en' ? 'What to improve' : '改善点'}
+                    {lang === 'en' ? 'What to improve' : '改善点'}
                   </h3>
                   <ul className="space-y-3">
                     {t.process.findingsBad.map((item, i) => (
@@ -232,15 +232,15 @@ export default function UIUXSixAcresPage() {
                     id="style-heading"
                     className="font-body text-xs text-ink-muted tracking-[0.12em] uppercase lg:sticky lg:top-24"
                   >
-                    {currentLang === 'en' ? 'Style Guide' : 'スタイルガイド'}
+                    {lang === 'en' ? 'Style Guide' : 'スタイルガイド'}
                   </h2>
                 </div>
                 <div className="lg:col-span-9 space-y-8">
                   <dl className="space-y-6">
                     {[
-                      { label: currentLang === 'en' ? 'Typography' : 'タイポグラフィ', value: t.process.styleGuide.typography },
-                      { label: currentLang === 'en' ? 'Colours'    : 'カラー',         value: t.process.styleGuide.colors    },
-                      { label: currentLang === 'en' ? 'Buttons'    : 'ボタン',          value: t.process.styleGuide.buttons   },
+                      { label: lang === 'en' ? 'Typography' : 'タイポグラフィ', value: t.process.styleGuide.typography },
+                      { label: lang === 'en' ? 'Colours'    : 'カラー',         value: t.process.styleGuide.colors    },
+                      { label: lang === 'en' ? 'Buttons'    : 'ボタン',          value: t.process.styleGuide.buttons   },
                     ].map(({ label, value }) => (
                       <div key={label} className="border-b border-hairline pb-6 last:border-b-0 last:pb-0">
                         <dt className="font-body text-xs text-ink-muted uppercase tracking-[0.1em] mb-2">{label}</dt>
@@ -250,7 +250,7 @@ export default function UIUXSixAcresPage() {
                   </dl>
                   <div className="border-t border-hairline pt-6">
                     <p className="font-body text-xs text-ink-muted uppercase tracking-[0.1em] mb-2">
-                      {currentLang === 'en' ? 'Wireframe Process' : 'ワイヤーフレームプロセス'}
+                      {lang === 'en' ? 'Wireframe Process' : 'ワイヤーフレームプロセス'}
                     </p>
                     <p className="font-body text-sm text-ink-muted leading-relaxed">{t.process.wireframe}</p>
                   </div>
@@ -268,7 +268,7 @@ export default function UIUXSixAcresPage() {
                     id="reflection-heading"
                     className="font-body text-xs text-ink-muted tracking-[0.12em] uppercase lg:sticky lg:top-24"
                   >
-                    {currentLang === 'en' ? 'Reflection' : '振り返り'}
+                    {lang === 'en' ? 'Reflection' : '振り返り'}
                   </h2>
                 </div>
                 <div className="lg:col-span-9 space-y-6">
@@ -286,13 +286,13 @@ export default function UIUXSixAcresPage() {
           <nav aria-label="Project navigation" className="border-t border-hairline">
             <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10 flex items-center justify-between">
               <Link
-                href="/uiux"
+                href={`/${lang}/uiux`}
                 className="font-body text-sm text-ink-muted hover:text-accent transition-colors duration-200 inline-flex items-center gap-2"
               >
                 <span aria-hidden="true">←</span> {t.back}
               </Link>
               <Link
-                href="/uiux/achievy"
+                href={`/${lang}/uiux/achievy`}
                 className="font-body text-sm text-ink-muted hover:text-accent transition-colors duration-200 inline-flex items-center gap-2"
               >
                 Achievy <span aria-hidden="true">→</span>
@@ -303,7 +303,7 @@ export default function UIUXSixAcresPage() {
         </article>
       </main>
 
-      <Footer currentLang={currentLang} />
+      <Footer />
     </div>
   );
 }

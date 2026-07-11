@@ -1,13 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import { Header, Footer } from '@/shared/ui';
+import Header from '@/components/header';
+import Footer from '@/components/footer';
+import type { Locale } from '@/lib/i18n';
 import { achievyData } from '@/features/uiux/data';
-import { useUIUXProjectPage } from '@/features/uiux/model';
 
-export default function UIUXAchievyPage() {
-  const { currentLang, setCurrentLang } = useUIUXProjectPage();
-  const t = achievyData[currentLang as 'en' | 'ja'];
+export default function UIUXAchievyPage({ lang }: { lang: Locale }) {
+  const t = achievyData[lang];
 
   const processSteps = [
     { key: 'background', data: t.background },
@@ -21,7 +21,7 @@ export default function UIUXAchievyPage() {
 
   return (
     <div className="min-h-screen bg-canvas">
-      <Header currentLang={currentLang} onLanguageChange={(l) => setCurrentLang(l as 'en' | 'ja')} />
+      <Header lang={lang} />
 
       <main>
         <article>
@@ -32,11 +32,11 @@ export default function UIUXAchievyPage() {
             className="max-w-7xl mx-auto px-6 lg:px-12 pt-24 pb-16"
           >
             <Link
-              href="/uiux"
+              href={`/${lang}/uiux`}
               className="font-body text-sm text-ink-muted hover:text-accent transition-colors duration-200 inline-flex items-center gap-2 mb-12"
             >
               <span aria-hidden="true">←</span>{' '}
-              {currentLang === 'en' ? 'Back to Design Work' : 'デザイン作品に戻る'}
+              {lang === 'en' ? 'Back to Design Work' : 'デザイン作品に戻る'}
             </Link>
 
             <p className="hero-l1 font-body text-xs text-ink-muted tracking-[0.18em] uppercase mb-6">
@@ -127,17 +127,17 @@ export default function UIUXAchievyPage() {
           <nav aria-label="Project navigation" className="border-t border-hairline">
             <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10 flex items-center justify-between">
               <Link
-                href="/uiux"
+                href={`/${lang}/uiux`}
                 className="font-body text-sm text-ink-muted hover:text-accent transition-colors duration-200 inline-flex items-center gap-2"
               >
                 <span aria-hidden="true">←</span>{' '}
-                {currentLang === 'en' ? 'All Design Work' : 'デザイン作品一覧'}
+                {lang === 'en' ? 'All Design Work' : 'デザイン作品一覧'}
               </Link>
               <Link
-                href="/uiux/six-acres"
+                href={`/${lang}/uiux/six-acres`}
                 className="font-body text-sm text-ink-muted hover:text-accent transition-colors duration-200 inline-flex items-center gap-2"
               >
-                {currentLang === 'en' ? 'Six Acres' : 'Six Acres'}{' '}
+                {lang === 'en' ? 'Six Acres' : 'Six Acres'}{' '}
                 <span aria-hidden="true">→</span>
               </Link>
             </div>
@@ -146,7 +146,7 @@ export default function UIUXAchievyPage() {
         </article>
       </main>
 
-      <Footer currentLang={currentLang} />
+      <Footer />
     </div>
   );
 }
