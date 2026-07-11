@@ -118,6 +118,154 @@ flowchart LR
 
 ---
 
+## ページ別移行タスク
+
+各ルートについて「現状の構成」「ゴールの構成」「ロジックの扱い」を対応付け、チェック可能なタスクに分解する。ファイル名はゴール構造では kebab-case（Next.js 慣習）に統一する。
+
+### home（`/` → `/[lang]`）
+
+| 現状 | ゴール |
+| ---- | ------ |
+| `app/page.tsx`（`'use client'` 相当・`useHomePage`） | `app/[lang]/page.tsx`（Server Component） |
+| `features/home/ui/Home*Section.tsx` | `app/[lang]/_components/*.tsx` |
+| `features/home/model/useHomePage.ts`（マウス視差・mounted・isLoaded） | 視差のみ client の葉 `_components/hero-parallax.tsx` に分離。`isLoaded`/`mounted` は RSC 化で廃止 |
+| `features/home/data/homeData.ts` | `content/home.ts` |
+| `features/home/ui/HomeStyles.tsx`（`return null`） | 削除 |
+
+- [ ] `homeData.ts` を `content/home.ts` へ移設（型付き・言語別）
+- [ ] Home セクション群を `app/[lang]/_components/` へ移設し Server Component 化
+- [ ] マウス視差ロジックのみ `'use client'` の葉に切り出す
+- [ ] `useHomePage` と `HomeStyles` を削除、`useLanguage` を `lang` param に置換
+
+### software 一覧（`/software` → `/[lang]/software`）
+
+| 現状 | ゴール |
+| ---- | ------ |
+| `app/software/page.tsx`（`useSoftwarePage`） | `app/[lang]/software/page.tsx`（Server Component） |
+| `features/software/ui/*`（Hero/CoreExpertise/Experience/Featured/KeyAchievements/Skills/Contact/MatrixBackground） | `app/[lang]/software/_components/*` |
+| `useSoftwarePage`（`showAllExperience` トグル・isLoaded） | トグルは `ExperienceSection` を client の葉に。isLoaded は廃止 |
+| `features/software/data/softwareData.ts` | `content/software/index.ts` |
+| `features/software/ui/SoftwareStyles.tsx`（`return null`） | 削除 |
+
+- [ ] `softwareData.ts` を `content/software/index.ts` へ移設
+- [ ] セクション群を `_components/` へ移設・Server Component 化
+- [ ] `showAllExperience` を持つ部分のみ client の葉に切り出す
+- [ ] `MatrixBackground`（描画）は client の葉として維持
+- [ ] `useSoftwarePage`・`SoftwareStyles` を削除
+
+### software プロジェクト詳細（3ルート → `[slug]` 集約）
+
+現状は既にデータ駆動（`SoftwareProjectPage` に data を渡す）のため集約が容易。
+
+| 現状 | ゴール |
+| ---- | ------ |
+| `app/software/{ecommerce,jma-systems,techdoctor}/page.tsx` ×3 | `app/[lang]/software/[slug]/page.tsx` ×1 |
+| `features/software/data/{ecommerce,jmaSystems,techDoctor}Data.ts` | `content/software/projects/{slug}.ts` |
+| `features/software/ui/SoftwareProjectPage.tsx`・`SoftwareProjectLayout.tsx` | `app/[lang]/software/_components/` |
+
+- [ ] 各プロジェクト data を `content/software/projects/<slug>.ts` へ移設し slug→data のマップを作る
+- [ ] `[slug]/page.tsx` に `generateStaticParams`（en/ja × 全 slug）を実装
+- [ ] 未知 slug は `notFound()` を返す
+- [ ] `SoftwareProjectPage`/`Layout` を `_components/` へ移設
+
+### uiux 一覧（`/uiux` → `/[lang]/uiux`）
+
+software 一覧と同方針で移設する（`useUIUXPage` → RSC + client の葉）。
+
+- [ ] `uiuxData.ts` を `content/uiux/index.ts` へ移設
+- [ ] セクション群を `app/[lang]/uiux/_components/` へ移設・Server Component 化
+- [ ] `useUIUXPage` を削除、`uiuxUtils`（`groupSkillsByCategory` 等）を `lib/` へ移す
+
+### uiux プロジェクト詳細（2ルート → `[slug]` 集約・**要共通化**）
+
+現状はデータ駆動ではなく個別コンポーネント（`UIUXAchievyPage`/`UIUXSixAcresPage`）。software と同じデータ駆動形へ**先に共通化**してから集約する。
+
+| 現状 | ゴール |
+| ---- | ------ |
+| `app/uiux/{achievy,six-acres}/page.tsx` ×2 | `app/[lang]/uiux/[slug]/page.tsx` ×1 |
+| `UIUXAchievyPage.tsx`・`UIUXSixAcresPage.tsx`（個別実装） | 共通 `_components/uiux-project-page.tsx`（data 駆動） |
+| `features/uiux/data/{achievy,sixAcres}Data.ts` | `content/uiux/projects/{slug}.ts` |
+
+- [ ] 2つの個別ページ実装の差分を洗い出し、data 駆動の共通コンポーネントへ統合
+- [ ] 各プロジェクト data を `content/uiux/projects/<slug>.ts` へ移設
+- [ ] `[slug]/page.tsx` に `generateStaticParams` を実装、未知 slug は `notFound()`
+
+### contact（`/contact` → `/[lang]/contact`）
+
+| 現状 | ゴール |
+| ---- | ------ |
+| `app/contact/page.tsx`（`useContactPage`・`useReveal` 直接使用） | `app/[lang]/contact/page.tsx`（Server Component） |
+| `features/contact/data/contactData.ts` | `content/contact.ts` |
+| `useContactPage`（isLoaded） | 廃止。反映アニメは `useReveal` を使う client の葉に閉じる |
+
+- [ ] `contactData.ts` を `content/contact.ts` へ移設
+- [ ] ページを Server Component 化し、`useReveal` 利用箇所を client の葉に限定
+- [ ] `useContactPage` を削除
+
+---
+
+## ロジック（フック）の移行方針
+
+| 現状フック | 実体 | ゴールでの扱い |
+| ---------- | ---- | -------------- |
+| `useLanguage` | ローカル state の言語保持（破綻） | **削除**。`[lang]` ルート param + `lib/i18n` に置換 |
+| `use*Page`（各 model） | `isLoaded` フラグ + 言語 + 一部の実状態 | `isLoaded`/`useEffect` マウント判定は**廃止**（RSC 化）。残る実状態のみ client の葉へ |
+| `useHomePage` のマウス視差 | `mousemove` リスナ | client の葉 `hero-parallax.tsx` として存続 |
+| `useSoftwarePage` の `showAllExperience` | 表示トグル | client の葉（ExperienceSection）へ |
+| `useReveal` | スクロール反映アニメ | `lib/hooks/use-reveal.ts`（client hook）として存続 |
+
+原則: **サーバで確定できるものは Server Component**、状態・イベント・ブラウザ API に触れるものだけを `'use client'` の葉に押し込む。
+
+---
+
+## 共有コードの移行マッピング
+
+| 現状 | ゴール | 備考 |
+| ---- | ------ | ---- |
+| `shared/ui/Header.tsx` | `components/header.tsx` | ナビ文言は `lib/i18n` の辞書から取得 |
+| `shared/ui/Footer.tsx` | `components/footer.tsx` | |
+| `shared/ui/LanguageSwitcher.tsx` | `components/language-switcher.tsx` | client。現在ロケールを保ちつつ対言語ルートへ遷移 |
+| `shared/ui/TechnicalSkills.tsx` | `components/technical-skills.tsx` | |
+| `shared/hooks/useReveal.ts` | `lib/hooks/use-reveal.ts` | client hook |
+| `shared/hooks/useLanguage.ts` | 削除 | ルーティングへ置換 |
+| `shared/utils/getNavText.ts` | `content/dictionaries/{en,ja}.ts` + `lib/i18n.ts` | 辞書へ統合 |
+| `shared/utils/softwareUtils.ts` | `lib/format.ts` 等 | feature 依存を解消 |
+| `shared/utils/uiuxUtils.ts` | `lib/uiux.ts` | `@/features/uiux` への**逆流 import を解消** |
+| `shared/utils/commonUtils.ts` | `lib/` 内の該当モジュール | |
+| `shared/data/siteConfig.ts`・`constants.ts`・`particles.ts` | `lib/site-config.ts` / `content/` | メタデータは `lib`、表示コンテンツは `content` |
+| `shared/types/*` | `types/` または利用箇所へコロケーション | |
+| `src/data/*`（`loadResume`・`resume.yaml`）+ ルート `resume.yml` | `content/` に統一 | 未使用なら削除し SSOT を回復 |
+
+---
+
+## 保守性・拡張性の設計
+
+再設計後に「迷わず追加・変更できる」ためのルールを定める。以下を CLAUDE.md / architecture.md（Phase 6）へ反映する。
+
+### 拡張の型（レシピ）
+
+| やりたいこと | 手順 | 触るファイル |
+| ------------ | ---- | ------------ |
+| プロジェクトを1件追加 | `content/<area>/projects/<slug>.ts` を追加し slug 一覧に登録 | content のみ（ルート追加不要・自動で静的生成） |
+| セクションを追加 | 該当ルートの `_components/` にコンポーネントを追加し `page.tsx` で組む | 当該ルート配下のみ |
+| ページを追加 | `app/[lang]/<route>/page.tsx` と `_components/` を作る | 当該ルートのみ |
+| 言語を追加 | `lib/i18n.ts` の `locales` に追加し辞書ファイルを1つ増やす | `lib/i18n.ts` + `content/dictionaries/<locale>.ts`（`generateStaticParams` が自動追随） |
+
+### 配置ルール
+
+- **コロケーション優先**: ルート専用コンポーネントは `app/[lang]/<route>/_components/` に置く。
+- **昇格ルール**: 2つ以上のルートで再利用された時点で `components/` へ昇格する（早すぎる共通化をしない）。
+- **content と表示の分離**: 表示文言・データは必ず `content/` に型付きで置き、コンポーネントに直書きしない（SSOT）。
+- **Server 既定 / Client は葉**: 既定は Server Component。`'use client'` は状態・イベント・ブラウザ API を持つ最小の葉に限定する。
+- **依存方向**: `app → components → lib`。`lib`/`components` から `app` を import しない（逆流禁止）。
+
+### 命名・型
+
+- ファイルは kebab-case（Next.js 慣習）。コンポーネント名は PascalCase。
+- コンテンツ・辞書は型で契約を固定し、言語追加やプロジェクト追加時に型エラーで抜けを検出できるようにする。
+
+---
+
 ## 完了の定義（Done）
 
 - [ ] `src/features/` と `src/shared/` が存在しない
