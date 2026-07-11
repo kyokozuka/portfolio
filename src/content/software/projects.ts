@@ -1,12 +1,19 @@
-import { ecommerceData, jmaSystemsData, techDoctorData } from '@/features/software/data';
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
+import { parse } from 'yaml';
 import type { SoftwareProjectData } from '@/features/software/types';
 
 // slug → プロジェクトデータのマップ。[slug] 動的ルートの単一ソース。
-// プロジェクト追加はこのマップに1行足すだけで静的生成に追随する。
+// 各プロジェクトの実データは content/software/projects/<slug>.yml。
+const load = (slug: string) =>
+  parse(
+    readFileSync(path.join(process.cwd(), 'src/content/software/projects', `${slug}.yml`), 'utf-8'),
+  ) as SoftwareProjectData;
+
 export const softwareProjects: Record<string, SoftwareProjectData> = {
-  ecommerce: ecommerceData,
-  'jma-systems': jmaSystemsData,
-  techdoctor: techDoctorData,
+  ecommerce: load('ecommerce'),
+  'jma-systems': load('jma-systems'),
+  techdoctor: load('techdoctor'),
 };
 
 export const softwareSlugs = Object.keys(softwareProjects);

@@ -4,10 +4,10 @@ import Link from 'next/link';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import type { Locale } from '@/lib/i18n';
-import { achievyData } from '@/features/uiux/data';
+import type { AchievyData } from '@/features/uiux/types';
 
-export default function UIUXAchievyPage({ lang }: { lang: Locale }) {
-  const t = achievyData[lang];
+export default function UIUXAchievyPage({ lang, data }: { lang: Locale; data: AchievyData }) {
+  const t = data[lang];
 
   const processSteps = [
     { key: 'background', data: t.background },

@@ -5,10 +5,10 @@ import Link from 'next/link';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import type { Locale } from '@/lib/i18n';
-import { sixAcresData } from '@/features/uiux/data';
+import type { SixAcresData } from '@/features/uiux/types';
 
-export default function UIUXSixAcresPage({ lang }: { lang: Locale }) {
-  const t = sixAcresData[lang] ?? sixAcresData.en;
+export default function UIUXSixAcresPage({ lang, data }: { lang: Locale; data: SixAcresData }) {
+  const t = data[lang] ?? data.en;
 
   const beforeAfterEntries = Object.entries(t.beforeAfter) as [
     string,
