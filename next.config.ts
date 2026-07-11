@@ -8,6 +8,8 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   basePath: basePath,
   assetPrefix: basePath,
+  // PWA（manifest / Service Worker 登録）で basePath を参照するためクライアントへ公開
+  env: { NEXT_PUBLIC_BASE_PATH: basePath || '' },
   images: {
     unoptimized: true,
     loader: 'default',

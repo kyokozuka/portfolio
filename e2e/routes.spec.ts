@@ -82,3 +82,20 @@ for (const p of linkAuditPaths) {
     expect(stale, `旧パスリンク: ${stale.join(', ')}`).toEqual([]);
   });
 }
+
+// PWA: <head> の manifest リンク・theme-color と、アイコン資産の提供を検証する。
+// manifest.webmanifest の中身は静的書き出し（build）で生成されるため内容検証はそちらで担保し、
+// ここでは dev でも確認できるリンク存在・アイコン到達性のみを見る。
+// Service Worker は本番ビルドのみ登録するため E2E(dev) では対象外。
+test('PWA の manifest リンク / theme-color / アイコンが提供される', async ({ page }) => {
+  await page.goto('/en');
+
+  const manifestLink = page.locator('link[rel="manifest"]');
+  await expect(manifestLink).toHaveCount(1);
+  expect(await manifestLink.getAttribute('href')).toContain('manifest.webmanifest');
+
+  await expect(page.locator('meta[name="theme-color"]')).toHaveCount(1);
+
+  const iconRes = await page.request.get('/icon.svg');
+  expect(iconRes.ok()).toBeTruthy();
+});
