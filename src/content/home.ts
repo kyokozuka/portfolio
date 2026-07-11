@@ -1,5 +1,11 @@
-// home ルートのコンテンツ単一ソース（Phase 2）。
-// 現状は features/home/data から再エクスポートし、content/ への物理移設は
-// 後続 Phase で行う（このパスを先に確立して参照を content/ に寄せる）。
-export { homeContent } from '@/features/home/data';
-export type { HomeContent } from '@/features/home/data';
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
+import { parse } from 'yaml';
+import type { HomeContent } from '@/features/home/data';
+
+// home コンテンツの単一ソースは content/home.yml。
+// ビルド時（Server Component）に fs で読み込み、型付けしてエクスポートする。
+const file = path.join(process.cwd(), 'src/content/home.yml');
+export const homeContent = parse(readFileSync(file, 'utf-8')) as Record<string, HomeContent>;
+
+export type { HomeContent };
