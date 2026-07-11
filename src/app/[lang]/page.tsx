@@ -25,11 +25,11 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       <Header lang={lang} />
 
       <main>
-        <HomeHeroSection currentContent={currentContent} isLoaded={true} />
+        <HomeHeroSection currentContent={currentContent} isLoaded={true} lang={lang} />
         <HomeAchievementsSection achievements={currentContent.achievements} />
-        <HomeRoleCardsSection software={currentContent.software} uiux={currentContent.uiux} />
+        <HomeRoleCardsSection software={currentContent.software} uiux={currentContent.uiux} lang={lang} />
         <HomeAboutSection about={currentContent.about} />
-        <HomeProjectsSection highlights={currentContent.highlights} />
+        <HomeProjectsSection highlights={currentContent.highlights} lang={lang} />
       </main>
 
       <Footer />

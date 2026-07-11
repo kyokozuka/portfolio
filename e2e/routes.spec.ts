@@ -63,3 +63,22 @@ for (const path of jaRoutes) {
     await expect(page.getByText(/ソフトウェア/).first()).toBeVisible();
   });
 }
+
+// 内部リンクがロケール無しの旧パス（/software 等）を指していないこと（リンク切れ回帰防止）。
+const linkAuditPaths = [
+  '/en',
+  '/en/software',
+  '/en/software/techdoctor',
+  '/en/uiux',
+  '/en/uiux/achievy',
+  '/en/contact',
+];
+for (const p of linkAuditPaths) {
+  test(`${p} に旧ロケール無しパスへの内部リンクが無い`, async ({ page }) => {
+    await page.goto(p);
+    const stale = await page
+      .locator('a[href^="/software"], a[href^="/uiux"], a[href^="/contact"]')
+      .evaluateAll((els) => els.map((e) => (e as HTMLAnchorElement).getAttribute('href')));
+    expect(stale, `旧パスリンク: ${stale.join(', ')}`).toEqual([]);
+  });
+}

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useReveal } from "@/lib/hooks";
 
-export default function ContactSection() {
+export default function ContactSection({ lang }: { lang: string }) {
   const { ref, visible } = useReveal<HTMLElement>();
 
   return (
@@ -22,7 +22,7 @@ export default function ContactSection() {
           <em>something great.</em>
         </h2>
         <Link
-          href="/contact"
+          href={`/${lang}/contact`}
           className="font-body font-medium text-sm px-8 py-3.5 bg-ink text-canvas hover:bg-accent transition-colors duration-200 inline-block"
         >
           Get in touch

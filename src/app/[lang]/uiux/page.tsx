@@ -42,10 +42,10 @@ export default async function UIUXPage({ params }: { params: Promise<{ lang: str
           isLoaded={true}
         />
         <UIUXSkillsSection skillsByCategory={skillsByCategory} />
-        <UIUXProjectsSection projects={uiuxProjects} />
+        <UIUXProjectsSection projects={uiuxProjects} lang={lang} />
         <UIUXExperienceSection experience={uiuxExperience} />
         <UIUXAcademicProjectsSection academicProjects={uiuxAcademicProjects} />
-        <UIUXContactSection contactText={currentContent.contact} />
+        <UIUXContactSection contactText={currentContent.contact} lang={lang} />
       </main>
 
       <Footer />

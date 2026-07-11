@@ -7,14 +7,15 @@ import { useReveal } from '@/lib/hooks';
 interface HomeRoleCardsSectionProps {
   software: HomeContent['software'];
   uiux: HomeContent['uiux'];
+  lang: string;
 }
 
-export default function HomeRoleCardsSection({ software, uiux }: HomeRoleCardsSectionProps) {
+export default function HomeRoleCardsSection({ software, uiux, lang }: HomeRoleCardsSectionProps) {
   const { ref, visible } = useReveal<HTMLElement>();
 
   const cards = [
-    { data: software, href: '/software', num: '01' },
-    { data: uiux,     href: '/uiux',     num: '02' },
+    { data: software, href: `/${lang}/software`, num: '01' },
+    { data: uiux,     href: `/${lang}/uiux`,     num: '02' },
   ];
 
   return (

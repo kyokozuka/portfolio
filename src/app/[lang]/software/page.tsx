@@ -50,7 +50,7 @@ export default async function SoftwarePage({ params }: { params: Promise<{ lang:
           title={currentContent.projects.title}
           currentLang={lang}
         />
-        <ContactSection />
+        <ContactSection lang={lang} />
       </main>
 
       <Footer />

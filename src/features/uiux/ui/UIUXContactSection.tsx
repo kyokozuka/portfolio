@@ -5,9 +5,10 @@ import { useReveal } from '@/lib/hooks';
 
 interface UIUXContactSectionProps {
   contactText: string;
+  lang: string;
 }
 
-export default function UIUXContactSection({ contactText }: UIUXContactSectionProps) {
+export default function UIUXContactSection({ contactText, lang }: UIUXContactSectionProps) {
   const { ref, visible } = useReveal<HTMLElement>();
 
   return (
@@ -26,7 +27,7 @@ export default function UIUXContactSection({ contactText }: UIUXContactSectionPr
           <em>Let&apos;s design together.</em>
         </h2>
         <Link
-          href="/contact"
+          href={`/${lang}/contact`}
           className="font-body font-medium text-sm px-8 py-3.5 bg-ink text-canvas hover:bg-accent transition-colors duration-200 inline-block"
         >
           Start a project

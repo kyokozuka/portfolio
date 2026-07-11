@@ -6,9 +6,10 @@ import { HomeContent } from '@/features/home/data';
 interface HomeHeroSectionProps {
   currentContent: HomeContent;
   isLoaded: boolean; // kept for interface compatibility, animation is CSS-driven
+  lang: string;
 }
 
-export default function HomeHeroSection({ currentContent }: HomeHeroSectionProps) {
+export default function HomeHeroSection({ currentContent, lang }: HomeHeroSectionProps) {
   return (
     <section aria-labelledby="hero-heading" className="max-w-7xl mx-auto px-6 lg:px-12 pt-28 pb-24 md:pt-36 md:pb-32">
       <div className="max-w-4xl">
@@ -46,13 +47,13 @@ export default function HomeHeroSection({ currentContent }: HomeHeroSectionProps
         {/* CTAs */}
         <div className="hero-l4 flex flex-wrap gap-4">
           <Link
-            href="/software"
+            href={`/${lang}/software`}
             className="font-body font-medium text-sm px-8 py-3.5 bg-ink text-canvas hover:bg-accent transition-colors duration-200"
           >
             Software Work
           </Link>
           <Link
-            href="/uiux"
+            href={`/${lang}/uiux`}
             className="font-body font-medium text-sm px-8 py-3.5 border border-ink text-ink hover:border-accent hover:text-accent transition-colors duration-200"
           >
             Design Work

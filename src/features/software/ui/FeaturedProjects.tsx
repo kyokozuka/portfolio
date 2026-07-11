@@ -41,7 +41,7 @@ export default function FeaturedProjects({ projects, title, currentLang }: Featu
               style={{ transitionDelay: `${(i + 1) * 80}ms` }}
             >
               <Link
-                href={`/software/${project.id}`}
+                href={`/${currentLang}/software/${project.id}`}
                 className="grid grid-cols-12 gap-4 py-8 group"
               >
                 <div className="col-span-12 md:col-span-3">
