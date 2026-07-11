@@ -34,3 +34,7 @@ run = "npm start"
 [tasks."test"]
 description = "Run unit tests (Vitest)"
 run = "npm test"
+
+[tasks."e2e"]
+description = "Run E2E tests (Playwright)"
+run = "npm run e2e"
