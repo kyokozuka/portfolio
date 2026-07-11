@@ -7,10 +7,11 @@
 | ID | Title | Status | Date |
 |----|----|--------|------|
 | [ADR-001](./ADR-001-typescript-strict-mode.md) | TypeScript strict モード採用 | Accepted | 2026-05-20 |
-| [ADR-002](./ADR-002-feature-based-layered-architecture.md) | フィーチャーベース + レイヤード アーキテクチャ | Accepted | 2026-05-20 |
+| [ADR-002](./ADR-002-feature-based-layered-architecture.md) | フィーチャーベース + レイヤード アーキテクチャ | Superseded by ADR-006 | 2026-05-20 |
 | [ADR-003](./ADR-003-signal-noise-design-system.md) | Signal/Noise デザインシステム採用 | Accepted | 2026-05-20 |
 | [ADR-004](./ADR-004-semantic-html-requirement.md) | セマンティックHTML必須化 | Accepted | 2026-05-20 |
 | [ADR-005](./ADR-005-tailwind-css-styling.md) | Tailwind CSS によるスタイリング | Accepted | 2026-05-20 |
+| [ADR-006](./ADR-006-nextjs-idiomatic-architecture.md) | Next.js App Router 流儀のアーキテクチャへ再設計 | Proposed | 2026-07-11 |
 
 ---
 

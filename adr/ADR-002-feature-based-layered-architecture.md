@@ -1,7 +1,9 @@
 # ADR-002: フィーチャーベース + レイヤード アーキテクチャ
 
 ## Status
-Accepted (2026-05-20)
+Superseded by [ADR-006](./ADR-006-nextjs-idiomatic-architecture.md) (2026-07-11)
+
+当初 Accepted (2026-05-20)。Next.js App Router 流儀への再設計に伴い ADR-006 で置き換え。
 
 ## Context
 
