@@ -21,10 +21,10 @@ const routes: Route[] = [
     path: '/en/software/techdoctor',
     marker: /Digital Biomarker Development Platform/i,
   },
-  { name: 'uiux 一覧', path: '/uiux', marker: /Turning ideas into beautiful experiences/i },
+  { name: 'uiux 一覧 (en)', path: '/en/uiux', marker: /Turning ideas into beautiful experiences/i },
   {
-    name: 'uiux 詳細 (achievy)',
-    path: '/uiux/achievy',
+    name: 'uiux 詳細 (achievy, en)',
+    path: '/en/uiux/achievy',
     marker: /Task Management App for ADHD Students/i,
   },
   { name: 'contact', path: '/contact', marker: /@kyokozuka/i },

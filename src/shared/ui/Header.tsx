@@ -23,9 +23,9 @@ export default function Header({ currentLang = 'en', onLanguageChange }: HeaderP
   const isActive = (path: string) => pathname === path || pathname === path + '/';
 
   const navLinks = [
-    // software は /[lang] へ移設済み。未移設ページ用に暫定でデフォルトロケールへ。
+    // software/uiux は /[lang] へ移設済み。未移設ページ用に暫定でデフォルトロケールへ。
     { href: '/en/software', key: 'software' },
-    { href: '/uiux',     key: 'uiux'     },
+    { href: '/en/uiux',  key: 'uiux'     },
     { href: '/contact',  key: 'contact'  },
   ];
 
