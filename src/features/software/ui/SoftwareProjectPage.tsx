@@ -1,20 +1,22 @@
 'use client';
 
 import Link from 'next/link';
-import { Header, Footer } from '@/shared/ui';
+import Header from '@/components/header';
+import Footer from '@/components/footer';
+import type { Locale } from '@/lib/i18n';
 import { SoftwareProjectData, TechnicalDetail } from '@/features/software/types';
-import { useSoftwareProjectPage } from '@/features/software/model';
 
 interface SoftwareProjectPageProps {
   projectData: SoftwareProjectData;
+  lang: Locale;
 }
 
-export default function SoftwareProjectPage({ projectData }: SoftwareProjectPageProps) {
-  const { currentLang, setCurrentLang, currentData } = useSoftwareProjectPage(projectData);
+export default function SoftwareProjectPage({ projectData, lang }: SoftwareProjectPageProps) {
+  const currentData = projectData[lang];
 
   return (
     <div className="min-h-screen bg-canvas">
-      <Header currentLang={currentLang} onLanguageChange={setCurrentLang} />
+      <Header lang={lang} />
 
       <main>
         <article>
@@ -25,7 +27,7 @@ export default function SoftwareProjectPage({ projectData }: SoftwareProjectPage
             className="max-w-7xl mx-auto px-6 lg:px-12 pt-24 pb-16"
           >
             <Link
-              href="/software"
+              href={`/${lang}/software`}
               className="font-body text-sm text-ink-muted hover:text-accent transition-colors duration-200 inline-flex items-center gap-2 mb-12"
             >
               <span aria-hidden="true">←</span> {currentData.back}
@@ -54,19 +56,19 @@ export default function SoftwareProjectPage({ projectData }: SoftwareProjectPage
             <dl className="hero-l4 grid grid-cols-1 sm:grid-cols-3 border-t border-hairline">
               <div className="py-6 sm:pr-10 sm:border-r border-b sm:border-b-0 border-hairline">
                 <dt className="font-body text-xs text-ink-muted tracking-[0.12em] uppercase mb-1.5">
-                  {currentLang === 'en' ? 'Role' : '役割'}
+                  {lang === 'en' ? 'Role' : '役割'}
                 </dt>
                 <dd className="font-body text-sm text-ink">{currentData.role}</dd>
               </div>
               <div className="py-6 sm:px-10 sm:border-r border-b sm:border-b-0 border-hairline">
                 <dt className="font-body text-xs text-ink-muted tracking-[0.12em] uppercase mb-1.5">
-                  {currentLang === 'en' ? 'Tools' : 'ツール'}
+                  {lang === 'en' ? 'Tools' : 'ツール'}
                 </dt>
                 <dd className="font-body text-sm text-ink">{currentData.tools}</dd>
               </div>
               <div className="py-6 sm:pl-10">
                 <dt className="font-body text-xs text-ink-muted tracking-[0.12em] uppercase mb-1.5">
-                  {currentLang === 'en' ? 'Duration' : '期間'}
+                  {lang === 'en' ? 'Duration' : '期間'}
                 </dt>
                 <dd className="font-body text-sm text-ink">{currentData.duration}</dd>
               </div>
@@ -85,7 +87,7 @@ export default function SoftwareProjectPage({ projectData }: SoftwareProjectPage
                     id="overview-heading"
                     className="font-body text-xs text-ink-muted tracking-[0.12em] uppercase lg:sticky lg:top-24"
                   >
-                    {currentLang === 'en' ? 'Overview' : '概要'}
+                    {lang === 'en' ? 'Overview' : '概要'}
                   </h2>
                 </div>
                 <div className="lg:col-span-9">
@@ -109,7 +111,7 @@ export default function SoftwareProjectPage({ projectData }: SoftwareProjectPage
                     id="solution-heading"
                     className="font-body text-xs text-ink-muted tracking-[0.12em] uppercase lg:sticky lg:top-24"
                   >
-                    {currentLang === 'en' ? 'Solution' : 'ソリューション'}
+                    {lang === 'en' ? 'Solution' : 'ソリューション'}
                   </h2>
                 </div>
                 <div className="lg:col-span-9">
@@ -133,7 +135,7 @@ export default function SoftwareProjectPage({ projectData }: SoftwareProjectPage
                     id="features-heading"
                     className="font-body text-xs text-ink-muted tracking-[0.12em] uppercase lg:sticky lg:top-24"
                   >
-                    {currentLang === 'en' ? 'Key Features' : '主要機能'}
+                    {lang === 'en' ? 'Key Features' : '主要機能'}
                   </h2>
                 </div>
                 <div className="lg:col-span-9">
@@ -160,7 +162,7 @@ export default function SoftwareProjectPage({ projectData }: SoftwareProjectPage
                 id="tech-heading"
                 className="font-body text-xs text-ink-muted tracking-[0.12em] uppercase mb-10"
               >
-                {currentLang === 'en' ? 'Technical Details' : '技術詳細'}
+                {lang === 'en' ? 'Technical Details' : '技術詳細'}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-hairline border border-hairline">
                 {Object.entries(currentData.technicalDetails).map(([key, detail]) => {
@@ -226,7 +228,7 @@ export default function SoftwareProjectPage({ projectData }: SoftwareProjectPage
           >
             <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10 flex items-center justify-between">
               <Link
-                href="/software"
+                href={`/${lang}/software`}
                 className="font-body text-sm text-ink-muted hover:text-accent transition-colors duration-200 inline-flex items-center gap-2"
               >
                 <span aria-hidden="true">←</span> {currentData.back}
@@ -245,7 +247,7 @@ export default function SoftwareProjectPage({ projectData }: SoftwareProjectPage
         </article>
       </main>
 
-      <Footer currentLang={currentLang} />
+      <Footer />
     </div>
   );
 }

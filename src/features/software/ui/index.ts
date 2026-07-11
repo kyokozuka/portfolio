@@ -8,4 +8,3 @@ export { default as MatrixBackground } from './MatrixBackground';
 export { default as SoftwareProjectLayout } from './SoftwareProjectLayout';
 export { default as SoftwareProjectPage } from './SoftwareProjectPage';
 export { default as SoftwareSkillsSection } from './SoftwareSkillsSection';
-export { default as SoftwareStyles } from './SoftwareStyles';

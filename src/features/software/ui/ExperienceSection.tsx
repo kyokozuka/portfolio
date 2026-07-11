@@ -9,8 +9,6 @@ interface ExperienceSectionProps {
   title: string;
   showMoreText: string;
   showLessText: string;
-  showAllExperience: boolean;
-  onToggleExperience: () => void;
   currentLang: string;
 }
 
@@ -19,12 +17,12 @@ export default function ExperienceSection({
   title,
   showMoreText,
   showLessText,
-  showAllExperience,
-  onToggleExperience,
   currentLang,
 }: ExperienceSectionProps) {
   const { ref, visible } = useReveal<HTMLElement>();
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  // 表示件数トグルは Server Component 化に伴い、この client の葉が自己管理する。
+  const [showAllExperience, setShowAllExperience] = useState(false);
 
   const displayed = showAllExperience ? experience : experience.slice(0, 3);
 
@@ -121,7 +119,7 @@ export default function ExperienceSection({
       <div className="border-t border-hairline pt-8 mt-4">
         <button
           type="button"
-          onClick={onToggleExperience}
+          onClick={() => setShowAllExperience(!showAllExperience)}
           className="font-body text-sm text-ink-muted hover:text-accent transition-colors duration-200 inline-flex items-center gap-2"
         >
           {showAllExperience ? showLessText : showMoreText}
