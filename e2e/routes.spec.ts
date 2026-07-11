@@ -14,7 +14,7 @@ type Route = {
 // マーカーはヒーロー見出し（H1 は1文字ずつ span 分割されるため getByText で
 // 全文一致できない）を避け、非分割の安定テキスト（サブタイトル・ラベル等）を使う。
 const routes: Route[] = [
-  { name: 'home', path: '/', marker: /Software Engineer & UI\/UX Designer/i },
+  { name: 'home (en)', path: '/en', marker: /Software Engineer & UI\/UX Designer/i },
   { name: 'software 一覧', path: '/software', marker: /Core Expertise/i },
   {
     name: 'software 詳細 (techdoctor)',
@@ -43,3 +43,16 @@ for (const route of routes) {
     await expect(page.getByText(route.marker).first()).toBeVisible();
   });
 }
+
+// ロケールルーティング（Phase 2 で追加）の挙動
+test('/ はデフォルトロケール /en へリダイレクトする', async ({ page }) => {
+  await page.goto('/');
+  // /en の表示内容は上記の home (en) テストで担保。ここではリダイレクトのみ検証する。
+  await expect.poll(() => new URL(page.url()).pathname).toMatch(/^\/en\/?$/);
+});
+
+test('/ja は日本語ナビで描画される', async ({ page }) => {
+  await page.goto('/ja');
+  await expect(page.getByRole('navigation').first()).toBeVisible();
+  await expect(page.getByText(/ソフトウェア/).first()).toBeVisible();
+});

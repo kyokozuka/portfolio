@@ -1,36 +1,17 @@
-"use client";
+'use client';
 
-import { Header, Footer } from "@/shared/ui";
-import { useHomePage } from "@/features/home/model";
-import {
-  HomeHeroSection,
-  HomeAchievementsSection,
-  HomeRoleCardsSection,
-  HomeAboutSection,
-  HomeProjectsSection,
-} from "@/features/home/ui";
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { defaultLocale } from '@/lib/i18n';
 
-export default function Home() {
-  const {
-    currentLang,
-    setCurrentLang,
-    isLoaded,
-    currentContent,
-  } = useHomePage();
+// output: 'export' では middleware が使えないため、ルート / はクライアントで
+// デフォルトロケール（/en）へリダイレクトする。
+export default function RootRedirect() {
+  const router = useRouter();
 
-  return (
-    <div className="min-h-screen bg-canvas">
-      <Header currentLang={currentLang} onLanguageChange={setCurrentLang} />
+  useEffect(() => {
+    router.replace(`/${defaultLocale}`);
+  }, [router]);
 
-      <main>
-        <HomeHeroSection currentContent={currentContent} isLoaded={isLoaded} />
-        <HomeAchievementsSection achievements={currentContent.achievements} />
-        <HomeRoleCardsSection software={currentContent.software} uiux={currentContent.uiux} />
-        <HomeAboutSection about={currentContent.about} />
-        <HomeProjectsSection highlights={currentContent.highlights} />
-      </main>
-
-      <Footer currentLang={currentLang} />
-    </div>
-  );
+  return null;
 }
