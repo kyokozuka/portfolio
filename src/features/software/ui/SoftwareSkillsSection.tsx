@@ -1,6 +1,6 @@
 "use client";
 
-import { useReveal } from "@/shared/hooks";
+import { useReveal } from "@/lib/hooks";
 
 interface SoftwareSkillsSectionProps {
   title: string;

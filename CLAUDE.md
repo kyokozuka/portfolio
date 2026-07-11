@@ -68,10 +68,10 @@ Portfolio Project/
 詳細なアーキテクチャ、テックスタック、パフォーマンス要件は **`docs/architecture.md`** を参照。
 
 主な特徴：
-- **フロントエンド**: Next.js + TypeScript + Tailwind CSS
-- **アーキテクチャ**: フィーチャーベース + レイヤード（UI, Model, Data, Types）
+- **フロントエンド**: Next.js App Router + TypeScript + Tailwind CSS
+- **アーキテクチャ**: Next.js 流儀（ロケールルーティング `app/[lang]/`、ルート近接コロケーション `app/**/_components/`、Server Component 既定）。詳細は [ADR-006](./adr/ADR-006-nextjs-idiomatic-architecture.md)。旧 FSD（ADR-002）は置き換え済み
 - **セマンティック HTML**: 常にセマンティック要素を使用
-- **インポート方向**: `app` → `features` → `shared`（上方向インポート禁止）
+- **インポート方向**: `app` → `components` → `lib`（`content` は型付きコンテンツ）。`shared/` は撤去済み。`features/*` は移行途中の残存（後続で `_components/`・`content/` へ移設予定）
 
 ---
 

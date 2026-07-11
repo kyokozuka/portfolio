@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useReveal } from "@/shared/hooks";
+import { useReveal } from "@/lib/hooks";
 
 export default function ContactSection() {
   const { ref, visible } = useReveal<HTMLElement>();

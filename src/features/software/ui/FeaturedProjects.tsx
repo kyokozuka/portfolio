@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { FeaturedProject } from "@/features/software/data";
-import { useReveal } from "@/shared/hooks";
+import { useReveal } from "@/lib/hooks";
 
 interface FeaturedProjectsProps {
   projects: FeaturedProject[];

@@ -1,7 +1,7 @@
 "use client";
 
 import { CoreExpertise as CoreExpertiseType } from "@/features/software/data";
-import { useReveal } from "@/shared/hooks";
+import { useReveal } from "@/lib/hooks";
 
 interface CoreExpertiseProps {
   expertise: CoreExpertiseType[];

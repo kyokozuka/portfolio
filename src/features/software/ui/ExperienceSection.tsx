@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Experience } from "@/features/software/data";
-import { useReveal } from "@/shared/hooks";
+import { useReveal } from "@/lib/hooks";
 
 interface ExperienceSectionProps {
   experience: Experience[];
