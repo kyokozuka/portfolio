@@ -1,7 +1,29 @@
 {
+  "instruction": "You are a helpful assistant that can help with tasks related to the web development.",
+  "includeCoAuthoredBy": false,
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "push": ""
+  },
   "enabledPlugins": {
     "skill-creator@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
     "code-review@claude-plugins-official": true
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "f=$(jq -r '.tool_input.file_path // .tool_response.filePath // empty'); case \"$f\" in *.ts|*.tsx) export PATH=\"$HOME/.local/bin:$PATH\"; cd \"$CLAUDE_PROJECT_DIR\" && mise run lint && mise run type-check ;; esac",
+            "timeout": 180,
+            "statusMessage": "Running mise lint + type-check"
+          }
+        ]
+      }
+    ]
   }
 }
