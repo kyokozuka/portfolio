@@ -15,10 +15,10 @@ type Route = {
 // 全文一致できない）を避け、非分割の安定テキスト（サブタイトル・ラベル等）を使う。
 const routes: Route[] = [
   { name: 'home (en)', path: '/en', marker: /Software Engineer & UI\/UX Designer/i },
-  { name: 'software 一覧', path: '/software', marker: /Core Expertise/i },
+  { name: 'software 一覧 (en)', path: '/en/software', marker: /Core Expertise/i },
   {
-    name: 'software 詳細 (techdoctor)',
-    path: '/software/techdoctor',
+    name: 'software 詳細 (techdoctor, en)',
+    path: '/en/software/techdoctor',
     marker: /Digital Biomarker Development Platform/i,
   },
   { name: 'uiux 一覧', path: '/uiux', marker: /Turning ideas into beautiful experiences/i },
