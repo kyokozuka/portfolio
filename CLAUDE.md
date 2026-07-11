@@ -1,6 +1,6 @@
 # Portfolio — 開発ガイド
 
-**目的**: このコードベースの構造・技術・規約をまとめた実用ガイド。設計判断の理由は [docs/design-decisions.md](./docs/design-decisions.md)、デザインシステムは [docs/design.md](./docs/design.md) を参照。
+**目的**: このコードベースの構造・技術・規約をまとめた実用ガイド。デザイン（デザインシステム・トークン・セマンティックHTML）は [DESIGN.md](./DESIGN.md) を参照。
 
 ---
 
@@ -43,7 +43,7 @@ src/
 
 - **ロケール**: URL セグメント `app/[lang]`（`/en` `/ja`）。`lib/i18n` の `locales`/`isLocale`/`getDictionary` が単一ソース。`/` はデフォルトロケールへリダイレクト。
 - **レンダリング**: Server Component 既定。`'use client'` はインタラクティブな葉（言語切替・`useReveal` を使う節など）に限定。
-- **セマンティック HTML**: 意味があればセマンティック要素、意味がなくスタイル目的だけなら `<div>`/`<span>`（詳細は design-decisions）。
+- **セマンティック HTML**: 意味があればセマンティック要素、意味がなくスタイル目的だけなら `<div>`/`<span>`（詳細は [DESIGN.md](./DESIGN.md)）。
 - **インポート方向**: `app → components → lib`。上方向・逆流 import を禁止。
 - **コメント**: "何" ではなく "なぜ" を書く。
 
@@ -62,3 +62,15 @@ mise run type-check   # tsc --noEmit
 mise run test         # Vitest（ユニット）
 mise run e2e          # Playwright（E2E）
 ```
+
+---
+
+## 主要な設計判断
+
+| 決定 | 内容と理由 |
+| ---- | ---------- |
+| TypeScript strict | `strict: true`・明示的型必須。実行時エラー削減と、型が実装ドキュメントになる保守性を優先。 |
+| Next.js 流儀アーキテクチャ | 旧 FSD（`features`/`shared`）を廃し、ロケールルーティング + Server Component 既定へ再設計。規模に合わない抽象を避け、フレームワーク機能（RSC・i18n）を活かす。詳細は上記「ディレクトリ構造」「規約」。 |
+| デザイン | Signal/Noise デザインシステム / Tailwind / セマンティックHTML。→ [DESIGN.md](./DESIGN.md) |
+
+> 旧 FSD は移行済み。`features/*` の UI セクション・data・types が移行途中で残存（`_components/`・`content/` へ移設予定）。
