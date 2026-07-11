@@ -56,86 +56,6 @@ export interface DesignIcon {
   color: string;
 }
 
-export const uiuxContent: Record<string, UIUXContent> = {
-  en: {
-    title: "UI/UX Designer",
-    subtitle: "Turning ideas into beautiful experiences",
-    description: "Passionate about creating intuitive, accessible, and beautiful user interfaces. Currently studying UI/UX Design at CICCC, focusing on user-centered design principles and modern design systems.",
-    contact: "Let's Create Something Amazing"
-  },
-  ja: {
-    title: "UI/UXデザイナー",
-    subtitle: "アイデアを美しい体験に変える",
-    description: "直感的でアクセシブル、美しいユーザーインターフェースの作成に情熱を持っています。現在CICCCでUI/UXデザインを学び、ユーザー中心のデザイン原則とモダンなデザインシステムに焦点を当てています。",
-    contact: "素晴らしいものを作りましょう"
-  }
-};
-
-export const uiuxProjects: UIUXProject[] = [
-  {
-    id: "six-acres",
-    title: "Six Acres Restaurant",
-    description: "Complete website redesign focusing on improved user experience and modern design principles",
-    category: "Web Redesign",
-    image: "projects/sixacres/Redesign_thumnail.jpg",
-    tools: ["Figma", "User Research", "Prototyping"],
-    color: "from-pink-500 to-purple-600"
-  },
-  {
-    id: "achievy",
-    title: "Achievy: Task Management for ADHD Students",
-    description: "Design Sprint project for a neurodiversity-friendly task management app. Research, ideation, prototyping, and user testing for Canadian college students with ADHD.",
-    category: "Design Sprint",
-    image: "projects/achievy/achievy_thumnail.jpg",
-    tools: ["Design Sprint", "Figma", "User Research", "Prototyping"],
-    color: "from-blue-500 to-cyan-600"
-  }
-];
-
-export const uiuxSkills: UIUXSkill[] = [
-  // Design Tools
-  { name: "Figma", category: "Design Tools", icon: "logos:figma", color: "from-purple-400 to-pink-500" },
-  { name: "Miro", category: "Design Tools", icon: "logos:miro", color: "from-pink-400 to-rose-500" },
-  { name: "Notion", category: "Design Tools", icon: "logos:notion-icon", color: "from-slate-400 to-gray-500" },
-
-  // Research & Analysis
-  { name: "User Research", category: "Research & Analysis", icon: "mdi:account-search", color: "from-blue-400 to-cyan-500" },
-  { name: "Usability Testing", category: "Research & Analysis", icon: "mdi:test-tube", color: "from-indigo-400 to-purple-500" },
-
-  // Design Process
-  { name: "Prototyping", category: "Design Process", icon: "mdi:layers-triple", color: "from-green-400 to-emerald-500" },
-  { name: "Wireframing", category: "Design Process", icon: "mdi:vector-square", color: "from-orange-400 to-red-500" },
-  { name: "Design Sprint", category: "Design Process", icon: "mdi:run-fast", color: "from-yellow-400 to-orange-500" }
-];
-
-export const uiuxExperience: UIUXExperience[] = [
-  {
-    title: "UI/UX Design Program",
-    institution: "CICCC",
-    period: "Current",
-    description: "Comprehensive program covering Information Design, Interaction Design, Multi-Platform UI Design, and Design Evaluation. Hands-on projects with real-world applications.",
-    highlights: ["User Research", "Prototyping", "Design Systems", "Usability Testing"],
-    color: "from-green-400 to-emerald-500"
-  }
-];
-
-export const uiuxAcademicProjects: UIUXAcademicProject[] = [
-  {
-    title: "E-Scooter App",
-    description: "Complete design process from user research to high-fidelity prototyping",
-    tools: ["Figma", "Miro", "User Research"],
-    status: "Completed",
-    color: "from-blue-400 to-cyan-500"
-  },
-  {
-    title: "E-Learning System",
-    description: "Platform design with comprehensive usability testing and heuristic evaluation",
-    tools: ["Figma", "Prototyping", "Usability Testing"],
-    status: "In Progress",
-    color: "from-purple-400 to-pink-500"
-  }
-];
-
 export const creativeElements: CreativeElement[] = [
   { left: "5%", top: "10%", size: "w-4 h-4", color: "bg-gradient-to-r from-pink-400 to-purple-400", delay: "0s" },
   { left: "90%", top: "15%", size: "w-3 h-3", color: "bg-gradient-to-r from-blue-400 to-cyan-400", delay: "1.2s" },
@@ -162,8 +82,3 @@ export const designIcons: DesignIcon[] = [
   { left: "55%", top: "75%", icon: "mdi:grid", delay: "1.9s", size: "text-2xl", color: "text-yellow-400" }
 ];
 
-export const categoryColors: Record<string, string> = {
-  "Design Tools": "from-purple-500 to-pink-600",
-  "Research & Analysis": "from-blue-500 to-cyan-600",
-  "Design Process": "from-green-500 to-emerald-600"
-};

@@ -1,19 +1,14 @@
-import type { ComponentType } from 'react';
 import { notFound } from 'next/navigation';
-import { locales, isLocale, type Locale } from '@/lib/i18n';
-import { uiuxProjectSlugs } from '@/content/uiux/projects';
+import { locales, isLocale } from '@/lib/i18n';
+import { uiuxProjectSlugs, getAchievyData, getSixAcresData } from '@/content/uiux/projects';
 import { UIUXAchievyPage, UIUXSixAcresPage } from '@/features/uiux/ui';
-
-// 詳細は案件ごとに設計が異なるため、slug → 案件別コンポーネントにディスパッチする。
-const registry: Record<string, ComponentType<{ lang: Locale }>> = {
-  achievy: UIUXAchievyPage,
-  'six-acres': UIUXSixAcresPage,
-};
 
 export function generateStaticParams() {
   return locales.flatMap((lang) => uiuxProjectSlugs.map((slug) => ({ lang, slug })));
 }
 
+// 詳細は案件ごとに設計・データ型が異なるため、slug ごとに YAML を読み込んで
+// 案件別コンポーネントへ data を渡す（client コンポーネントは fs を使えないため server で読む）。
 export default async function UIUXProjectRoute({
   params,
 }: {
@@ -22,8 +17,7 @@ export default async function UIUXProjectRoute({
   const { lang, slug } = await params;
   if (!isLocale(lang)) notFound();
 
-  const ProjectPage = registry[slug];
-  if (!ProjectPage) notFound();
-
-  return <ProjectPage lang={lang} />;
+  if (slug === 'achievy') return <UIUXAchievyPage lang={lang} data={getAchievyData()} />;
+  if (slug === 'six-acres') return <UIUXSixAcresPage lang={lang} data={getSixAcresData()} />;
+  notFound();
 }
