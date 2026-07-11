@@ -6,9 +6,10 @@ import { useReveal } from '@/lib/hooks';
 
 interface HomeProjectsSectionProps {
   highlights: HomeContent['highlights'];
+  lang: string;
 }
 
-export default function HomeProjectsSection({ highlights }: HomeProjectsSectionProps) {
+export default function HomeProjectsSection({ highlights, lang }: HomeProjectsSectionProps) {
   const { ref, visible } = useReveal<HTMLElement>();
 
   return (
@@ -59,7 +60,7 @@ export default function HomeProjectsSection({ highlights }: HomeProjectsSectionP
             ))}
           </ul>
           <Link
-            href="/software"
+            href={`/${lang}/software`}
             className="font-body text-sm font-medium text-ink-muted hover:text-accent transition-colors duration-200 inline-flex items-center gap-2 mt-8"
           >
             All software work <span aria-hidden="true">→</span>
@@ -91,7 +92,7 @@ export default function HomeProjectsSection({ highlights }: HomeProjectsSectionP
             ))}
           </ul>
           <Link
-            href="/uiux"
+            href={`/${lang}/uiux`}
             className="font-body text-sm font-medium text-ink-muted hover:text-accent transition-colors duration-200 inline-flex items-center gap-2 mt-8"
           >
             All design work <span aria-hidden="true">→</span>

@@ -7,9 +7,10 @@ import { useReveal } from '@/lib/hooks';
 
 interface UIUXProjectsSectionProps {
   projects: UIUXProject[];
+  lang: string;
 }
 
-export default function UIUXProjectsSection({ projects }: UIUXProjectsSectionProps) {
+export default function UIUXProjectsSection({ projects, lang }: UIUXProjectsSectionProps) {
   const { ref, visible } = useReveal<HTMLElement>();
 
   return (
@@ -36,7 +37,7 @@ export default function UIUXProjectsSection({ projects }: UIUXProjectsSectionPro
             className={`reveal-item border-t border-hairline first:border-t-0 ${visible ? 'visible' : 'hidden'}`}
             style={{ transitionDelay: `${(i + 1) * 100}ms` }}
           >
-            <Link href={`/uiux/${project.id}`} className="group grid grid-cols-12 gap-6 py-10">
+            <Link href={`/${lang}/uiux/${project.id}`} className="group grid grid-cols-12 gap-6 py-10">
 
               {/* Image */}
               <div className="col-span-12 md:col-span-4 lg:col-span-3">

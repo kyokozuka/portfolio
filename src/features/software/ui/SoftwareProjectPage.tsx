@@ -235,7 +235,8 @@ export default function SoftwareProjectPage({ projectData, lang }: SoftwareProje
               </Link>
               {currentData.nextProjectLink && (
                 <Link
-                  href={currentData.nextProjectLink}
+                  // nextProjectLink はロケール無しの相対パス（例 /software/ecommerce）。ロケールを前置する。
+                  href={`/${lang}${currentData.nextProjectLink}`}
                   className="font-body text-sm text-ink-muted hover:text-accent transition-colors duration-200 inline-flex items-center gap-2"
                 >
                   {currentData.nextProject} <span aria-hidden="true">→</span>
