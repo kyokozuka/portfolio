@@ -30,3 +30,7 @@ run = "npm run type-check"
 [tasks."start"]
 description = "Start production server"
 run = "npm start"
+
+[tasks."test"]
+description = "Run unit tests (Vitest)"
+run = "npm test"
